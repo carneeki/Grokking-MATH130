@@ -1,0 +1,27 @@
+\begin{figure}[!htb]
+\label{fig:GraphTemplate}
+\begin{tikzpicture}[samples=50,scale=1]
+   \draw[color=neekiRed,domain=-5:-0.2,variable=x]
+     plot[id=hyperbx.neg] function{1/x}
+     node[right] {$f(x) = \frac{1}{x}, x \in \{ -5,-\frac{1}{5} \} $};
+   \draw[color=neekiBlue,domain=0.2:5,variable=x]
+   plot[id=hyperbx.pos] function{1/x}
+     node[right] {$f(x) = \frac{1}{x}, x \in \{ \frac{1}{5},5 \} $};
+  \draw[<->]  (0.0,-5.0) -- (0.0,5.0) node[above] {$f(x)$};
+  \draw[<->] (-5.0, 0.0) -- (5.0,0.0) node[right] {$x$};
+\end{tikzpicture}
+\caption{A hyperbolic function: $f(x) = \frac{1}{x}$}
+\end{figure}
+A hyperbolic function in the form $ f(x) = \frac{1}{x}$
+\begin{table}[!hbt]
+\label{tab:GraphTemplateParts}
+\begin{tabularx}{\linewidth}{| l X |}
+  \hline
+  \multicolumn{2}{|l|}{Where:} \\
+  \hline \hline
+  x & is the independent variable\\
+  y & is the dependent variable\\
+\hline
+\end{tabularx}
+\end{table}
+%
