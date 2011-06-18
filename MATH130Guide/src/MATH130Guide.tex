@@ -109,7 +109,7 @@ longnamesfirst
   linkcolor=neekiRed, % color of internal links
   citecolor=neekiBlue, % color of links to bibliography
   filecolor=red, % color of file links
-  urlcolor=red,  % color of external links
+  urlcolor=red  % color of external links
 }
 %
 %- (05) Custom Commands ------------------------------------------------------%
@@ -734,11 +734,11 @@ A hyperbolic function in the form $ f(x) = \frac{1}{x}$
 \begin{tikzpicture}[scale=1]
   \def\xmin{-5}
   \def\xmax{5}
-  \def\ymin{-2}
+  \def\ymin{-5}
   \def\ymax{5}
   \clip
     (\xmin,\ymin) rectangle (\xmax,\ymax);
-  \filldraw[fill=blue,fill opacity=0.15, color=neekiBlue, <->, variable=x]
+  \draw[color=neekiBlue, <->, variable=x]
     plot[id=parabola, raw gnuplot, smooth]
     function{
       set xrange [\xmin:\xmax];
@@ -778,28 +778,28 @@ A cubic function in the form $ f(x) = mx^3 + c$
 \begin{figure}[!hbt]
 \label{fig:FuncGraphAbsolute}
 \begin{tikzpicture}[scale=1]
-  \def\xmin{-5}
-  \def\xmax{5}
-  \def\ymin{-2}
-  \def\ymax{5}
-  \clip
-    (\xmin,\ymin) rectangle (\xmax,\ymax);
-  \filldraw[fill=blue,fill opacity=0.15, color=neekiBlue, <->, variable=x]
-    plot[id=parabola, raw gnuplot, smooth]
-    function{
-      set xrange [\xmin:\xmax];
-      set yrange [\ymin:\ymax];
-      plot abs(x);}
-    node[right] {$f(x) = |x|, x \in \{ -5,5 \} $};
-  % grid
-  \draw[very thin, color=black!30, ystep=1, xstep=1]
-    (\xmin,\ymin) grid (\xmax,\ymax);
-  % x-axis
-  \draw[<->]
-    (\xmin,0) -- (\xmax,0) node[right] {$x$};
-  % y-axis
-  \draw[<->]
-    (0,\ymin) -- (0,\ymax) node[above] {$f(x)$};
+ \def\xmin{-5}
+ \def\xmax{5}
+ \def\ymin{-2}
+ \def\ymax{5}
+ \clip
+   (\xmin,\ymin) rectangle (\xmax,\ymax);
+ \filldraw[fill=blue,fill opacity=0.15, color=neekiBlue, <->, variable=x]
+   plot[id=parabola, raw gnuplot, smooth]
+   function{
+     set xrange [\xmin:\xmax];
+     set yrange [\ymin:\ymax];
+     plot abs(x);}
+   node[right] {$f(x) = |x|, x \in \{ -5,5 \} $};
+ % grid
+ \draw[very thin, color=black!30, ystep=1, xstep=1]
+   (\xmin,\ymin) grid (\xmax,\ymax);
+ % x-axis
+ \draw[<->]
+   (\xmin,0) -- (\xmax,0) node[right] {$x$};
+ % y-axis
+ \draw[<->]
+   (0,\ymin) -- (0,\ymax) node[above] {$f(x)$};
 \end{tikzpicture}
 \caption{A function of absolute value: $f(x) = |x|$}
 \end{figure}
@@ -1021,7 +1021,7 @@ demonstrate chain rule first, and then the power method.}
 \begin{align}
   f(x) & = {({x}^{2})}^{3}
   \intertext{Let $u = {x}^{2}$ such that}
-  f(x) & = {u}^{3} \label{eq:DiffChainRuleLet} 
+  f(x) & = {u}^{3} \label{eq:DiffChainRuleLet}
   \intertext{The first step in \ref{eq:DiffChainRuleLet} is to identify the
   chain rule, and to name the function inside $u$. It just makes things
   easier this way for most of the time.}
@@ -1079,7 +1079,7 @@ Consider the plot of the function $f(x) = sinx$
    \draw[color=neekiRed,domain=0:pi,variable=x]
      plot[id=sinx] function{1/x}
      node[right] {$f(x) = \frac{1}{x}, x \in \{ -5,-\frac{1}{5} \} $};
-   \draw[color=neekiBlue,domain=0:5,variable=x]
+%   \draw[color=neekiBlue,domain=0:5,variable=x]
   \draw[<->]  (0.0,-5.0) -- (0.0,5.0) node[above] {$f(x)$};
   \draw[<->] (-5.0, 0.0) -- (5.0,0.0) node[right] {$x$};
 \end{tikzpicture}

@@ -24,15 +24,15 @@ Class=CLatexEdit
 Document=src\MATH130Guide.tex
 
 [Frame0_Row0]
-cyCur=226
+cyCur=581
 cyMin=10
 
 [Frame0_Col0]
-cxCur=734
+cxCur=1710
 cxMin=10
 
 [Frame0_View0,0]
-Cursor.row=163
-Cursor.column=11
-TopSubLine=161
+Cursor.row=89
+Cursor.column=0
+TopSubLine=66
 
