@@ -1,10 +1,50 @@
+# original .gitignore cf: https://gist.github.com/871983
 
-/MATH130Guide/src/MATH130Guide.parabola.gnuplot
-/MATH130Guide/src/MATH130Guide.parabola.table
-/MATH130Guide/src/MATH130Guide.synctex.gz
-/MATH130Guide/src/Thumbs.db
-/MATH130Guide/src/MATH130Guide.hyperbx.neg.gnuplot
-/MATH130Guide/src/MATH130Guide.hyperbx.neg.table
-/MATH130Guide/src/MATH130Guide.hyperbx.pos.gnuplot
-/MATH130Guide/src/MATH130Guide.hyperbx.pos.table
-/MATH130Guide/tmp/src
+# Latex files
+
+*.aux
+*.glo
+*.idx
+*.log
+*.toc
+*.ist
+*.acn
+*.acr
+*.alg
+*.bbl
+*.blg
+*.dvi
+*.glg
+*.gls
+*.ilg
+*.ind
+*.lof
+*.lot
+*.maf
+*.mtc
+*.mtc1
+*.out
+*.synctex.gz
+
+# out and tmp directories
+./MATH130/tmp/
+./MATH130/out/
+
+# GNUplot
+*.gnuplot
+*.table
+
+# Windows thumbnails
+*.db
+
+# Mac IDE files
+*.swp
+*~
+*(Autosaved).rtfd/
+Backup[ ]of[ ]*.pages/
+Backup[ ]of[ ]*.key/
+Backup[ ]of[ ]*.numbers/
+
+# Mac finder files and hidden folders
+.DS_Store
+
