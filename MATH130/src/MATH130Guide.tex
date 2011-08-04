@@ -516,37 +516,118 @@ approximately 2.71828. \cite{duWGx}
 %-----------------------------------------------------------------------------%
 %- Algebra :: Trigonometry ---------------------------------------------------%
 %-----------------------------------------------------------------------------%
-\section{Trigonometry}
+\section{Trigonometry:TODO}
 \label{sec:Trigonometry}
-\lipsum[1]
+\emph{Trigonometry is about ratios}. Specifically, trigonometry is about the
+ratios of angles and sides in triangles with respect to each other when drawn
+inside a special circle called \emph{the unit circle}.
+
+The unit circle is such an important part of trigonometry that it is worth
+looking it up on Wikipedia \emph{AND} as many other places as possible.
+
+\begin{figure}[!hbt]
+\label{fig:UnitCircle}
+\begin{tikzpicture}[scale=5.3,cap=round,>=latex]
+  % draw the coordinates
+  \draw[->] (-1.5cm,0cm) -- (1.5cm,0cm) node[right,fill=white] {$x$};
+  \draw[->] (0cm,-1.5cm) -- (0cm,1.5cm) node[above,fill=white] {$y$};
+
+  % draw the unit circle
+  \draw[thick] (0cm,0cm) circle(1cm);
+
+  \foreach \x in {0,30,...,360} {
+    % lines from center to point
+    \draw[gray] (0cm,0cm) -- (\x:1cm);
+    % dots at each point
+    \filldraw[black] (\x:1cm) circle(0.4pt);
+    % draw each angle in degrees
+    \draw (\x:0.6cm) node[fill=white] {$\x^\circ$};
+            
+    % 'drop a vertical' as Fran Griffin calls it
+    % x-coord = cos(A)
+    % y-coord = 0;
+    \draw (\x:0.6cm) -- (\x:0.6cm,0);
+  }
+
+    % draw each angle in radians
+    \foreach \x/\xtext in {
+        30/\frac{\pi}{6},
+        45/\frac{\pi}{4},
+        60/\frac{\pi}{3},
+        90/\frac{\pi}{2},
+        120/\frac{2\pi}{3},
+        135/\frac{3\pi}{4},
+        150/\frac{5\pi}{6},
+        180/\pi,
+        210/\frac{7\pi}{6},
+        225/\frac{5\pi}{4},
+        240/\frac{4\pi}{3},
+        270/\frac{3\pi}{2},
+        300/\frac{5\pi}{3},
+        315/\frac{7\pi}{4},
+        330/\frac{11\pi}{6},
+        360/2\pi}
+            \draw (\x:0.85cm) node[fill=white] {$\xtext$};
+
+    \foreach \x/\xtext/\y in {
+        % the coordinates for the first quadrant
+        30/\frac{\sqrt{3}}{2}/\frac{1}{2},
+        45/\frac{\sqrt{2}}{2}/\frac{\sqrt{2}}{2},
+        60/\frac{1}{2}/\frac{\sqrt{3}}{2},
+        % the coordinates for the second quadrant
+        150/-\frac{\sqrt{3}}{2}/\frac{1}{2},
+        135/-\frac{\sqrt{2}}{2}/\frac{\sqrt{2}}{2},
+        120/-\frac{1}{2}/\frac{\sqrt{3}}{2},
+        % the coordinates for the third quadrant
+        210/-\frac{\sqrt{3}}{2}/-\frac{1}{2},
+        225/-\frac{\sqrt{2}}{2}/-\frac{\sqrt{2}}{2},
+        240/-\frac{1}{2}/-\frac{\sqrt{3}}{2},
+        % the coordinates for the fourth quadrant
+        330/\frac{\sqrt{3}}{2}/-\frac{1}{2},
+        315/\frac{\sqrt{2}}{2}/-\frac{\sqrt{2}}{2},
+        300/\frac{1}{2}/-\frac{\sqrt{3}}{2}}
+            \draw (\x:1.25cm) node[fill=white] {$\left(\xtext,\y\right)$};
+
+    % draw the horizontal and vertical coordinates
+    % the placement is better this way
+    \draw (-1.25cm,0cm) node[above=1pt] {$(-1,0)$}
+          (1.25cm,0cm)  node[above=1pt] {$(1,0)$}
+          (0cm,-1.25cm) node[fill=white] {$(0,-1)$}
+          (0cm,1.25cm)  node[fill=white] {$(0,1)$};
+\end{tikzpicture}
+\caption{The Unit Circle, based on work from Supreme Ayal, TiKZ Examples
+\cite{HTrCS}}
+\end{figure}
+\newpage
+
 %-----------------------------------------------------------------------------%
 %- Algebra :: Polynomials ----------------------------------------------------%
 %-----------------------------------------------------------------------------%  
-\section{Polynomials}
+\section{Polynomials:TODO}
 \label{sec:Polynomials}
 \lipsum[1]
 %-----------------------------------------------------------------------------%
 %- Algebra :: Absolute Values ------------------------------------------------%
 %-----------------------------------------------------------------------------%
-\section{Absolute Values}
+\section{Absolute Values:TODO}
 \label{sec:AbsoluteValues}
 \lipsum[1]
 %-----------------------------------------------------------------------------%
 %- Algebra :: Inequalities ---------------------------------------------------%
 %-----------------------------------------------------------------------------%
-\section{Inequalities}
+\section{Inequalities:TODO}
 \label{sec:Inequalities}
 \lipsum[1]
 %-----------------------------------------------------------------------------%
 %- Algebra :: Simultaneous Equations------------------------------------------%
 %-----------------------------------------------------------------------------%
-\section{Simultaneous Equations}
+\section{Simultaneous Equations:TODO}
 \label{sec:SimultaneousEquations}
 \lipsum[1]
 %-----------------------------------------------------------------------------%
 %- Algebra :: Matrices -------------------------------------------------------%
 %-----------------------------------------------------------------------------%
-\section{Matrices}
+\section{Matrices:TODO}
 \label{sec:Matrices}
 \lipsum[1]
 %-----------------------------------------------------------------------------%
@@ -600,12 +681,12 @@ A parabolic function in the form $ f(x) = mx^2 + c$
 %-----------------------------------------------------------------------------%
 %- Algebra :: Counting -------------------------------------------------------%
 %-----------------------------------------------------------------------------%
-\section{Counting}
+\section{Counting:TODO}
 \label{sec:Counting}
 %-----------------------------------------------------------------------------%
 %- Algebra :: Arithmetic & Geometric Progressions ----------------------------%
 %-----------------------------------------------------------------------------%
-\section{Arithmetic \& Geometric Progressions}
+\section{Arithmetic \& Geometric Progressions:TODO}
 \label{sec:ArithmeticAndGeometricProgressions}
 %
 \newpage
@@ -1058,13 +1139,13 @@ power method, and we \emph{should} use the chain rule:
 %-----------------------------------------------------------------------------%
 %- Calculus :: Practical Uses of Differentiation -----------------------------%
 %-----------------------------------------------------------------------------%
-\section{Practical uses of Differentiation}
+\section{Practical uses of Differentiation:TODO}
 \label{sec:PracticalUsesOfDifferentiation}
 \lipsum[1]
 %-----------------------------------------------------------------------------%
 %- Calculus :: Differentiation of Exponents and Logs -------------------------%
 %-----------------------------------------------------------------------------%
-\section{Differentiation of Exponents and Logs}
+\section{Differentiation of Exponents and Logs:TODO}
 \label{sec:DifferentiationOfExponentsAndLogs}
 \lipsum[1]
 %-----------------------------------------------------------------------------%
@@ -1118,61 +1199,61 @@ For a proof, refer to appendix section \ref{sec:DiffTrigProof},
 %-----------------------------------------------------------------------------%
 %- Calculus :: Differentiation of Trigonometric Functions --------------------%
 %-----------------------------------------------------------------------------%
-\section{Maxima and Minima}
+\section{Maxima and Minima:TODO}
 \label{sec:MaximaAndMinima}
 \lipsum[1]
 %-----------------------------------------------------------------------------%
 %- Calculus :: Differentiation of Trigonometric Functions --------------------%
 %-----------------------------------------------------------------------------%
-\section{Grokking Word Problems}
+\section{Grokking Word Problems:TODO}
 \label{sec:GrokkingWordProblems}
 \lipsum[1]
 %-----------------------------------------------------------------------------%
 %- Calculus :: Differentiation of Trigonometric Functions --------------------%
 %-----------------------------------------------------------------------------%
-\section{Curve Sketching}
+\section{Curve Sketching:TODO}
 \label{sec:CurveSketching}
 \lipsum[1]
 %-----------------------------------------------------------------------------%
 %- Calculus :: Differentiation of Trigonometric Functions --------------------%
 %-----------------------------------------------------------------------------%
-\section{Integration}
+\section{Integration:TODO}
 \label{sec:Integration}
 tl;dr: Integration is the reverse process of Differentiation.
 %-----------------------------------------------------------------------------%
 %- Calculus :: Differentiation of Trigonometric Functions --------------------%
 %-----------------------------------------------------------------------------%
-\section{Newton's Method}
+\section{Newton's Method:TODO}
 \label{sec:NewtonsMethod}
 \lipsum[1]
 %-----------------------------------------------------------------------------%
 %- Calculus :: Differentiation of Trigonometric Functions --------------------%
 %-----------------------------------------------------------------------------%
-\section{Integration: The 2 Types}
+\section{Integration: The 2 Types:TODO}
 \label{sec:IntegrationThe2Types}
 Outline anti-derivatives (ie indefinite integrals) and definite integrals.
 %-----------------------------------------------------------------------------%
 %- Calculus :: Differentiation of Trigonometric Functions --------------------%
 %-----------------------------------------------------------------------------%
-\section{Practical uses of Integration}
+\section{Practical uses of Integration:TODO}
 \label{sec:PracticalUsesOfIntegration}
 \lipsum[1]
 %-----------------------------------------------------------------------------%
 %- Calculus :: Differentiation of Trigonometric Functions --------------------%
 %-----------------------------------------------------------------------------%
-\section{Average values of a function}
+\section{Average values of a function:TODO}
 \label{sec:AverageValuesOfAFunction}
 \lipsum[1]
 %-----------------------------------------------------------------------------%
 %- Calculus :: Differentiation of Trigonometric Functions --------------------%
 %-----------------------------------------------------------------------------%
-\section{Trapezoidal Rule}
+\section{Trapezoidal Rule:TODO}
 \label{sec:TrapezoidalRule}
 \lipsum[1]
 %-----------------------------------------------------------------------------%
 %- Calculus :: Differentiation of Trigonometric Functions --------------------%
 %-----------------------------------------------------------------------------%
-\section{Simpson's Rule}
+\section{Simpson's Rule:TODO}
 \label{sec:SimpsonsRule}
 \lipsum[1]
 %-----------------------------------------------------------------------------%
