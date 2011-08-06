@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>MATH130Guide</name>
+	<name>MATH130</name>
 	<comment></comment>
 	<projects>
-		<project>MATH130Guide</project>
+		<project>MATH130</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
@@ -15,11 +15,4 @@
 	<natures>
 		<nature>net.sourceforge.texlipse.builder.TexlipseNature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>src/MATH130Guide.bib</name>
-			<type>1</type>
-			<locationURI>PROJECT_LOC/src/MATH130Guide.bib</locationURI>
-		</link>
-	</linkedResources>
 </projectDescription>

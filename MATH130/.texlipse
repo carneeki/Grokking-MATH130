@@ -1,13 +1,13 @@
 #TeXlipse project settings
-#Wed Jun 15 19:58:11 EST 2011
+#Fri Aug 05 13:47:27 EST 2011
 builderNum=2
-outputDir=out/
+outputDir=src/
 makeIndSty=
 bibrefDir=
 outputFormat=pdf
-tempDir=tmp
-mainTexFile=MATH130Guide.tex
-outputFile=MATH130Guide.pdf
+tempDir=
+mainTexFile=MATH130.tex
+outputFile=MATH130.pdf
 langSpell=en
-markDer=true
+markDer=false
 srcDir=src/

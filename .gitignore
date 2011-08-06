@@ -27,8 +27,8 @@
 *.synctex.gz
 
 # out and tmp directories
-./MATH130/tmp/
-./MATH130/out/
+./tmp/
+./out/
 
 # GNUplot
 *.gnuplot
