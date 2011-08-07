@@ -48,14 +48,14 @@
   a4paper,
   pdftex,
 %  fontsize=11pt,
-  draft=false,
+%  draft=true,
   twoside,
 ]{book}
 %
 %
 %- (03) Standard package includes and options --------------------------------%
-%\usepackage{draftwatermark} % draft watermark. Comment these 2 lines in final
-%\SetWatermarkLightness{0.9} %
+\usepackage{draftwatermark} % draft watermark. Comment these 2 lines in final
+\SetWatermarkLightness{0.9} %
 \usepackage{amsmath}       % amsmath & amssymb are almost ALWAYS required.
 \usepackage{amssymb}       %
 %
@@ -65,9 +65,11 @@
 \usepackage{xcolor}         % pdflatex
 \definecolor{neekiRed}{RGB}{172,40,41}
 \definecolor{neekiBlue}{RGB}{62,70,157}
+\definecolor{neekiGreen}{RGB}{39,171,39}
+\definecolor{neekiPurple}{RGB}{105,39,171}
 %
 \usepackage{geometry}      % option for altering page dimensions if needed
-\usepackage[pdftex]{graphicx} % including image files for figures (ie
+%\usepackage[pdftex]{graphicx} % including image files for figures (ie
                               % non-[E]PS)
 %                          % valid types: jpeg, png, pdf
 \usepackage{wrapfig}       % the figures themselves
@@ -809,28 +811,30 @@ Broken down, this means for each element in a given row in
 $\mathbb{A}$, we must multiply that element by a matching element in it's
 corresponding column in $\mathbb{B}$ and sum all the results.
 
+For the matrices $\mathbb{A}$, $\mathbb{B}$ and $\mathbb{P}$:
 \begin{align}
 \begin{bmatrix}
-  \textcolor{neekiBlue}{P_{1,1}} & P_{1,2} \\
-  P_{2,1} & P_{2,2}
+  ~\textcolor{neekiRed}{p_{1,1}}~&~p_{1,2}~ \\
+  ~p_{2,1}~&~\textcolor{neekiGreen}{p_{2,2}}~
 \end{bmatrix}
- & =
+ &~=~ 
 \begin{bmatrix}
-  \textcolor{neekiBlue}{a_{1,1}} & \textcolor{neekiBlue}{a_{1,2}} &
-                                              \textcolor{neekiBlue}{a_{1,3}} \\
-  a_{2,1} & a_{2,2} & a_{2,3}
+  ~\textcolor{neekiRed}{a_{1,1}}~&~\textcolor{neekiRed}{a_{1,2}}~&~
+                                              \textcolor{neekiRed}{a_{1,3}}~ \\
+  ~\textcolor{neekiGreen}{a_{2,1}}~&~\textcolor{neekiGreen}{a_{2,2}}~&~
+                                            \textcolor{neekiGreen}{a_{2,3}}~
 \end{bmatrix}
-\times
+~\times~
 \begin{bmatrix}
-  \textcolor{neekiBlue}{b_{1,1}} & b_{1,2} \\
-  \textcolor{neekiBlue}{b_{2,1}} & b_{2,2} \\
-  \textcolor{neekiBlue}{b_{3,1}} & b_{3,2}
+  ~\textcolor{neekiRed}{b_{1,1}}~&~\textcolor{neekiGreen}{b_{1,2}}~ \\
+  ~\textcolor{neekiRed}{b_{2,1}}~&~\textcolor{neekiGreen}{b_{2,2}}~ \\
+  ~\textcolor{neekiRed}{b_{3,1}}~&~\textcolor{neekiGreen}{b_{3,2}}~
 \end{bmatrix}
-\\
-\textcolor{neekiBlue}{P_{1,1}} & \textcolor{neekiBlue}{= a_{1,1} \times b_{1,1} + a_{1,2} \times b_{2,1} +a_{1,3} \times b_{3,1}} \nonumber \\
-P_{2,1} & = a_{2,1} \times b_{1,1} + a_{2,2} \times b_{2,1} + a_{2,3} \times b_{3,1} \nonumber \\
-P_{1,2} & = a_{1,1} \times b_{1,2} + a_{1,2} \times b_{2,2} + a_{1,3} \times b_{3,2} \nonumber \\
-P_{2,2} & = a_{2,1} \times b_{1,2} + a_{3,2} \times b_{2,2} + a_{2,3} \times b_{3,2} \nonumber
+\intertext{where:}
+\textcolor{neekiRed}{p_{1,1}}&\textcolor{neekiRed}{~=~a_{1,1}~\times~b_{1,1}~+~a_{1,2}~\times~b_{2,1}~+~a_{1,3}~\times~b_{3,1}} \nonumber \\
+\textcolor{neekiPurple}{p_{2,1}}&~=\textcolor{neekiPurple}{~a_{2,1}~\times~b_{1,1}~+~a_{2,2}~\times~b_{2,1}~+~a_{2,3}~\times~b_{3,1}} \nonumber \\
+\textcolor{neekiGreen}{p_{1,2}}&\textcolor{neekiGreen}{~=~a_{1,1}~\times~b_{1,2}~+~a_{1,2}~\times~b_{2,2}~+~a_{1,3}~\times~b_{3,2}} \nonumber \\
+p_{2,2}&~=~a_{2,1}~\times~b_{1,2}~+~a_{2,2}~\times~b_{2,2}~+~a_{2,3}~\times~b_{3,2} \nonumber
 \end{align}
 
 
