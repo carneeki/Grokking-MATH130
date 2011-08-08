@@ -276,7 +276,7 @@ There are some basic laws that need to be understood to manipulate numbers
 The first group of laws are called the "Distributive laws".
 \begin{align}
       a(b+c) & = ab + ac \label{eq:distrib0} \\
-      (a+b)c & = ab + bc \label{eq:distrib1} \\
+      (a+b)c & = ac + bc \label{eq:distrib1} \\
   (a+b)(c+d) & = ac + ad + bc + bd \label{eq:distrib2}
 \end{align}
 Equation \ref{eq:distrib2} gives rise to a special case called a quadratic
@@ -691,6 +691,37 @@ Or more generally:
 horizontally we describe the columns.}\footnote{This is in contrast to the
 cartesian plane e.g. map reading where we go horizontally then vertically.}
 
+There is also a special kind of matrix called the \emph{identity matrix} often
+represented by $\mathbb{I}$. This is a special matrix, which must be square in
+shape (ie for $\mathbb{A}_{M,N}, M = N$), and consists of all zeroes except for
+a diagonal row of ones from the top left corner to the bottom right corner.
+
+A 4x4 identity matrix:
+\begin{align}
+  \mathbb{I}_{4,4}~&=
+  \begin{bmatrix}
+    ~1~&~0~&~0~&~0~\\
+    ~0~&~1~&~0~&~0~\\
+    ~0~&~0~&~1~&~0~\\
+    ~0~&~0~&~0~&~1~\\
+  \end{bmatrix}
+  \label{eq:4x4IdentityMatrix}
+\end{align}
+
+An important property of the identity matrix is that when a matrix is multiplied
+by it's identity matrix, the product is the original matrix.
+\begin{align}
+  \mathbb{A}~\times~\mathbb{I}~&=~\mathbb{A}
+\end{align}
+Another impotant property is that a matrix can be multiplied by it's identity
+matrix in either order (we will see later in section
+\ref{sec:MultiplyingMatrices}, Multiplying Matrices that in matrix
+algebra, order is important\footnote{as opposed to normal algebra where you can
+multiply in any which way and it doesn't matter}.
+\begin{align}
+  \mathbb{I}~\times~\mathbb{A}~&=~\mathbb{A}
+\end{align}
+
 \subsection{Adding Matrices}
 \label{sec:AddingMatrices}
 
@@ -790,7 +821,7 @@ An example:
     \end{bmatrix}
 \end{align}
 
-\subsection{TODO: Multiplying Matrices}
+\subsection{Multiplying Matrices}
 \label{sec:MultiplyingMatrices}
 Formal definitions for the multiplication of matrices like the one mentioned at
 the start of this chapter appear scary, but really, it is just \emph{a lot}\footnote{
@@ -837,7 +868,77 @@ For the matrices $\mathbb{A}$, $\mathbb{B}$ and $\mathbb{P}$:
 p_{2,2}&~=~a_{2,1}~\times~b_{1,2}~+~a_{2,2}~\times~b_{2,2}~+~a_{2,3}~\times~b_{3,2} \nonumber
 \end{align}
 
+\subsection{Identity Matrix}
+\label{sec:IdentityMatrix}
+For the identity matrix:
+\begin{align}
+  \mathbb{A}~\times~\mathbb{I}~&=~\mathbb{A} \nonumber
+\end{align}
 
+Proof by general case:
+\begin{align}
+  \begin{bmatrix}
+    ~1~&~0~\\
+    ~0~&~1~\\
+  \end{bmatrix}
+  \times
+  \begin{bmatrix}
+    ~a~&~b~\\
+    ~c~&~d~\\
+  \end{bmatrix}
+  &=
+  \begin{bmatrix}
+    ~[(1~\times~a)+(0~\times~c)]~&~[(1~\times~b)+(0~\times~c)]~\\
+    ~[(0~\times~a)+(1~\times~c)]~&~[(0~\times~b)+(1~\times~d)]~\\
+  \end{bmatrix}\\
+  &=
+  \begin{bmatrix}
+    ~a~&~b~\\
+    ~c~&~d~\\
+  \end{bmatrix}
+\end{align}
+
+This is the matrix equivalent of the number 1\footnote{NOTE: this is only
+equivalent to one, it is not actually the value of one (to my knowledge).}
+
+\begin{align}
+  1~\times~a~&=~a \\
+  \frac{1}{a}~\times~a~&=~1 \\
+  \intertext{in matrix terms:}
+  \mathbb{A}^{-1}~\times~\mathbb{A} = \mathbb{I}
+\end{align}
+
+This leads into the topic of calculating the inverse of a matrix.
+
+\subsection{Inverse of Matrices}
+\label{sec:InverseOfMatrices}
+For a 2x2 matrix:
+\begin{align}
+  \mathbb{A} & = 
+    \begin{bmatrix}
+      a & b \\
+      c & d
+    \end{bmatrix}
+    \\
+  \mathbb{A}^{-1} & =
+    \frac{1}{ad-bc} \times
+    \begin{bmatrix}
+      &~d~&~-b~& \\
+      &~-c~&~a~&
+    \end{bmatrix}  
+\end{align}
+
+For a 3x3 matrix:
+%\begin{align}
+%
+%\end{align}
+TODO THIS\ldots
+
+For a 4x4 matrix, in the words of Sal Kahn, ``You'll be there all day, and for a
+5x5 you're almost bound to make a mistake and is best left for a
+computer.''\footnote{``In my mind, the only thing less pleasant than inverting
+a 3 by 3 matrix is inverting a 4 by 4 matrix.'' -- both quotes from
+http://www.khanacademy.org/video/inverting-matrices--part-2?playlist=Linear\%20Algebra}
 
 \subsection{TODO: Dividing Matrices}
 \label{sec:DividingMatrices}
