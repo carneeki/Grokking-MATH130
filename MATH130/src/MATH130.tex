@@ -207,7 +207,7 @@ in mind.
                                             $-1, 0, 1 $ \\ \hline
   $\mathbb{I}$ & Irrational Numbers & Yes & Numbers which cannot be expressed
                                             as a fraction.
-                                            $ e, \pi, \sqrt[2]{2} $ \\ \hline
+                                            $e, \pi, \sqrt[2]{2} $ \\ \hline
   $\mathbb{Q}$ & Rational Numbers   & Yes & Numbers which can be represented as a
                                             fraction.
                                             $ \frac{1}{2}, 1, \frac{0}{4} $
@@ -267,6 +267,21 @@ to encounter in MATH130. This list is partially built from \citet{IjPb7}.
 \caption{Types of mathematical symbols}
 \end{table}
 \newpage
+
+\subsection{A Brief Interlude on Language}
+\label{sec:ABriefInterludeOnLanguage}
+An expression and an equation are \emph{different} things, despite the fact that
+they look similar. An expression might be something like $3x - 8$, however, $x$
+has no value. By the fact that $3x - 8$ has no value \emph{assigned} to it, it
+is an expression. If we were to assign a value to it, $3x-8 = 0$ then we can
+call it an equation.
+
+\begin{align}
+  3x - 8 & & \text{an expression} \nonumber   \\
+  3x - 8 & = 0 & \text{an equation} \nonumber \\
+\end{align}
+
+\newpage
 %-----------------------------------------------------------------------------%
 %- Algebra :: Number Systems & Factorization ---------------------------------%
 %-----------------------------------------------------------------------------%
@@ -303,7 +318,7 @@ same result as in \ref{eq:distrib1}.
 It turns out that any repeating decimal can be written as a fraction:
 
 \begin{align}
-  2 \times 100000 & = \\
+  2.1 \times 100000 & = \\
     & = 2.1 \times \frac{10}{10} \\
     & = \frac{21}{10} \\
 \end{align}
@@ -408,6 +423,108 @@ inverse of one fraction:
 \end{align}
 
 %-----------------------------------------------------------------------------%
+%- Algebra :: Number Systems & Factorization :: Surds ------------------------%
+%-----------------------------------------------------------------------------%
+\newpage
+\subsection{Introduction to Irrational Numbers (Surds)}
+\label{sec:IntroductionToIrrationalNumbers}
+A \emph{surd} is \emph{an archaic\footnote{almost as old as the Maths
+Deptartment} term for an irrational number}. This is basically a number which
+cannot be written as a decimal because, if you tried
+\begin{enumerate}
+  \item you'd go on forever as it has an infinite number of decimal places\\
+  and
+  \item it has no repeating parts to the decimal places.
+\end{enumerate}
+For this reason it cannot be expressed as a fraction in the form $\frac{p}{q}$
+where p and q are integers.\\
+Examples of irrational numbers are $e, \pi, \sqrt[2]{2}$\\
+\\
+A more formal\footnote{poorly worded, but means the same thing as above}
+definition is:
+
+\begin{equation*}
+\left.\begin{aligned}
+  \mathbb{I} \ni \frac{p}{q}
+\end{aligned}
+\right\} 
+\qquad \text{{p,q $\in \mathbb{Z}$}}
+\end{equation*}
+\\
+There are some handy things we can do with irrational numbers. Consider
+$\sqrt[2]{8} =
+2.828427124$\footnote{It's even longer than
+2.828427124746190097603377448419396157139343750753896146353359475981464956924214077700775068655...,
+it's infinite remember!}. It can be rewritten like this:
+\begin{align}
+  \sqrt[2]{8} & = 
+    \sqrt[2]{2 \times 4} \\
+    & = \sqrt[2]{2} \times \sqrt[2]{4} \\
+    & = \sqrt[2]{2} \times 2 \\
+    & = 2\sqrt[2]{2}
+\end{align}
+
+\subsubsection{Rationalizing the Denominator}
+\label{sec:RationalizingTheDenominator}
+
+Often examiners will give us a fraction and say ``rationalize the
+denominator''\footnote{``sudo rationalize the denominator'' if you want to be
+a troll}. I don't know why - they just do. In order to get the marks in the
+exam, we can rationalize the denominator by multiplying that fraction by 1.\\
+\\
+While the notion of multiplying by 1 sounds silly, consider that $1 \in
+\mathbb{R} = \frac{p}{q}$ where {p,q} can be a surd, $x$: $\frac{x}{x} =
+1$. This gives rise to the following possibility of:
+
+\begin{align}
+  \frac{5}{\sqrt[2]{2}} & = \\
+   & = \frac{5}{\sqrt[2]{2}} \times \frac{\sqrt[2]{2}}{\sqrt[2]{2}} \\
+   \intertext{The next part is where the useful stuff happens, if we square a
+   square-root then they ``undo'' each other, and we are left over with the bit
+   inside the square-root}
+   & = \frac{5 \times \sqrt[2]{2}}{(\sqrt[2]{2}) \times (\sqrt[2]{2})} \\
+   & = \frac{5\sqrt[2]{2}}{2}
+\end{align}
+\\
+The denominator might not always be a square-root, University of North Texas'
+next example includes a cube-root, so we must multiply by 1 again.
+
+\begin{align}
+  \frac{2}{\sqrt[3]{5}} & = \\
+    \intertext{sometimes it's nicer to lay things out to see what's going on:}
+    & = \frac{2}{\sqrt[3]{5}} \times
+          \frac{\sqrt[3]{5}}{\sqrt[3]{5}} \times
+          \frac{\sqrt[3]{5}}{\sqrt[3]{5}}
+    \intertext{but we still condense it into the root symbol:}
+    & = \frac{2}{\sqrt[3]{5}} \times
+          \frac{\sqrt[3]{5 \times 5}}{\sqrt[3]{5 \times 5}} \\
+    & = \frac{2 \sqrt[3]{5 \times 5}}{(\sqrt[3]{5})(\sqrt[3]{5 \times
+          5})} \\ & = \frac{2 \sqrt[3]{25}}{5} \\
+\end{align}
+\\
+The last example involves more than one term on the
+denominator. In this particular case, we will still multiply by 1, however we are using some
+trickery from an upcoming section \ref{sec:IntroductionToPolynomials},
+``Introduction to Polynomials'' specifically equation \ref{eq:Diff2Squares}.
+
+\begin{align}
+  \frac{2}{1+\sqrt[2]{3}} & = \\ 
+  & = \frac{2}{1+\sqrt[2]{3}} \times \frac{1-\sqrt[2]{3}}{1-\sqrt[2]{3}} \\
+  & = \frac{2(1-\sqrt[2]{3})}{1-3}
+  \intertext{if the denominator part of above step does not make sense, then
+  please refer to equation \ref{eq:Diff2Squares} in section
+  \ref{sec:IntroductionToPolynomials}, ``Introduction to Polynomials''}
+  & = \frac{2(1-\sqrt[2]{3})}{-2} \\
+  & = -\frac{2(1-\sqrt[2]{3})}{2} \\
+  & = -\frac{1(1-\sqrt[2]{3})}{1} \\
+  & = -(1-\sqrt[2]{3})
+\end{align}
+
+The examples for rationalizing the denominator come from University of Northern
+Texas:
+\url{http://www.math.unt.edu/mathlab/emathlab/How%20to%20Rationalize%20the%20Denominator%20of%20a%20Fraction.htm}\\
+
+%-----------------------------------------------------------------------------%
 %- Algebra :: Number Systems & Factorization :: Polynomials ------------------%
 %-----------------------------------------------------------------------------%
 \newpage
@@ -423,16 +540,19 @@ problems easier down the track.
               & = & {a}^{2} + 2ab + {b}^{2} \label{eq:poly0} \\
   {(a-b)}^{2} & = & (a-b)(a-b) \nonumber \\
               & = & {a}^{2} - 2ab + {b}^{2} \label{eq:poly1} \\
-  (a+b)(a-b)  & = & {a}^{2} - {b}^{2} \label{eq:poly2}
+  (a+b)(a-b)  & = & {a}^{3} + ab - ab - {b}^{2} \nonumber \\ 
+              & = & {a}^{2} - {b}^{2} \label{eq:Diff2Squares} \\
+  (a-b)({a}^{2} + ab + {b}^{2}) & = & {a}^{3} - {b}^{3} \label{eq:Diff2Cubes}
 \end{align}
-Equation \ref{eq:poly2} is often called the difference of two squares where
-${a}^{2}$ and ${b}^{2}$ represent both squares.
+Equation \ref{eq:Diff2Squares} is often called the difference of two squares where
+${a}^{2}$ and ${b}^{2}$ represent both squares. \\
+Equation \ref{eq:Diff2Cubes} is often called the difference of two cubes.
 %-----------------------------------------------------------------------------%
 %- Algebra :: Number Systems & Factorization :: Quadratics -------------------%
 %-----------------------------------------------------------------------------%
 \subsection{Quadratics} \label{sec:Quadratics}
 Quadratics are an important type of the distributive law. They represent 3
-coefficients and a variable. Equations \ref{eq:poly0} through to \ref{eq:poly2}
+coefficients and a variable. Equations \ref{eq:poly0} through to \ref{eq:Diff2Squares}
 are the classic 3 ways in which quadratics are introduced in textbooks. A more
 formal definition has been provided by the table
 \ref{eq:ComponentsToAQuadratic} (from \cite{MD51J}).
@@ -549,6 +669,12 @@ If given an equation like
 \newpage
 \section{Exponentials \& Logarithms}
 \label{sec:ExponentialsAndLogarithms}
+Exponents, powers or indices and logarithms are ways of expressing numbers that
+have been multiplied or divided a number of times.
+
+\subsection{Powers, Exponentials and Indices}
+\label{sec:PowersExponentialsAndIndices}
+
 Exponents are putting a power or index in the top right corner of a number,
 which indicates how many times we must multiply or divide that number by
 itself to give us a total number. With this information in mind, we need to
@@ -588,8 +714,10 @@ power laws we must bear in mind... They are summarised as follows:
 \end{align}
 Converting notation between the forms exhibited in
 \ref{eq:ExponentLaw_FracExp0} and \ref{eq:ExponentLaw_FracExp1} is often
-extremely useful in Calculus, in particular, differentiation.\\
-\\
+extremely useful in Calculus, in particular, differentiation.
+
+\subsection{Logarithms}
+\label{sec:Logarithms}
 Until this point, only exponentials where we want to do something to a base
 number have been covered. When we want to see how a base number has been
 affected by it's power a logarithm is the way to undo the power.
