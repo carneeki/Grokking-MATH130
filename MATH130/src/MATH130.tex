@@ -293,6 +293,120 @@ $ab + ac$.\\
 Another way to think about it is $a$ is distributed to each term inside the
 brackets. This also applies in \ref{eq:distrib2} with $c$, and it yields the 
 same result as in \ref{eq:distrib1}.
+
+%-----------------------------------------------------------------------------%
+%- Algebra :: Number Systems & Factorization :: Fractions --------------------%
+%-----------------------------------------------------------------------------%
+\newpage
+\subsection{Introduction to Fractions}
+\label{sec:IntroductionToFractions}
+It turns out that any repeating decimal can be written as a fraction:
+
+\begin{align}
+  2 \times 100000 & = \\
+    & = 2.1 \times \frac{10}{10} \\
+    & = \frac{21}{10} \\
+\end{align}
+
+What about $1.33333\ldots$?
+\begin{align}
+  1.33333 & = \frac{4}{3} \\
+\end{align}
+
+Or $1.373737\ldots$ ??
+\begin{align}
+  let     x & = 1.373737\ldots\\
+       100x & = 137.3737\ldots\\
+   100x - x & = 137.373737\ldots - 1.373737\ldots\\
+        99x & = 136 \\
+  so \nonumber \\
+        x & = \frac{136}{99} \\
+        \therefore 1.373737\ldots = x & = \frac{136}{99}  
+\end{align}
+
+For longer decimal places we need to create 2 numbers using $x$ with the same
+decimal part so that when we subtract the decimal part we get a whole number.
+
+\begin{align}
+         let  x & = 36.2593593593\ldots \\
+       so 10x & = 362.593593\ldots \\
+       10000x & = 362593.593\ldots \\
+   10000x-10x & = 362593-362 \\
+        9990x & = \ldots \\
+ \therefore x & = \frac{362593 - 362}{9990} \\
+\end{align}
+
+As it turns out, every fraction is a repeating decimal, so if we don't have a
+repeating decimal, it is not a fraction (of whole numbers), some examples are
+$\pi$, $\sqrt{2}$\footnote{these numbers require some complex calculus to prove
+they are non-recurring, a simpler number is $0.1234567890111121314\ldots$}.
+
+%-----------------------------------------------------------------------------%
+%- Algebra :: Number Systems & Factorization :: Fractional Operations --------%
+%-----------------------------------------------------------------------------%
+\newpage
+\subsection{Fractional Operations - Adding}
+\label{sec:FractionalOperationsAdding}
+A good reason why we \emph{don't} add fractions in the following way:
+\quotation{add the tops (to give the numerator), add the bottoms (to give the
+denominator (or quotient)}.
+example: $\frac{1}{2} + \frac{1}{2} \neq \frac{2}{4} = \frac{1}{2}$
+
+The \emph{correct} way of adding fractions is to use a common quotient then add
+the numerator and keep the denominator the same.\footnote{a simpler (but only
+partial) answer could be ``you're adding like with like'' -- a MATH130 student
+from the audience of Chris Gordon's lecture at 2011-08-08 10:31AM}
+
+%% TODO: insert a pizza divided into 8 slices and add 3 + 2 slices to represent
+% part of the pizza.
+Consider you order 3 slices of pizza from Hot Momma's pizza at the MQ bar, and
+you are given 2 more for being a regular customer:
+\begin{align}
+  \frac{3}{8} & = \ldots \\
+  \frac{3}{8} + \frac{2}{8} & = \frac{5}{8} \\
+\end{align}
+You have $\frac{5}{8}$ or ``five eights'' of a whole pizza.\footnote{I want a
+slice of that pizza if it's the supreme}.
+
+What if you have different quotients? You \emph{need} to convert to a common
+quotient:
+\begin{align}
+ \frac{1}{2} + \frac{7}{10} & = \\
+    & = \frac{5}{5} \times \frac{1}{2} + \frac{7}{10} \\
+    & = \frac{5}{10} \times \frac{7}{10} \label{eq:CommonDenominator}\\
+    & = \frac{12}{10} \\
+    & = \frac{2 \times 6}{2 \times 5} \\
+  \intertext{the two's divide out, which simplifies the fraction}  
+    & = \frac{6}{5} \\
+\end{align}
+Equation \ref{eq:CommonDenominator} is where the important heavy lifting of the
+operation of converting to a common quotient comes into play.
+
+A general case:
+
+\begin{align}
+  \frac{a}{b} + \frac{c}{d} & = \\
+    & = [\frac{a}{b} \ times \frac{d}{d}] + [\frac{c}{d} \ times \frac{b}{b} ]
+    & = \frac{ad + cd}{db} \\
+\end{align}
+
+%-----------------------------------------------------------------------------%
+%- Algebra :: Number Systems & Factorization :: Fractional Operations --------%
+%-----------------------------------------------------------------------------%
+\newpage
+\subsection{Fractional Operations - Division}
+\label{sec:FractionalOperationsDivision}
+Dividing fractions has a reasonably simply rule to remember: Multiply by the
+inverse of one fraction:
+
+\begin{align}
+  \frac{a}{b} \div \frac{c}{d} & = \frac{ \frac{a}{b} }{ \frac{c}{d}} \times
+  \frac{bd}{bd} \\
+   & = \frac{\frac{a}{b}\times b \times d}{\frac{c}{d} \ times b \times d} \\
+  \intertext{divide out common terms}
+   & = \frac{ad}{cb}
+\end{align}
+
 %-----------------------------------------------------------------------------%
 %- Algebra :: Number Systems & Factorization :: Polynomials ------------------%
 %-----------------------------------------------------------------------------%
@@ -1061,10 +1175,61 @@ Types of graphs that can be encountered in MATH130:\\
   \item Cubic \ref{fig:FuncGraphCubic}
   \item Absolute \ref{fig:FuncGraphAbsolute}
 \end{enumerate}
+
+A function has a \emph{domain} which is all the acceptable values of $x$ as
+inputs that the function can use. Some examples:
+
+\begin{align}
+   f(x) & = x^{2} \nonumber \\
+   domain: { 0 \leq x \geq 0 } \\
+   \\
+   f(x) & = \frac{1}{x} \nonumber \\
+   domain: { x \neq 0 } \\
+   \\
+   f(x) & = \sqrt{x} \nonumber \\
+   domain: { x \geq 0 } \\
+   \\
+   f(x) & = \sqrt{x-2} + \sqrt{5 + x} \nonumber \\
+   domain: (x-2) & \geq 0 \\
+      \therefore & \geq 2 \\
+      \and \\
+   domain: 5 + x & \geq 0 \\
+      \therefore & \geq -5 \\
+   and so:\\
+   {x: x \geq 2}
+\end{align}
+The last equation demonstrates that the domain is the more restrictive of
+the conditions of the two ``sub-domains'' of each square root portion of the
+function.
+
+\subsection{Arithmetic With Functions}
+\label{sec:ArithmeticWithFunctions}
+
+Suppose we have:
+\begin{align}
+  f(x) & = x^{2} + 1 \\
+  g(x) & = \frac{1}{1-x} \\
+  \intertext{and}
+  h    & = f(x) + g(x) \\
+  \intertext{then}
+       & = x^{2} + 1 + \frac{1}{1-x} \\
+  \intertext{however, if}
+  i    & = f(x) \times g(x) \\
+  \intertext{then}
+       & = (x^{2} + 1) \times (\frac{1}{1-x}) \\
+  \intertext{however, if}
+  j    & = f \circ g \\
+  \intertext{then}
+       & = j(x) = f(g(x)) \\
+       & = (\frac{1}{1-x})^{2} + 1
+\end{align}
+\quote{``Remember to ``algebra'' the function to
+minimise them and to see if they equal a simpler equation''}\footnote{according to Gareth Richardson}
+
 %
 \clearpage
 \subsection{Linear Functions}
-\label{Sec:LinearFunctions}
+\label{sec:LinearFunctions}
 \begin{figure}[!hbt]
 \label{fig:FuncGraphLinear}
 \begin{tikzpicture}[scale=0.5]
@@ -1092,6 +1257,44 @@ a rearrangement of the general form.
 \hline
 \end{tabularx}
 \end{table}
+
+If given only 2 points and we are to find the equation of the line:
+\begin{enumerate}
+  \item we need to determine the gradient
+  \item we need to substitute the x,y values in to form the equation
+\end{enumerate}
+
+Determining the gradient is done using the formula:
+\begin{align}
+  \frac{y_{2} - y_{1}}{x_{2} - x_{1}} & = m
+\end{align}
+
+Example: we are given the points (7,1), (2,5) and need to find the equation of
+the line connecting these points.
+\begin{align}
+  \frac{5 - 1}{2 - 7} & = \frac{4}{-5}\\
+    & = -\frac{4}{-5}
+\end{align}
+
+If we want to find a parallel line passing through specific points, remember
+that the gradient ($m$) must be the same in both equations, and we must
+subtitute the $x$ and $y$ values for the specific points into the new arbitrary
+equation to solve for the new equation:
+
+Example: find an equation for the line through $(3,4)$ and parallel to the line
+through $(7,1)$ and $(2,5)$ from out previous example:
+\begin{align}
+  \intertext{let}
+  m & = -\frac{4}{5} \nonumber \\
+  \intertext{substitute x,y values into slope-intercept equation}
+  y & = mx + b \nonumber \\
+  4 & = -frac{4}{5}\times3 + b
+  \intertext{and solve for b}
+  4 + \frac{4}{5}\times3 & = b \\ 
+  4 + \frac{12}{5}       & = b \\
+  \frac{32}{5}           & = b \\
+  \therefore y & = -\frac{4}{5}x + \frac{32}{5}
+\end{align}
 %
 \clearpage
 \subsection{Parabolic Functions}
