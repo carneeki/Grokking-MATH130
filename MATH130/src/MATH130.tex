@@ -58,6 +58,7 @@
 \SetWatermarkLightness{0.9} %
 \usepackage{amsmath}       % amsmath & amssymb are almost ALWAYS required.
 \usepackage{amssymb}       %
+\usepackage{gensymb}       % for the degrees circle!
 %
 %\usepackage{verbatim}     % multiline commenting ( c++ equiv /* ... */ )
 %
@@ -117,6 +118,7 @@ longnamesfirst
 %
 %- (05) Custom Commands ------------------------------------------------------%
 \newcommand{\derivative}[1][x]{\frac{\mathrm{d}}{\mathrm{d}#1}}
+\newcommand{\ndeg}{^\circ}
 %
 %- (06) Document Title and other metadata ------------------------------------%
 %
@@ -754,25 +756,56 @@ it'':
 \begin{quote}
   When you're having trouble with a power take a log.
 \end{quote}
+
 %-----------------------------------------------------------------------------%
 %- Algebra :: Exponentials & Logarithms :: Euler Constant: Base e ------------%
 %-----------------------------------------------------------------------------%
+\newpage
 \subsection{Euler Constant: Base \emph{e}}
 \label{sec:EulerConstantBaseE}
 Most calculations involving logarithms will be to various bases depending on
 the topic. In COMP it is often base 2 (binary), in other fields it is often base
 10. In MATH and most of the sciences it is often base \emph{e}, which is
 approximately 2.71828. \cite{duWGx}
+
 %-----------------------------------------------------------------------------%
 %- Algebra :: Trigonometry ---------------------------------------------------%
 %-----------------------------------------------------------------------------%
 \newpage
 \section{TODO: Trigonometry}
 \label{sec:Trigonometry}
-\emph{Trigonometry is about ratios}. Specifically, trigonometry is about the
-ratios of angles and sides in triangles with respect to each other when drawn
-inside a special circle called \emph{the unit circle}.
+\emph{Trigonometry is about ratios of angles and sides}.
+Specifically, trigonometry is about the ratios of angles and sides in triangles
+with respect to each other when drawn inside a special circle called \emph{the
+unit circle}.
 
+A brief interlude on language. Most of our trigonometric measurements are
+\emph{NOT} going to be measured in degrees. Most of our measurements of angles
+are measured in radians. A \emph{radian} is the ratio of angles with respect
+pi.\\
+To convert between radians and degrees use the following formulae:
+
+\begin{align}
+  \theta \ndeg & = r \times \frac{180\ndeg}{\pi} \\
+            r & = \theta \ndeg \times \frac{\pi}{180\ndeg}
+\end{align}
+
+A more formal definition of the radian: \emph{The radian measure of an angle
+$\theta$ is the arclength subtended by the angle in a unit circle.} This
+definition requires we define what a unit circle is. \footnote{This works fine
+for \emph{anti-clockwise} angles, however, a radian can never be negative
+because a length (the arclength in this case) can never be less than zero.}
+
+A full circle:
+\begin{align}
+  r & = \theta \ndeg \times \frac{\pi}{180\ndeg} \\
+  r & = 360 \ndeg \times \frac{\pi}{180\ndeg} \\
+  r & = 2 
+\end{align}
+
+\newpage
+\subsection{The Unit Circle}
+\label{sec:TheUnitCircle}
 The unit circle is such an important part of trigonometry that it is worth
 looking it up on Wikipedia \emph{AND} as many other places as possible.
 
@@ -849,7 +882,62 @@ looking it up on Wikipedia \emph{AND} as many other places as possible.
 \caption{The Unit Circle, based on work from Supreme Ayal, TiKZ Examples
 \cite{HTrCS}}
 \end{figure}
-\newpage
+
+A formal definition of the unit circle:
+$cos(\theta)$ is the $x$-value of the intersection of the unit circle with the
+angle $\theta$.\\
+$sin(\theta)$ is the $y$-value of the intersection of the unit circle with the
+angle $\theta$\footnote{These words are not quite complete, and would require
+the unit circle picture}.
+
+UTUCDTCTV:\footnote{Use the Unit Circle Definition to Calculate The Value}
+\begin{align}
+  cos(\frac{-2\pi}{3}) & = \ldots
+\end{align}
+$\pi$ is $\frac{1}{2}$ circle.\\
+$\frac{\pi}{3}$ is $\frac{1}{3}$ of $\frac{1}{2}$ a circle.\\
+At this point, there has been no trigonometry\ldots \\
+% TODO: diagram of above (2pi / 3), drop verticals, & horizontals
+The rest of this is high school geometry to determine angles involving
+triangles (such as Pythagoras).
+% TODO: include pi/3 complement
+
+\subsubsection{Properties of The Unit Circle}
+\label{sec:Properties of The Unit Circle}
+
+\begin{align}
+  -1 \leq & sin(\theta) \leq & 1 \\
+\end{align}
+% TODO: 10 O'Clock unit circle
+$sin(\theta)$ is the $y$-value on the unit circle which is bound by -1 and 1.
+
+\begin{align}
+  sin(-\theta) & = - sin(\theta) \\
+\end{align}
+
+% TODO: Picture of right angle triangle
+% TODO: Angle sum of a triangle against 2 parallel lines = pi radians 
+% TODO: SOH, CAH, TOA
+\subsubsection{SOH CAH TOA}
+\label{sec:SOHCAHTOA}
+\begin{align}
+  sin(\theta \ndeg) & = \frac{o}{h} \\
+  cos(\theta \ndeg) & = \frac{a}{h} \\
+  tan(\theta \ndeg) & = \frac{o}{a}
+\end{align}
+
+\subsubsection{Angle Sum Formula}
+\label{sec:AngleSumFormula}
+
+There are 3 angle sum formulae to learn, and while the 3rd can be deduced from
+the first two, it is easier to just memorise it as the derivation is beyond
+the scope of MATH130.
+
+\begin{align}
+  sin(\alpha + \beta) & = sin(\alpha)cos(\beta) + cos(\alpha)sin(\beta) \\
+  cos(\alpha + \beta) & = cos(\alpha)sin(\beta) - cos(\beta)sin(\alpha) \\
+  tan(\alpha + \beta) & = \frac{tan(\alpha) + tan(\beta)}{1 - tan(\alpha)tan(\beta)}
+\end{align}
 
 %-----------------------------------------------------------------------------%
 %- Algebra :: Polynomials ----------------------------------------------------%
