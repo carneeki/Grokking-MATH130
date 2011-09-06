@@ -677,13 +677,20 @@ If given an equation like
 Exponents, powers or indices and logarithms are ways of expressing numbers that
 have been multiplied or divided a number of times.
 
+If we were to plot an exponential equation on a graph, we would notice that
+the graph has a constant doubling time, ie for every unit we double on the
+$y$ axis, the number of units on the horizontal axis are constant.
+
+If the graph increases at an increasing rate, it does not necessarily mean it
+the graph is exponential.
+
 \subsection{Powers, Exponentials and Indices}
 \label{sec:PowersExponentialsAndIndices}
 
-Exponents are putting a power or index in the top right corner of a number,
+Indices are putting a power or index in the top right corner of a number,
 which indicates how many times we must multiply or divide that number by
 itself to give us a total number. With this information in mind, we need to
-define some parts of the language  behind how logs and exponentials should be
+define some parts of the language behind how logs and indices should be
 used.
 \begin{align}
   {a}^{x} & = y
@@ -695,8 +702,8 @@ used.
 \hline
 \multicolumn{2}{|l|}{Where:} \\
 \hline \hline
-a & is the base\\
-x & is the exponent\\
+a & is the base or \emph{radix}\\
+x & is the index\\
 y & is the output\\
 \hline
 \end{tabularx}
@@ -706,19 +713,19 @@ y & is the output\\
 When we want to perform manipulations to several numbers, there are various
 power laws we must bear in mind... They are summarised as follows:
 \begin{align}
-  {a}^{0}               & = 1 \label{eq:ExponentLaw_Power0} \\
-  {a}^{1}               & = a \label{eq:ExponentLaw_Power1} \\
-  {a}^{x} * {a}^{y}     & = {a}^{x+y} \label{eq:ExponentLaw_AddExps} \\
-  {a}^{x} - {a}^{y}     & = {a}^{x-y} \label{eq:ExponentLaw_SubExps} \\
-  {({a}^{x})}^{y}       & = {a}^{xy} \label{eq:ExponentLaw_MultExps} \\
-  a{b}^{-x}             & = \frac{a}{{b}^{x}} \label{eq:ExponentLaw_NegExp} \\
+  {a}^{0}               & = 1 \label{eq:IndexLaw_Power0} \\
+  {a}^{1}               & = a \label{eq:IndexLaw_Power1} \\
+  {a}^{x} * {a}^{y}     & = {a}^{x+y} \label{eq:IndexLaw_AddExps} \\
+  {a}^{x} - {a}^{y}     & = {a}^{x-y} \label{eq:IndexLaw_SubExps} \\
+  {({a}^{x})}^{y}       & = {a}^{xy} \label{eq:IndexLaw_MultExps} \\
+  a{b}^{-x}             & = \frac{a}{{b}^{x}} \label{eq:IndexLaw_NegExp} \\
   {a}^{(\frac{x}{y})}   & = {({a}^{x})}^{\frac{1}{y}}
-                            \label{eq:ExponentLaw_FracExp0} \\
-                        & = \sqrt[y]{{a}^{x}} \label{eq:ExponentLaw_FracExp1}\\
+                            \label{eq:IndexLaw_FracExp0} \\
+                        & = \sqrt[y]{{a}^{x}} \label{eq:IndexLaw_FracExp1}\\
   a{b}^{(-\frac{x}{y})} & = \frac{a}{\sqrt[y]{{b}^{x}}}
 \end{align}
 Converting notation between the forms exhibited in
-\ref{eq:ExponentLaw_FracExp0} and \ref{eq:ExponentLaw_FracExp1} is often
+\ref{eq:IndexLaw_FracExp0} and \ref{eq:IndexLaw_FracExp1} is often
 extremely useful in Calculus, in particular, differentiation.
 
 \subsection{Logarithms}
@@ -756,6 +763,22 @@ it'':
 \begin{quote}
   When you're having trouble with a power take a log.
 \end{quote}
+
+\subsubsection{Log Laws}
+\label{sec:LogLaws}
+
+\begin{align}
+  log_b(1) & = 0     & & \text{because} & b^0 = 1 \\
+  log_b(b) & = 1     & & \text{because} & b^1 = b \\
+  log_b(a) & = \frac{log_d(a)}{log_d(b)} \\
+  log_b(0) & \text{undefined} & & \text{because} & b^x = 0 \text{is impossible} \\
+  log_b(xy)          & = log_b(x) + log_b(y) & \text{because} & b^c * b^d    & = b^{c+d} \\
+  log_b(\frac{x}{y}) & = log_b(x) - log_b(y) & \text{because} & b^{c-d}      & = \frac{b^c}{b^d} \\
+  log_b(x^d)         & = d * log_b(x)        & \text{because} & (b^c)^d      & = b^{c*d} \\
+  log_b(\sqrt[y]{x}) & = \frac{log_b(x)}{y}  & \text{because} & \sqrt[y]{x}  & = x^{\frac{1}{y}} \\
+  x^{log_b(y)}       & = y^{log_b(x)}        & \text{because} & x^{log_b(y)} & = b^{log_b(x)log_b(y)} & = b^{log_b(y)log_b(x)} & = y^{log_b(x)}
+  c * log_b(x) + d * log_b(y) = log_b(x^c * y^d) & \text{because} & log_b(x^c * y^d) & = log_b(y^d)
+\end{align}
 
 %-----------------------------------------------------------------------------%
 %- Algebra :: Exponentials & Logarithms :: Euler Constant: Base e ------------%
@@ -809,79 +832,82 @@ A full circle:
 The unit circle is such an important part of trigonometry that it is worth
 looking it up on Wikipedia \emph{AND} as many other places as possible.
 
-\begin{figure}[!hbt]
-\label{fig:UnitCircle}
-\begin{tikzpicture}[scale=5.3,cap=round,>=latex]
-  % draw the coordinates
-  \draw[->] (-1.5cm,0cm) -- (1.5cm,0cm) node[right,fill=white] {$x$};
-  \draw[->] (0cm,-1.5cm) -- (0cm,1.5cm) node[above,fill=white] {$y$};
-
-  % draw the unit circle
-  \draw[thick] (0cm,0cm) circle(1cm);
-
-  \foreach \x in {0,30,...,360} {
-    % lines from center to point
-    \draw[gray] (0cm,0cm) -- (\x:1cm);
-    % dots at each point
-    \filldraw[black] (\x:1cm) circle(0.4pt);
-    % draw each angle in degrees
-    \draw (\x:0.6cm) node[fill=white] {$\x^\circ$};
-            
-    % 'drop a vertical' as Fran Griffin calls it
-    % x-coord = cos(A)
-    % y-coord = 0;
-%    \draw (\x:0.6cm) -- (\x:0.6cm,0);
-  }
-
-    % draw each angle in radians
-    \foreach \x/\xtext in {
-        30/\frac{\pi}{6},
-        45/\frac{\pi}{4},
-        60/\frac{\pi}{3},
-        90/\frac{\pi}{2},
-        120/\frac{2\pi}{3},
-        135/\frac{3\pi}{4},
-        150/\frac{5\pi}{6},
-        180/\pi,
-        210/\frac{7\pi}{6},
-        225/\frac{5\pi}{4},
-        240/\frac{4\pi}{3},
-        270/\frac{3\pi}{2},
-        300/\frac{5\pi}{3},
-        315/\frac{7\pi}{4},
-        330/\frac{11\pi}{6},
-        360/2\pi}
-            \draw (\x:0.85cm) node[fill=white] {$\xtext$};
-
-    \foreach \x/\xtext/\y in {
-        % the coordinates for the first quadrant
-        30/\frac{\sqrt{3}}{2}/\frac{1}{2},
-        45/\frac{\sqrt{2}}{2}/\frac{\sqrt{2}}{2},
-        60/\frac{1}{2}/\frac{\sqrt{3}}{2},
-        % the coordinates for the second quadrant
-        150/-\frac{\sqrt{3}}{2}/\frac{1}{2},
-        135/-\frac{\sqrt{2}}{2}/\frac{\sqrt{2}}{2},
-        120/-\frac{1}{2}/\frac{\sqrt{3}}{2},
-        % the coordinates for the third quadrant
-        210/-\frac{\sqrt{3}}{2}/-\frac{1}{2},
-        225/-\frac{\sqrt{2}}{2}/-\frac{\sqrt{2}}{2},
-        240/-\frac{1}{2}/-\frac{\sqrt{3}}{2},
-        % the coordinates for the fourth quadrant
-        330/\frac{\sqrt{3}}{2}/-\frac{1}{2},
-        315/\frac{\sqrt{2}}{2}/-\frac{\sqrt{2}}{2},
-        300/\frac{1}{2}/-\frac{\sqrt{3}}{2}}
-            \draw (\x:1.25cm) node[fill=white] {$\left(\xtext,\y\right)$};
-
-    % draw the horizontal and vertical coordinates
-    % the placement is better this way
-    \draw (-1.25cm,0cm) node[above=1pt] {$(-1,0)$}
-          (1.25cm,0cm)  node[above=1pt] {$(1,0)$}
-          (0cm,-1.25cm) node[fill=white] {$(0,-1)$}
-          (0cm,1.25cm)  node[fill=white] {$(0,1)$};
-\end{tikzpicture}
-\caption{The Unit Circle, based on work from Supreme Ayal, TiKZ Examples
-\cite{HTrCS}}
-\end{figure}
+%\begin{figure}[!hbt]
+%\label{fig:UnitCircle}
+% \begin{tikzpicture}[scale=5.3,cap=round,>=latex]
+%   % draw the coordinates
+%   \draw[->] (-1.5cm,0cm) -- (1.5cm,0cm) node[right,fill=white] {$x$};
+%   \draw[->] (0cm,-1.5cm) -- (0cm,1.5cm) node[above,fill=white] {$y$};
+% 
+%   % draw the unit circle
+%   \draw[thick] (0cm,0cm) circle(1cm);
+% 
+%   \foreach \x in {0,30,...,360} {
+%     % lines from center to point
+%     \draw[gray] (0cm,0cm) -- (\x:1cm);
+%     % dots at each point
+%     \filldraw[black] (\x:1cm) circle(0.4pt);
+%     % draw each angle in degrees
+%     \draw (\x:0.6cm) node[fill=white] {$\x^\circ$};
+%             
+%     % 'drop a vertical' as Fran Griffin calls it
+%     % x-coord = cos(A)
+%     % y-coord = 0;
+% %    \draw (\x:0.6cm) -- (\x:0.6cm,0);
+%   }
+% 
+%   % draw each angle in radians
+%   \foreach \x/\xtext in {
+%     30/\frac{\pi}{6},
+%     45/\frac{\pi}{4},
+%     60/\frac{\pi}{3},
+%     90/\frac{\pi}{2},
+%     120/\frac{2\pi}{3},
+%     135/\frac{3\pi}{4},
+%     150/\frac{5\pi}{6},
+%     180/\pi,
+%     210/\frac{7\pi}{6},
+%     225/\frac{5\pi}{4},
+%     240/\frac{4\pi}{3},
+%     270/\frac{3\pi}{2},
+%     300/\frac{5\pi}{3},
+%     315/\frac{7\pi}{4},
+%     330/\frac{11\pi}{6},
+%     360/2\pi
+%   }
+%   \draw (\x:0.85cm) node[fill=white] {$\xtext$};
+% 
+%   \foreach \x/\xtext/\y in {
+%     % the coordinates for the first quadrant
+%     30/\frac{\sqrt{3}}{2}/\frac{1}{2},
+%     45/\frac{\sqrt{2}}{2}/\frac{\sqrt{2}}{2},
+%     60/\frac{1}{2}/\frac{\sqrt{3}}{2},
+%     % the coordinates for the second quadrant
+%     150/-\frac{\sqrt{3}}{2}/\frac{1}{2},
+%     135/-\frac{\sqrt{2}}{2}/\frac{\sqrt{2}}{2},
+%     120/-\frac{1}{2}/\frac{\sqrt{3}}{2},
+%     % the coordinates for the third quadrant
+%     210/-\frac{\sqrt{3}}{2}/-\frac{1}{2},
+%     225/-\frac{\sqrt{2}}{2}/-\frac{\sqrt{2}}{2},
+%     240/-\frac{1}{2}/-\frac{\sqrt{3}}{2},
+%     % the coordinates for the fourth quadrant
+%     330/\frac{\sqrt{3}}{2}/-\frac{1}{2},
+%     315/\frac{\sqrt{2}}{2}/-\frac{\sqrt{2}}{2},
+%     300/\frac{1}{2}/-\frac{\sqrt{3}}{2}
+%   }
+%         
+%   \draw (\x:1.25cm) node[fill=white] {$\left(\xtext,\y\right)$};
+% 
+%   % draw the horizontal and vertical coordinates
+%   % the placement is better this way
+%   \draw (-1.25cm,0cm) node[above=1pt] {$(-1,0)$}
+%     (1.25cm,0cm)  node[above=1pt] {$(1,0)$}
+%     (0cm,-1.25cm) node[fill=white] {$(0,-1)$}
+%     (0cm,1.25cm)  node[fill=white] {$(0,1)$};
+% \end{tikzpicture}
+%\caption{The Unit Circle, based on work from Supreme Ayal, TiKZ Examples
+%\cite{HTrCS}}
+%\end{figure}
 
 A formal definition of the unit circle:
 $cos(\theta)$ is the $x$-value of the intersection of the unit circle with the
@@ -1741,7 +1767,7 @@ The power method is by far the easiest to understand of all 3 methods, and if
 possible, it may be easier to rearrange a part of an equation into index
 notation and differentiate that way. This method is not always possible,
 but by using the power laws from the series of equations starting with
-\ref{eq:ExponentLaw_Power0}, sometimes a shortcut can be made, which is why
+\ref{eq:IndexLaw_Power0}, sometimes a shortcut can be made, which is why
 Section \ref{sec:ExponentialsAndLogarithms} important to know very well.\\
 \\
 Put simply, the power method can be understood as ``multiply the base by the
