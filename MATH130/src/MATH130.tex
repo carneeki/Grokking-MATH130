@@ -768,16 +768,18 @@ it'':
 \label{sec:LogLaws}
 
 \begin{align}
-  log_b(1) & = 0     & & \text{because} & b^0 = 1 \\
-  log_b(b) & = 1     & & \text{because} & b^1 = b \\
-  log_b(a) & = \frac{log_d(a)}{log_d(b)} \\
-  log_b(0) & \text{undefined} & & \text{because} & b^x = 0 \text{is impossible} \\
-  log_b(xy)          & = log_b(x) + log_b(y) & \text{because} & b^c * b^d    & = b^{c+d} \\
-  log_b(\frac{x}{y}) & = log_b(x) - log_b(y) & \text{because} & b^{c-d}      & = \frac{b^c}{b^d} \\
-  log_b(x^d)         & = d * log_b(x)        & \text{because} & (b^c)^d      & = b^{c*d} \\
-  log_b(\sqrt[y]{x}) & = \frac{log_b(x)}{y}  & \text{because} & \sqrt[y]{x}  & = x^{\frac{1}{y}} \\
-  x^{log_b(y)}       & = y^{log_b(x)}        & \text{because} & x^{log_b(y)} & = b^{log_b(x)log_b(y)} & = b^{log_b(y)log_b(x)} & = y^{log_b(x)}
-  c * log_b(x) + d * log_b(y) = log_b(x^c * y^d) & \text{because} & log_b(x^c * y^d) & = log_b(y^d)
+  log_b(1)           & = 0                         & \text{because} ~ & b^0              & = 1                    && \\
+  log_b(b)           & = 1                         & \text{because} ~ & b^1              & = b                    && \\
+  log_b(a)           & = \frac{log_d(a)}{log_d(b)} &                ~ &                  &                        && \\
+  log_b(0)           & = \text{undefined}          & \text{because} ~ & b^x              & = 0 \text{is impossible} && \\
+  log_b(xy)          & = log_b(x) + log_b(y)       & \text{because} ~ & b^c * b^d        & = b^{c+d}              && \\
+  log_b(\frac{x}{y}) & = log_b(x) - log_b(y)       & \text{because} ~ & b^{c-d}          & = \frac{b^c}{b^d}      && \\
+  log_b(x^d)         & = d * log_b(x)              & \text{because} ~ & (b^c)^d          & = b^{c*d}              && \\
+  log_b(\sqrt[y]{x}) & = \frac{log_b(x)}{y}        & \text{because} ~ & \sqrt[y]{x}      & = x^{\frac{1}{y}}      && \\
+  x^{log_b(y)}       & = y^{log_b(x)}              & \text{because} ~ & x^{log_b(y)}     & = b^{log_b(x)log_b(y)} && \\
+                     &                             &                  &                  & = b^{log_b(y)log_b(x)} && \nonumber  \\
+                     &                             &                  &                  & = y^{log_b(x)} \nonumber \\
+  c * log_b(x) + d * log_b(y) & = log_b(x^c * y^d) & \text{because} ~ & log_b(x^c * y^d) & = log_b(y^d)           &&
 \end{align}
 
 %-----------------------------------------------------------------------------%
