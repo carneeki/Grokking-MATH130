@@ -1,0 +1,172 @@
+%-----------------------------------------------------------------------------%
+%- Algebra :: Trigonometry ---------------------------------------------------%
+%-----------------------------------------------------------------------------%
+\chapter{Trigonometry}
+\label{chap:Trigonometry}
+\emph{Trigonometry is about ratios of angles and sides}.
+Specifically, trigonometry is about the ratios of angles and sides in triangles
+with respect to each other when drawn inside a special circle called \emph{the
+unit circle}.
+
+A brief interlude on language. Most of our trigonometric measurements are
+\emph{NOT} going to be measured in degrees. Most of our measurements of angles
+are measured in radians. A \emph{radian} is the ratio of angles with respect
+pi.\\
+To convert between radians and degrees use the following formulae:
+
+\begin{align}
+  \theta \ndeg & = r \times \frac{180\ndeg}{\pi} \\
+            r & = \theta \ndeg \times \frac{\pi}{180\ndeg}
+\end{align}
+
+A more formal definition of the radian: \emph{The radian measure of an angle
+$\theta$ is the arclength subtended by the angle in a unit circle.} This
+definition requires we define what a unit circle is. \footnote{This works fine
+for \emph{anti-clockwise} angles, however, a radian can never be negative
+because a length (the arclength in this case) can never be less than zero.}
+
+A full circle:
+\begin{align}
+  r & = \theta \ndeg \times \frac{\pi}{180\ndeg} \\
+  r & = 360 \ndeg \times \frac{\pi}{180\ndeg} \\
+  r & = 2 
+\end{align}
+
+\newpage
+\section{The Unit Circle}
+\label{sec:TheUnitCircle}
+The unit circle is such an important part of trigonometry that it is worth
+looking it up on Wikipedia \emph{AND} as many other places as possible.
+
+%\begin{figure}[!hbt]
+%\label{fig:UnitCircle}
+% \begin{tikzpicture}[scale=5.3,cap=round,>=latex]
+%   % draw the coordinates
+%   \draw[->] (-1.5cm,0cm) -- (1.5cm,0cm) node[right,fill=white] {$x$};
+%   \draw[->] (0cm,-1.5cm) -- (0cm,1.5cm) node[above,fill=white] {$y$};
+% 
+%   % draw the unit circle
+%   \draw[thick] (0cm,0cm) circle(1cm);
+% 
+%   \foreach \x in {0,30,...,360} {
+%     % lines from center to point
+%     \draw[gray] (0cm,0cm) -- (\x:1cm);
+%     % dots at each point
+%     \filldraw[black] (\x:1cm) circle(0.4pt);
+%     % draw each angle in degrees
+%     \draw (\x:0.6cm) node[fill=white] {$\x^\circ$};
+%             
+%     % 'drop a vertical' as Fran Griffin calls it
+%     % x-coord = cos(A)
+%     % y-coord = 0;
+% %    \draw (\x:0.6cm) -- (\x:0.6cm,0);
+%   }
+% 
+%   % draw each angle in radians
+%   \foreach \x/\xtext in {
+%     30/\frac{\pi}{6},
+%     45/\frac{\pi}{4},
+%     60/\frac{\pi}{3},
+%     90/\frac{\pi}{2},
+%     120/\frac{2\pi}{3},
+%     135/\frac{3\pi}{4},
+%     150/\frac{5\pi}{6},
+%     180/\pi,
+%     210/\frac{7\pi}{6},
+%     225/\frac{5\pi}{4},
+%     240/\frac{4\pi}{3},
+%     270/\frac{3\pi}{2},
+%     300/\frac{5\pi}{3},
+%     315/\frac{7\pi}{4},
+%     330/\frac{11\pi}{6},
+%     360/2\pi
+%   }
+%   \draw (\x:0.85cm) node[fill=white] {$\xtext$};
+% 
+%   \foreach \x/\xtext/\y in {
+%     % the coordinates for the first quadrant
+%     30/\frac{\sqrt{3}}{2}/\frac{1}{2},
+%     45/\frac{\sqrt{2}}{2}/\frac{\sqrt{2}}{2},
+%     60/\frac{1}{2}/\frac{\sqrt{3}}{2},
+%     % the coordinates for the second quadrant
+%     150/-\frac{\sqrt{3}}{2}/\frac{1}{2},
+%     135/-\frac{\sqrt{2}}{2}/\frac{\sqrt{2}}{2},
+%     120/-\frac{1}{2}/\frac{\sqrt{3}}{2},
+%     % the coordinates for the third quadrant
+%     210/-\frac{\sqrt{3}}{2}/-\frac{1}{2},
+%     225/-\frac{\sqrt{2}}{2}/-\frac{\sqrt{2}}{2},
+%     240/-\frac{1}{2}/-\frac{\sqrt{3}}{2},
+%     % the coordinates for the fourth quadrant
+%     330/\frac{\sqrt{3}}{2}/-\frac{1}{2},
+%     315/\frac{\sqrt{2}}{2}/-\frac{\sqrt{2}}{2},
+%     300/\frac{1}{2}/-\frac{\sqrt{3}}{2}
+%   }
+%         
+%   \draw (\x:1.25cm) node[fill=white] {$\left(\xtext,\y\right)$};
+% 
+%   % draw the horizontal and vertical coordinates
+%   % the placement is better this way
+%   \draw (-1.25cm,0cm) node[above=1pt] {$(-1,0)$}
+%     (1.25cm,0cm)  node[above=1pt] {$(1,0)$}
+%     (0cm,-1.25cm) node[fill=white] {$(0,-1)$}
+%     (0cm,1.25cm)  node[fill=white] {$(0,1)$};
+% \end{tikzpicture}
+%\caption{The Unit Circle, based on work from Supreme Ayal, TiKZ Examples
+%\cite{HTrCS}}
+%\end{figure}
+
+A formal definition of the unit circle:
+$cos(\theta)$ is the $x$-value of the intersection of the unit circle with the
+angle $\theta$.\\
+$sin(\theta)$ is the $y$-value of the intersection of the unit circle with the
+angle $\theta$\footnote{These words are not quite complete, and would require
+the unit circle picture}.
+
+UTUCDTCTV:\footnote{Use the Unit Circle Definition to Calculate The Value}
+\begin{align}
+  cos(\frac{-2\pi}{3}) & = \ldots
+\end{align}
+$\pi$ is $\frac{1}{2}$ circle.\\
+$\frac{\pi}{3}$ is $\frac{1}{3}$ of $\frac{1}{2}$ a circle.\\
+At this point, there has been no trigonometry\ldots \\
+% TODO: diagram of above (2pi / 3), drop verticals, & horizontals
+The rest of this is high school geometry to determine angles involving
+triangles (such as Pythagoras).
+% TODO: include pi/3 complement
+
+\subsection{Properties of The Unit Circle}
+\label{sec:Properties of The Unit Circle}
+
+\begin{align}
+  -1 \leq & sin(\theta) \leq & 1 \\
+\end{align}
+% TODO: 10 O'Clock unit circle
+$sin(\theta)$ is the $y$-value on the unit circle which is bound by -1 and 1.
+
+\begin{align}
+  sin(-\theta) & = - sin(\theta) \\
+\end{align}
+
+% TODO: Picture of right angle triangle
+% TODO: Angle sum of a triangle against 2 parallel lines = pi radians 
+% TODO: SOH, CAH, TOA
+\subsection{SOH CAH TOA}
+\label{sec:SOHCAHTOA}
+\begin{align}
+  sin(\theta \ndeg) & = \frac{o}{h} \\
+  cos(\theta \ndeg) & = \frac{a}{h} \\
+  tan(\theta \ndeg) & = \frac{o}{a}
+\end{align}
+
+\subsection{Angle Sum Formula}
+\label{sec:AngleSumFormula}
+
+There are 3 angle sum formulae to learn, and while the 3rd can be deduced from
+the first two, it is easier to just memorise it as the derivation is beyond
+the scope of MATH130.
+
+\begin{align}
+  sin(\alpha + \beta) & = sin(\alpha)cos(\beta) + cos(\alpha)sin(\beta) \\
+  cos(\alpha + \beta) & = cos(\alpha)sin(\beta) - cos(\beta)sin(\alpha) \\
+  tan(\alpha + \beta) & = \frac{tan(\alpha) + tan(\beta)}{1 - tan(\alpha)tan(\beta)}
+\end{align}

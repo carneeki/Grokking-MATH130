@@ -1,0 +1,73 @@
+%-----------------------------------------------------------------------------%
+%- Algebra :: Polynomials ----------------------------------------------------%
+%-----------------------------------------------------------------------------%  
+\chapter{TODO: Polynomials}
+\label{chap:Polynomials}
+Definition: Sum of natural powers of $x$, scaled and added.
+
+Example:
+\begin{align}
+  6x^4 + 20x^3 + \sqrt{2}x^2 + 13x - 2 \\
+\end{align}
+
+Two important terms are \emph{coefficient}; which is a number in front of the
+$x$, and \emph{degree} which is the highest power of $x$ in the expression.
+
+Polynomials are useful and common for approximating other functions. Here we
+approximate sin(x):
+\begin{align}
+  &~ x - \frac{x^{3}}{6} \\
+  &~ x - \frac{x^{3}}{6} + \frac{x^5}{120} \\
+  &~ x - \frac{x^{3}}{3!} + \frac{x^5}{5!} \\
+  &~ x - \frac{x^{3}}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} \\
+sin(x) &~ = x - \frac{x^{3}}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \ldots \\
+\end{align}
+
+The main polynomials studied in MATH130 are:
+\begin{description}
+  \item[quadratics]
+    \begin{align}
+      y & = ax^2 + bx + c       && \text{General Form} \\
+      y & = a(x -h)^{2} + k     && \text{Standard Form} \\
+      y & = a(x - x_1)(x - x_2) && \text{Factored Form}
+    \end{align}
+  \item[cubics]
+    \begin{align}
+      y = ax^3 + bx^2 + cx + d \\
+    \end{align}
+\end{description}
+
+\section{Quadratics}
+The standard form is useful for finding the roots / zeros (where $y = 0$).
+Consider solving:
+\begin{align}
+  8(x - 7)^{2} - 41 = 0 \\
+\end{align}
+Because there is only one $x$ value it makes it easier to solve:
+\begin{align}
+  8(x - 7)^{2} & = 41 \\
+  (x - 7)^{2}  & = \frac{41}{8} \\
+  x - 7        & = \pm \sqrt{\frac{41}{8}} \\
+  x            & = \pm \sqrt{\frac{41}{8}} + 7
+\end{align}
+
+It is also useful for sketching. Consider:
+\begin{align}
+  y = 2(x-1)^{2} + 3
+\end{align}
+\begin{enumerate}
+  %TODO: include graphs of each parabola in this enumeration
+  \item Start with $y = x^2$
+  
+  \item Because there is an $(x - 1)$ we shift the parabola $y = x^2$ by 1 to
+  the right.\\
+  $y = (x - 1)^2$
+  
+  \item Because there is a $2$ in front of the $(x-1)$, we make the parabola
+  steeper by a factor of two.\footnote{called ``stretching vertically''} \\
+  $y = 2(x - 1)^2$
+  
+  \item Because there is a $+3$ on the end, it lifts the parabola up by 3. \\
+  $y = 2(x - 1)^2 +3$
+\end{enumerate}
+

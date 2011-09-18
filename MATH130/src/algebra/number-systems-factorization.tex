@@ -1,0 +1,382 @@
+%-----------------------------------------------------------------------------%
+%- Algebra :: Number Systems & Factorization ---------------------------------%
+%-----------------------------------------------------------------------------%
+\chapter{Number Systems \& Factorization}
+\label{sec:NumberSystemsAndFactorization}
+There are some basic laws that need to be understood to manipulate numbers
+The first group of laws are called the "Distributive laws".
+\begin{align}
+      a(b+c) & = ab + ac \label{eq:distrib0} \\
+      (a+b)c & = ac + bc \label{eq:distrib1} \\
+  (a+b)(c+d) & = ac + ad + bc + bd \label{eq:distrib2}
+\end{align}
+Equation \ref{eq:distrib2} gives rise to a special case called a quadratic
+which will be introduced in section \ref{sec:IntroductionToPolynomials},
+Introduction to Polynomials, and in further detail in chapter
+\ref{chap:Polynomials}, Polynomials. 
+\\
+The distributive laws are all about expanding brackets, that is to say, in
+\ref{eq:distrib1}, first we multiply $a$ with the first term inside the
+brackets ($b$) to give us $ab$, then we multply $a$ with the second term, $c$
+to give us $ac$. When we add them (the $+$ symbol in the brackets) we get
+$ab + ac$.
+\\
+Another way to think about it is $a$ is distributed to each term inside the
+brackets. This also applies in \ref{eq:distrib2} with $c$, and it yields the 
+same result as in \ref{eq:distrib1}.
+
+%-----------------------------------------------------------------------------%
+%- Algebra :: Number Systems & Factorization :: Fractions --------------------%
+%-----------------------------------------------------------------------------%
+\section{Introduction to Fractions}
+\label{sec:IntroductionToFractions}
+It turns out that any repeating decimal can be written as a fraction:
+
+\begin{align}
+  2.1 \times 100000 & = \\
+    & = 2.1 \times \frac{10}{10} \\
+    & = \frac{21}{10} \\
+\end{align}
+
+What about $1.33333\ldots$?
+\begin{align}
+  1.33333 & = \frac{4}{3} \\
+\end{align}
+
+Or $1.373737\ldots$ ??
+\begin{align}
+  let     x & = 1.373737\ldots\\
+       100x & = 137.3737\ldots\\
+   100x - x & = 137.373737\ldots - 1.373737\ldots\\
+        99x & = 136 \\
+  so \nonumber \\
+        x & = \frac{136}{99} \\
+        \therefore 1.373737\ldots = x & = \frac{136}{99}  
+\end{align}
+
+For longer decimal places we need to create 2 numbers using $x$ with the same
+decimal part so that when we subtract the decimal part we get a whole number.
+
+\begin{align}
+         let  x & = 36.2593593593\ldots \\
+       so 10x & = 362.593593\ldots \\
+       10000x & = 362593.593\ldots \\
+   10000x-10x & = 362593.593\ldots - 362.593\ldots \\
+        9990x & = \ldots
+ \intertext{(we have now subtracted the recurring decimal component
+ from the fraction)}
+ \therefore x & = \frac{362593 - 362}{9990} \\
+\end{align}
+As it turns out, fractions will fall into one of three categories:
+\begin{enumerate}
+  \item recurring decimals such as $\frac{99}{101} = 0.9801\ldots$.
+  \item non-recurring decimals such as $\frac{1}{2} = 0.5$, these first two are
+  called $\mathbb{Q}$ or rational numbers.
+  \item non-recurring decimals such as $\pi = 3.1415\ldots$ or $\sqrt{2} =
+  1.4142\ldots$, these are denoted by the symbol $\mathbb{I}$, and called
+  irrational numbers\footnote{These numbers require some complex calculus to
+  prove they are non-recurring, a simpler number is
+  $0.1234567890111121314\ldots$ which has a pattern, and is not recurring, it's
+  just ``add one'' to the last number}.
+\end{enumerate}
+
+%-----------------------------------------------------------------------------%
+%- Algebra :: Number Systems & Factorization :: Fractional Operations --------%
+%-----------------------------------------------------------------------------%
+\subsection{Fractional Operations - Adding}
+\label{sec:FractionalOperationsAdding}
+A good reason why we \emph{don't} add fractions in the following way:
+\quotation{add the tops (to give the numerator), add the bottoms (to give the
+denominator (or quotient)}.
+example: $\frac{1}{2} + \frac{1}{2} \neq \frac{2}{4} = \frac{1}{2}$
+
+The \emph{correct} way of adding fractions is to use a common quotient then add
+the numerator and keep the denominator the same.\footnote{a simpler (but only
+partial) answer could be ``you're adding like with like'' -- a MATH130 student
+from the audience of Chris Gordon's lecture at 2011-08-08 10:31AM}
+
+%% TODO: insert a pizza divided into 8 slices and add 3 + 2 slices to represent
+% part of the pizza.
+Consider you order 3 slices of pizza from Hot Momma's pizza at the MQ bar, and
+you are given 2 more for being a regular customer:
+\begin{align}
+  \frac{3}{8} & = \ldots \\
+  \frac{3}{8} + \frac{2}{8} & = \frac{5}{8} \\
+\end{align}
+You have $\frac{5}{8}$ or ``five eights'' of a whole pizza.\footnote{I want a
+slice of that pizza if it's the supreme}.
+
+What if you have different quotients? You \emph{need} to convert to a common
+quotient:
+\begin{align}
+ \frac{1}{2} + \frac{7}{10} & = \\
+    & = \frac{5}{5} \times \frac{1}{2} + \frac{7}{10} \\
+    & = \frac{5}{10} \times \frac{7}{10} \label{eq:CommonDenominator}\\
+    & = \frac{12}{10} \\
+    & = \frac{2 \times 6}{2 \times 5} \\
+  \intertext{the two's divide out, which simplifies the fraction}  
+    & = \frac{6}{5} \\
+\end{align}
+Equation \ref{eq:CommonDenominator} is where the important heavy lifting of the
+operation of converting to a common quotient comes into play.
+
+A general case:
+
+\begin{align}
+  \frac{a}{b} + \frac{c}{d} & = \\
+    & = [\frac{a}{b} \ times \frac{d}{d}] + [\frac{c}{d} \ times \frac{b}{b} ]
+    & = \frac{ad + cd}{db} \\
+\end{align}
+
+%-----------------------------------------------------------------------------%
+%- Algebra :: Number Systems & Factorization :: Fractional Operations --------%
+%-----------------------------------------------------------------------------%
+\subsection{Fractional Operations - Division}
+\label{sec:FractionalOperationsDivision}
+Dividing fractions has a reasonably simply rule to remember: Multiply by the
+inverse of one fraction:
+
+\begin{align}
+  \frac{a}{b} \div \frac{c}{d} & = \frac{ \frac{a}{b} }{ \frac{c}{d}} \times
+  \frac{bd}{bd} \\
+   & = \frac{\frac{a}{b}\times b \times d}{\frac{c}{d} \ times b \times d} \\
+  \intertext{divide out common terms}
+   & = \frac{ad}{cb}
+\end{align}
+
+%-----------------------------------------------------------------------------%
+%- Algebra :: Number Systems & Factorization :: Surds ------------------------%
+%-----------------------------------------------------------------------------%
+\section{Introduction to Irrational Numbers (Surds)}
+\label{sec:IntroductionToIrrationalNumbers}
+A \emph{surd} is \emph{an archaic\footnote{almost as old as the Maths
+Deptartment} term for an irrational number}. This is basically a number which
+cannot be written as a decimal because, if you tried
+\begin{enumerate}
+  \item you'd go on forever as it has an infinite number of decimal places\\
+  and
+  \item it has no repeating parts to the decimal places.
+\end{enumerate}
+For this reason it cannot be expressed as a fraction in the form $\frac{p}{q}$
+where p and q are integers.
+Examples of irrational numbers are $e, \pi, \sqrt[2]{2}$
+\\
+A more formal\footnote{poorly worded, but means the same thing as above}
+definition is:
+\begin{equation*}
+\left.\begin{aligned}
+  \mathbb{I} \ni \frac{p}{q}
+\end{aligned}
+\right\} 
+\qquad \text{{p,q $\in \mathbb{Z}$}}
+\end{equation*}
+\\
+There are some handy things we can do with irrational numbers. Consider
+$\sqrt[2]{8} =
+2.828427124$\footnote{It's even longer than
+2.8284271247461900976033774484193961571393437507538961463533594759814649...,
+it's infinite remember!}. It can be rewritten like this:
+\begin{align}
+  \sqrt[2]{8} & = 
+    \sqrt[2]{2 \times 4} \\
+    & = \sqrt[2]{2} \times \sqrt[2]{4} \\
+    & = \sqrt[2]{2} \times 2 \\
+    & = 2\sqrt[2]{2}
+\end{align}
+
+\subsection{Rationalizing the Denominator}
+\label{sec:RationalizingTheDenominator}
+Often examiners will give us a fraction and say ``rationalize the
+denominator''\footnote{``sudo rationalize the denominator'' if you want to be
+a troll}. I don't know why - they just do. In order to get the marks in the
+exam, we can rationalize the denominator by multiplying that fraction by 1.
+\\
+While the notion of multiplying by 1 sounds silly, consider that $1 \in
+\mathbb{R} = \frac{p}{q}$ where \{p,q\} can be a surd, $x$: $\frac{x}{x} =
+1$. This gives rise to the following possibility of:
+\begin{align}
+  \frac{5}{\sqrt[2]{2}} & = \\
+   & = \frac{5}{\sqrt[2]{2}} \times \frac{\sqrt[2]{2}}{\sqrt[2]{2}} \\
+   \intertext{The next part is where the useful stuff happens, if we square a
+   square-root then they ``undo'' each other, and we are left over with the bit
+   inside the square-root}
+   & = \frac{5 \times \sqrt[2]{2}}{(\sqrt[2]{2}) \times (\sqrt[2]{2})} \\
+   & = \frac{5\sqrt[2]{2}}{2}
+\end{align}
+The denominator might not always be a square-root, University of North Texas'
+next example includes a cube-root, so we must multiply by 1 again.
+\begin{align}
+  \frac{2}{\sqrt[3]{5}} & = \\
+    \intertext{sometimes it's nicer to lay things out to see what's going on:}
+    & = \frac{2}{\sqrt[3]{5}} \times
+          \frac{\sqrt[3]{5}}{\sqrt[3]{5}} \times
+          \frac{\sqrt[3]{5}}{\sqrt[3]{5}}
+    \intertext{but we still condense it into the root symbol:}
+    & = \frac{2}{\sqrt[3]{5}} \times
+          \frac{\sqrt[3]{5 \times 5}}{\sqrt[3]{5 \times 5}} \\
+    & = \frac{2 \sqrt[3]{5 \times 5}}{(\sqrt[3]{5})(\sqrt[3]{5 \times
+          5})} \\ & = \frac{2 \sqrt[3]{25}}{5} \\
+\end{align}
+The last example involves more than one term on the
+denominator. In this particular case, we will still multiply by 1, however we
+are using some trickery from an upcoming section
+\ref{sec:IntroductionToPolynomials}, ``Introduction to Polynomials''
+specifically equation \ref{eq:Diff2Squares}.
+\begin{align}
+  \frac{2}{1+\sqrt[2]{3}} & = \\ 
+  & = \frac{2}{1+\sqrt[2]{3}} \times \frac{1-\sqrt[2]{3}}{1-\sqrt[2]{3}} \\
+  & = \frac{2(1-\sqrt[2]{3})}{1-3}
+  \intertext{if the denominator part of above step does not make sense, then
+  please refer to equation \ref{eq:Diff2Squares} in section
+  \ref{sec:IntroductionToPolynomials}, ``Introduction to Polynomials''}
+  & = \frac{2(1-\sqrt[2]{3})}{-2} \\
+  & = -\frac{2(1-\sqrt[2]{3})}{2} \\
+  & = -\frac{1(1-\sqrt[2]{3})}{1} \\
+  & = -(1-\sqrt[2]{3})
+\end{align}
+The examples for rationalizing the denominator come from University of Northern
+Texas:
+\url{http://www.math.unt.edu/mathlab/emathlab/How\%20to\%20Rationalize\%20the\%20Denominator\%20of\%20a\%20Fraction.htm}
+
+%-----------------------------------------------------------------------------%
+%- Algebra :: Number Systems & Factorization :: Polynomials ------------------%
+%-----------------------------------------------------------------------------%
+\section{Introduction to Polynomials}
+\label{sec:IntroductionToPolynomials}
+This section forms only an introduction to polynomials. More detail on
+polynomials is covered in chapter \ref{chap:Polynomials}, ``Polynomials''.
+
+Polynomials are a way of packing certain types of long equations into neater,
+more compact forms. The following equations show how the distributive laws can
+be applied to 3 polynomial equations. These 3 equations form the basic 3 rules
+of polynomials and their form should be memorised to make solving more complex
+problems easier down the track.
+\begin{align}
+  {(a+b)}^{2} & = & (a+b)(a+b) \nonumber \\
+              & = & {a}^{2} + 2ab + {b}^{2} \label{eq:poly0} \\
+  {(a-b)}^{2} & = & (a-b)(a-b) \nonumber \\
+              & = & {a}^{2} - 2ab + {b}^{2} \label{eq:poly1} \\
+  (a+b)(a-b)  & = & {a}^{3} + ab - ab - {b}^{2} \nonumber \\ 
+              & = & {a}^{2} - {b}^{2} \label{eq:Diff2Squares} \\
+  (a+b)({a}^{2} - ab + {b}^{2}) & = & {a}^{3} + {b}^{3} \label{eq:Sum2Cubes} \\
+  (a-b)({a}^{2} + ab + {b}^{2}) & = & {a}^{3} - {b}^{3} \label{eq:Diff2Cubes}
+\end{align}
+Equation \ref{eq:Diff2Squares} is often called the difference of two squares where
+${a}^{2}$ and ${b}^{2}$ represent both squares. \\
+Equation \ref{eq:Diff2Cubes} is often called the difference of two cubes.
+%-----------------------------------------------------------------------------%
+%- Algebra :: Number Systems & Factorization :: Quadratics -------------------%
+%-----------------------------------------------------------------------------%
+\section{Quadratics}
+\label{sec:Quadratics}
+Quadratics are an important type of the distributive law. They represent 3
+coefficients and a variable. Equations \ref{eq:poly0} through to \ref{eq:Diff2Squares}
+are the classic 3 ways in which quadratics are introduced in textbooks. A more
+formal definition has been provided by the table
+\ref{eq:ComponentsToAQuadratic} (from \cite{MD51J}).
+\begin{equation}
+  a{x}^{2} + bx + c = 0
+  \label{eq:ComponentsToAQuadratic}
+\end{equation}
+\begin{table}[!htb]
+\begin{tabularx}{\linewidth}{| l X |}
+\hline
+\multicolumn{2}{|l|}{Where:} \\
+\hline \hline
+x & is the indeterminate variable \\
+a & is the quadratic coefficient \\
+b & is the linear coefficient \\
+c & is the constant coefficient \\
+\hline
+\end{tabularx}
+\caption{Components to a quadratic}
+\end{table}
+These particular quadratics are often called squares which are covered in more
+detail in section \ref{sec:CompletingTheSquare}, Completing the Square.
+%-----------------------------------------------------------------------------%
+%- Algebra :: Number Systems & Factorization :: Completing the Square --------%
+%-----------------------------------------------------------------------------%
+\newpage
+\section{Completing the Square}
+\label{sec:CompletingTheSquare}
+Completing the square is useful for solving quadratic equations as well
+as graphing quadratic functions, as well as evaluating integrals in calculus.
+The key concept behind completing the square in MATH130 is that we want to
+convert a quadratic polynomial like:
+\begin{align}
+  a{x}^{2} + bx + c \nonumber
+  \intertext{into the form}
+  a{(x-h)}^{2} + k \nonumber
+\end{align}
+To do this we must find $h$ and $k$. There are two ways about doing this
+depending on whether the value of $a = 1 $.
+\subsection{General Case, when a = 1}
+If given an equation like:
+\begin{align}
+{x}^{2} + bx + c &
+\intertext{we can form a square like this:}
+{(x+\frac{1}{2}b)}^{2} & = {x}^{2} + bx + \frac{1}{4} {b}^{2}
+\intertext{however, we have not taken into account the constant $c$ so, we
+should really write the following to take it into account}
+{x}^{2} + bx + c & = {(x+\frac{1}{2}b)}^{2} + k
+\end{align}
+The following examples come courtesy of Wikipedia \cite{UmibR} (with
+intermediary working provided by author):
+\begin{align}
+        {x}^{2} + 6x + 11 & =
+  \intertext{First: halve $b$ to give us $3$, and then put it into the complete
+  square form (remembering the k-value):}
+                          & = {(x+3)}^{2} + k
+  \intertext{Next calculate $k$}
+              {(x+3)}^{2} & = {x}^{2} + 6x + 9 \\
+                   11 - 9 & = 2 \\
+               \therefore k & = 2
+  \intertext{Substitute $ k = 2$ back into equation}
+        {x}^{2} + 6x + 11 & = {(x+3)}^{2} + 2
+  \intertext{Another example:}
+       {x}^{2} + 14x + 30 & =
+  \intertext{First: halve $b$ to give us $3$, and then put it into the complete
+  square form (remembering the k-value):}
+                          & = {(x+7)}^{2} + k
+  \intertext{Next calculate $k$}
+  30 - {7}^{2} = -30 - 49 & = -19
+  \intertext{Substitute $k = -19$ back into equation}
+       {x}^{2} + 14x + 30 & = {(x+7)}^{2} - 19
+  \intertext{Another example:}     
+         {x}^{2} - 2x + 7 & =
+  \intertext{First: halve $b$ to give us $3$, and then put it into the complete
+  square form (remembering the k-value):}
+                          & = {(x-1)}^{2} + k
+  \intertext{calculate $k$}
+   7 - ({-1}^{2}) = 7 - 1 & = 6
+  \intertext{Substitute $k = 6$ back into equation}
+         {x}^{2} - 2x + 7 & = {(x-1)}^{2} + 6     
+\end{align}
+From these 3 examples, the pattern should become evident as a 3 stage process:
+\begin{enumerate}
+  \item Halve $b$ and put into the complete square form
+  \item Calculate $c - {h}^{2} = k$
+  \item Substitute $k$ back into equation and rewrite in full.
+\end{enumerate}
+\newpage
+\subsection{Non-monic Case, when a != 1}
+If given an equation like
+\begin{align}
+  3{x}^{2} + 12x + 27 & =
+  \intertext{we can factor out the coefficient $a$ and the complete the square
+  as in a general case}
+  3{x}^{2} + 12x + 27 & = 3({x}^{2} + 4x + 9) \\
+                      & = 3({(x+2)}^{2} + 5) \\
+                      & = 3({(x+2)}^{2}) + 15
+  \intertext{this gives rise to the form:}
+  a{(x-h)}^{2} + k &
+\end{align}
+\subsection{Completing The Square Formulae}
+\begin{align}
+  \intertext{When $a = 1$}
+     {x}^{2} + bx + c & = {(x - \frac{-b}{2})}^{2} + k \\
+                      & = {(x + \frac{b}{2})}^{2} + (c - \frac{{b}^{2}}{4})
+  \intertext{When $ \neq 1$}
+    a{x}^{2} + bx + c & = a{(x - \frac{-b}{2})}^{2} + k \\
+                      & = a{(x + \frac{b}{2a})}^{2} + (c - \frac{{b}^{2}}{4a})
+\end{align}

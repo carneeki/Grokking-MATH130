@@ -1,0 +1,38 @@
+%-----------------------------------------------------------------------------%
+%- Calculus :: Lines & Limits ------------------------------------------------%
+%-----------------------------------------------------------------------------%
+\newpage
+\section{Limits}
+\label{sec:Limits}
+There are some types of functions you may be asked to evaluate for various
+values of $x$ which are unreasonable. One such example is the hyperbolic
+function $f(x) = \frac{1}{x} $ where $x = 0$. In MATH130, we consider this value
+an illegal or ``undefined'' value - but there is still a way to evaluate it.
+Consider taking a table of values\ref{tab:LimitsHyperbolaExample}:
+\begin{table}[!hbt]
+\label{tab:LimitsHyperbolaExample}
+\begin{tabularx}{\textwidth}{| c || r | r | r | r | r | r | r | r | r | r | X |}
+  \hline
+  x & 5    & 4    & 3    & 2    & 1    & 0.8  & 0.6  & 0.4  & 0.2  & 0.1 & \ldots \\
+  \hline
+  y & 0.20 & 0.25 & 0.33 & 0.50 & 1.00 & 1.25 & 1.67 & 2.50 & 5.00 & 10.00 &
+  \ldots \\
+  \hline
+\hline
+\end{tabularx}
+\caption{Table of values for hyperbolic function $f(x) = \frac{1}{x}$}
+\end{table}
+Note how as $x$ gets smaller, $y$ gets bigger. The way this is formally worded
+is ``as $x$ approaches $0$, $y$ approaches infinity, and written:
+\begin{align}
+  x \to 0 & \; f(x) \to \infty
+\end{align}
+From this point, we can see that $x$ cannot be zero, however all other
+$\mathbb{R}$ are acceptable. Building on this we can define it as a set:
+\begin{align}
+  & x \to 0 \; f(x) \to \infty \nonumber \\
+  & x \in \{ \mathbb{R}, x \neq 0 \}
+\end{align}
+The key to understanding how limits work is to identify what $x$ values are
+undefined or otherwise illegal. Key indicators of this phenomena are when you
+see $x$ inside a squareroot sign, or as a divisor in a quotient: 

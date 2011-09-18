@@ -1,0 +1,46 @@
+%-----------------------------------------------------------------------------%
+%- Algebra :: Parabolas ------------------------------------------------------%
+%-----------------------------------------------------------------------------%
+\chapter{Parabolas}
+\label{chap:Parabolas}
+\begin{figure}[!hbt]
+\label{fig:FuncGraphParabola}
+\begin{tikzpicture}[scale=1]
+  \def\xmin{-5}
+  \def\xmax{5}
+  \def\ymin{-2}
+  \def\ymax{5}
+  \clip
+    (\xmin,\ymin) rectangle (\xmax,\ymax);
+  \filldraw[fill=blue,fill opacity=0.15, color=neekiBlue, <->, variable=x]
+    plot[id=parabola, raw gnuplot, smooth]
+    function{
+      set xrange [\xmin:\xmax];
+      set yrange [\ymin:\ymax];
+      plot x**2;}
+    node[right] {$f(x) = {x}^{2}, x \in \{ -5,5 \} $};
+  % grid
+  \draw[very thin, color=black!30, ystep=1, xstep=1]
+    (\xmin,\ymin) grid (\xmax,\ymax);
+  % x-axis
+  \draw[<->]
+    (\xmin,0) -- (\xmax,0) node[right] {$x$};
+  % y-axis
+  \draw[<->]
+    (0,\ymin) -- (0,\ymax) node[above] {$f(x)$};
+\end{tikzpicture}
+\caption{A parabolic function: $f(x) = {x}^{2}$}
+\end{figure}
+A parabolic function in the form $f(x) = mx^2 + c$
+\begin{table}[!hbt]
+\label{tab:PartsOfAParabolicFunction}
+\begin{tabularx}{\linewidth}{| l X |}
+  \hline
+  \multicolumn{2}{|l|}{Where:} \\
+  \hline \hline
+  m & represents a component of the gradient (covered more in section
+  \ref{sec:Differentiation} ``Differentiation''). \\ x & is the independent
+  variable\\ y & is the dependent variable\\
+\hline
+\end{tabularx}
+\end{table}

@@ -1,0 +1,50 @@
+%-----------------------------------------------------------------------------%
+%- Calculus :: Differentiation of Trigonometric Functions --------------------%
+%-----------------------------------------------------------------------------%
+\chapter{Differentiation of Trigonometric Functions}
+\label{chap:DifferentiationOfTrigFunctions}
+Consider the plot of the function $f(x) = sinx$
+\begin{figure}[!htb]
+\label{fig:GraphTemplate}
+\begin{tikzpicture}[samples=50,scale=1]
+   \draw[color=neekiRed,domain=0:pi,variable=x]
+     plot[id=sinx] function{1/x}
+     node[right] {$f(x) = \frac{1}{x}, x \in \{ -5,-\frac{1}{5} \} $};
+%   \draw[color=neekiBlue,domain=0:5,variable=x]
+  \draw[<->]  (0.0,-5.0) -- (0.0,5.0) node[above] {$f(x)$};
+  \draw[<->] (-5.0, 0.0) -- (5.0,0.0) node[right] {$x$};
+\end{tikzpicture}
+\caption{A hyperbolic function: $f(x) = \frac{1}{x}$}
+\end{figure}
+A hyperbolic function in the form $ f(x) = \frac{1}{x}$
+\begin{table}[!hbt]
+\label{tab:GraphTemplateParts}
+\begin{tabularx}{\linewidth}{| l X |}
+  \hline
+  \multicolumn{2}{|l|}{Where:} \\
+  \hline \hline
+  x & is the independent variable\\
+  y & is the dependent variable\\
+\hline
+\end{tabularx}
+\end{table}
+%
+Here are some equations that are handy to remember. Source \cite{RHBDiffQuickStart}.
+\begin{align}
+  \derivative {x}^{n} & = n{x}^{n-1} \\
+  \derivative {\emph{e}}^{ax} & = a{\emph{e}}^{ax} \\
+  \derivative ln(ax) & = \frac{1}{x} \\
+  \derivative sin(ax) & = (a)cos(ax) \\
+  \derivative cos(ax) & = (-a)sin(ax) \\
+  \derivative tan(ax) & = (a){sec}^{2}(ax) \\
+  \derivative sec(ax) & = (a)sec(ax)tan(ax) \\
+  \derivative csc(ax) & = (-a)csc(ax)cot(ax) \\
+  \derivative cot(ax) & = (-a){csc}^{2}(ax) \\
+  \derivative {sin}^{-1}(\frac{x}{a}) & = \frac{1}{\sqrt[2]{{a}^{2} - {x}^{2}}}
+  \\
+  \derivative {sin}^{-1}(\frac{x}{a}) & = \frac{-1}{\sqrt[2]{{a}^{2} - {x}^{2}}}
+  \\
+  \derivative {sin}^{-1}(\frac{x}{a}) & = \frac{a}{\sqrt[2]{{a}^{2} - {x}^{2}}}  
+\end{align}
+For a proof, refer to appendix section \ref{sec:DiffTrigProof},
+``Differentiation of Trig Functions Proof''

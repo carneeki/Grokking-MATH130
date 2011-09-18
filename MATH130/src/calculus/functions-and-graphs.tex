@@ -1,0 +1,298 @@
+\chapter{Calculus}
+\label{chap:Calculus}
+%-----------------------------------------------------------------------------%
+%- Calculus :: Functions & Graphs --------------------------------------------%
+%-----------------------------------------------------------------------------%
+\chapter{Functions \& Graphs}
+\label{chap:FunctionsAndGraphs}
+If you are a computer programmer, the best way to think of a function in maths
+is the same way you think of a function in a functional programming language. If
+you are not a computer programmer, perhaps the best way to think of a function
+is like a little machine that takes a number, it does something to that number,
+and it displays an output.\footnote{Congratulations, you are now thinking like a
+programmer as well as a mathematician!} Here is an example of a function that
+simply ``doubles'' the input:
+\begin{align}
+  f(x) & = 2x
+  \intertext{Here is what happens when we input the number $5$ into our
+  function...}
+  f(5)  & = 2(5) \\
+        & = 10
+  \intertext{And now the number $-5$:}
+  f(-5) & = 2(-5) \\
+        & = -10
+  \intertext{Functions can be (and often are) more complex, here's a
+  quadratic function:}
+  f(a)  & = {(a+3)}^{2} \\
+        & = (a+3)\,(a+3) \\
+        & = {a}^{2} + 6a + 9
+  \intertext{And if we substitute $5$ in for $a$ we get:}
+  f(5)  & = {5}^{2} + 6(5) + 9\\
+        & = 25 + 30 + 9 \\
+        & = 64
+  \intertext{For completeness, if we substitute $-5$ in for $a$ we get:}
+  f(-5) & = {-5}^{2} + 6(-5) + 9\\
+        & = 25 -6(5) + 9 \\
+        & = 4
+\end{align}
+When it comes to graphing functions, you can rename your $y$ axis to equal
+$f(x)$, so graphing your function is now the same as before graphs with one
+additional bonus: now you can let $x$ be an abitrary number\footnote{This is
+called a \emph{independent variable}} as part of the function. Figure
+\ref{fig:FuncGraphLinear} shows a function, $f(x) = {x}$.
+\\
+Types of graphs that can be encountered in MATH130:
+\begin{enumerate}
+  \item Line \ref{fig:FuncGraphLinear}
+  \item Parabola \ref{fig:FuncGraphParabola}
+  \item Hyperbola \ref{fig:FuncGraphHyperbola}
+  \item Cubic \ref{fig:FuncGraphCubic}
+  \item Absolute \ref{fig:FuncGraphAbsolute}
+\end{enumerate}
+
+A function has a \emph{domain} which is all the acceptable values of $x$ as
+inputs that the function can use. Some examples:
+
+\begin{align}
+   f(x) & = x^{2} \nonumber \\
+   domain: { 0 \leq x \geq 0 } \\
+   \\
+   f(x) & = \frac{1}{x} \nonumber \\
+   domain: { x \neq 0 } \\
+   \\
+   f(x) & = \sqrt{x} \nonumber \\
+   domain: { x \geq 0 } \\
+   \\
+   f(x) & = \sqrt{x-2} + \sqrt{5 + x} \nonumber \\
+   domain: (x-2) & \geq 0 \\
+      \therefore & \geq 2 \\
+      \and \\
+   domain: 5 + x & \geq 0 \\
+      \therefore & \geq -5 \\
+   and so:\\
+   {x: x \geq 2}
+\end{align}
+The last equation demonstrates that the domain is the more restrictive of
+the conditions of the two ``sub-domains'' of each square root portion of the
+function.
+
+\section{Arithmetic With Functions}
+\label{sec:ArithmeticWithFunctions}
+
+Suppose we have:
+\begin{align}
+  f(x) & = x^{2} + 1 \\
+  g(x) & = \frac{1}{1-x} \\
+  \intertext{and}
+  h    & = f(x) + g(x) \\
+  \intertext{then}
+       & = x^{2} + 1 + \frac{1}{1-x} \\
+  \intertext{however, if}
+  i    & = f(x) \times g(x) \\
+  \intertext{then}
+       & = (x^{2} + 1) \times (\frac{1}{1-x}) \\
+  \intertext{however, if}
+  j    & = f \circ g \\
+  \intertext{then}
+       & = j(x) = f(g(x)) \\
+       & = (\frac{1}{1-x})^{2} + 1
+\end{align}
+\quote{``Remember to ``algebra'' the function to minimise them and to see if
+they equal a simpler equation''}\footnote{according to Gareth Richardson}
+
+%
+\clearpage
+\section{Linear Functions}
+\label{sec:LinearFunctions}
+\begin{figure}[!hbt]
+\label{fig:FuncGraphLinear}
+\begin{tikzpicture}[scale=0.5]
+  \label{fig:FuncGraphLine}
+  \draw[<->]  (-3.9, -1.9) -- (3.9,9.9) node[right] {$f(x) = mx + b$};
+  \draw[<->]   (0.0, -1.9) -- (0.0,9.9) node[above] {$f(x)$};
+  \draw[<->]  (-3.9,  0.0) -- (3.9,0.0) node[right] {$x$};
+\end{tikzpicture}
+\caption{A linear function: $f(x) = mx + b$}
+\end{figure}
+%
+Linear function in the \emph{General Form} $Ax + By + C= 0$. It may also take
+the handy \emph{Slope-intercept form} $ f(x) = mx + b $. This is useful because
+the gradient of the line cane be read straight from the equation, and is just
+a rearrangement of the general form. 
+\begin{table}[!hbt]
+\label{tab:PartsOfALinearFunction}
+\begin{tabularx}{\linewidth}{| l X |}
+  \hline
+  \multicolumn{2}{|l|}{Where:} \\
+  \hline \hline
+  m & represents the gradient\\
+  x & is the independent variable\\
+  y & is the dependent variable\\
+\hline
+\end{tabularx}
+\end{table}
+
+If given only 2 points and we are to find the equation of the line:
+\begin{enumerate}
+  \item we need to determine the gradient
+  \item we need to substitute the x,y values in to form the equation
+\end{enumerate}
+
+Determining the gradient is done using the formula:
+\begin{align}
+  \frac{y_{2} - y_{1}}{x_{2} - x_{1}} & = m
+\end{align}
+
+Example: we are given the points (7,1), (2,5) and need to find the equation of
+the line connecting these points.
+\begin{align}
+  \frac{5 - 1}{2 - 7} & = \frac{4}{-5}\\
+    & = -\frac{4}{-5}
+\end{align}
+
+If we want to find a parallel line passing through specific points, remember
+that the gradient ($m$) must be the same in both equations, and we must
+subtitute the $x$ and $y$ values for the specific points into the new arbitrary
+equation to solve for the new equation:
+
+Example: find an equation for the line through $(3,4)$ and parallel to the line
+through $(7,1)$ and $(2,5)$ from out previous example:
+\begin{align}
+  \intertext{let}
+  m & = -\frac{4}{5} \nonumber \\
+  \intertext{substitute x,y values into slope-intercept equation}
+  y & = mx + b \nonumber \\
+  4 & = -frac{4}{5}\times3 + b
+  \intertext{and solve for b}
+  4 + \frac{4}{5}\times3 & = b \\ 
+  4 + \frac{12}{5}       & = b \\
+  \frac{32}{5}           & = b \\
+  \therefore y & = -\frac{4}{5}x + \frac{32}{5}
+\end{align}
+%
+\clearpage
+\section{Parabolic Functions}
+\label{sec:ParabolicFunctions}
+For an introduction to parabolas, it is highly recommended to read chapter
+\ref{chap:Parabolas}, ``Parabolas''.
+\clearpage
+\section{Hyperbolic Functions}
+\begin{figure}[!htb]
+\label{fig:FuncGraphHyperbola}
+\begin{tikzpicture}[samples=50,scale=1]
+   \draw[color=neekiRed,domain=-5:-0.2,variable=x]
+     plot[id=hyperbx.neg] function{1/x}
+     node[right] {$f(x) = \frac{1}{x}, x \in \{ -5,-\frac{1}{5} \} $};
+   \draw[color=neekiBlue,domain=0.2:5,variable=x]
+   plot[id=hyperbx.pos] function{1/x}
+     node[right] {$f(x) = \frac{1}{x}, x \in \{ \frac{1}{5},5 \} $};
+  \draw[<->]  (0.0,-5.0) -- (0.0,5.0) node[above] {$f(x)$};
+  \draw[<->] (-5.0, 0.0) -- (5.0,0.0) node[right] {$x$};
+\end{tikzpicture}
+\caption{A hyperbolic function: $f(x) = \frac{1}{x}$}
+\end{figure}
+A hyperbolic function in the form $ f(x) = \frac{1}{x}$
+\begin{table}[!hbt]
+\label{tab:PartsOfAHyperbolicFunction}
+\begin{tabularx}{\linewidth}{| l X |}
+  \hline
+  \multicolumn{2}{|l|}{Where:} \\
+  \hline \hline
+  x & is the independent variable\\
+  y & is the dependent variable\\
+\hline
+\end{tabularx}
+\end{table}
+%
+\clearpage
+\section{Cubic Functions}
+\begin{figure}[!hbt]
+\label{fig:FuncGraphCubic}
+\begin{tikzpicture}[scale=1]
+  \def\xmin{-5}
+  \def\xmax{5}
+  \def\ymin{-5}
+  \def\ymax{5}
+  \clip
+    (\xmin,\ymin) rectangle (\xmax,\ymax);
+  \draw[color=neekiBlue, <->, variable=x]
+    plot[id=parabola, raw gnuplot, smooth]
+    function{
+      set xrange [\xmin:\xmax];
+      set yrange [\ymin:\ymax];
+      plot x**3;}
+    node[right] {$f(x) = {x}^{3}, x \in \{ -5,5 \} $};
+  % grid
+  \draw[very thin, color=black!30, ystep=1, xstep=1]
+    (\xmin,\ymin) grid (\xmax,\ymax);
+  % x-axis
+  \draw[<->]
+    (\xmin,0) -- (\xmax,0) node[right] {$x$};
+  % y-axis
+  \draw[<->]
+    (0,\ymin) -- (0,\ymax) node[above] {$f(x)$};
+\end{tikzpicture}
+\caption{A cubic function: $f(x) = {x}^{3}$}
+\end{figure}
+A cubic function in the form $ f(x) = mx^3 + c$
+\begin{table}[!hbt]
+\label{tab:PartsOfACubicFunction}
+\begin{tabularx}{\linewidth}{| l X |}
+  \hline
+  \multicolumn{2}{|l|}{Where:} \\
+  \hline \hline
+  m & represents a component of the gradient (covered more in section
+  \ref{sec:Differentiation} ``Differentiation''). \\ x & is the independent
+  variable\\ y & is the dependent variable\\
+  x & is the independent variable\\
+  y & is the dependent variable\\
+\hline
+\end{tabularx}
+\end{table}
+%
+\clearpage
+\section{Absolute Value Functions}
+\begin{figure}[!hbt]
+\label{fig:FuncGraphAbsolute}
+\begin{tikzpicture}[scale=1]
+ \def\xmin{-5}
+ \def\xmax{5}
+ \def\ymin{-2}
+ \def\ymax{5}
+ \clip
+   (\xmin,\ymin) rectangle (\xmax,\ymax);
+ \filldraw[fill=blue,fill opacity=0.15, color=neekiBlue, <->, variable=x]
+   plot[id=parabola, raw gnuplot, smooth]
+   function{
+     set xrange [\xmin:\xmax];
+     set yrange [\ymin:\ymax];
+     plot abs(x);}
+   node[right] {$f(x) = |x|, x \in \{ -5,5 \} $};
+ % grid
+ \draw[very thin, color=black!30, ystep=1, xstep=1]
+   (\xmin,\ymin) grid (\xmax,\ymax);
+ % x-axis
+ \draw[<->]
+   (\xmin,0) -- (\xmax,0) node[right] {$x$};
+ % y-axis
+ \draw[<->]
+   (0,\ymin) -- (0,\ymax) node[above] {$f(x)$};
+\end{tikzpicture}
+\caption{A function of absolute value: $f(x) = |x|$}
+\end{figure}
+An absolute function in the form $ f(x) = |x|$
+\begin{table}[!hbt]
+\label{tab:PartsOfAnAbsoluteFunction}
+\begin{tabularx}{\linewidth}{| l X |}
+  \hline
+  \multicolumn{2}{|l|}{Where:} \\
+  \hline \hline
+  m & represents a component of the gradient (covered more in section
+  \ref{sec:Differentiation} ``Differentiation''). \\ x & is the independent
+  variable\\ y & is the dependent variable\\
+  x & is the independent variable\\
+  y & is the dependent variable\\
+\hline
+\end{tabularx}
+\end{table}
+\clearpage

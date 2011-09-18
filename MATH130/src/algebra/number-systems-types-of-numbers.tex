@@ -1,0 +1,98 @@
+%-----------------------------------------------------------------------------%
+%- Algebra :: Types of Numbers & Symbols Used --------------------------------%
+%-----------------------------------------------------------------------------%
+\chapter{Types of Numbers \& Symbols Used}
+\label{chap:TypesOfNumbersAndSymbolsUsed}
+Maths is pretty much a written language used to convey what people want to do
+to numbers, variables, or other bits of information. There are various types
+of numbers, and sometimes special symbols are used to denote what conditions
+must be placed on those numbers.
+\section{Types of Numbers}
+\label{sec:TypesOfNumbersUsed}
+Table \ref{tab:TypesOfNumbers} outlines the types of numbers encountered in
+MATH130, followed by a few additional types of numbers that are handy to bear
+in mind.
+\begin{table}[!htb]
+\label{tab:TypesOfNumbers}
+\begin{tabularx}{\linewidth}{| c | l | c | X |} \hline
+  Symbol & Name & In MATH130 & Description \& Example \\ \hline \hline
+  $\mathbb{N}$ & Natural Number     & Yes & Any whole number greater than
+                                            zero. $1, 2, 3 $ \\ \hline
+  $\mathbb{R}$ & Real Numbers       & Yes & Any number along a continuum.
+                                            $-1, 0, 1, \pi $ \\ \hline
+  $\mathbb{Z}$ & Integers           & Yes & Any whole number.
+                                            $-1, 0, 1 $ \\ \hline
+  $\mathbb{I}$ & Irrational Numbers & Yes & Numbers which cannot be expressed
+                                            as a fraction.
+                                            $e, \pi, \sqrt[2]{2} $ \\ \hline
+  $\mathbb{Q}$ & Rational Numbers   & Yes & Numbers which can be represented as a
+                                            fraction.
+                                            $ \frac{1}{2}, 1, \frac{0}{4} $
+                                            \\ \hline
+  $\mathbb{C}$ & Complex Numbers    & Yes \footnote{Only a brief introduction
+  to complex numbers is covered, and traditionally it is at the end of MATH130
+  incase there isn't enough time to cover it.}
+                                            & Numbers which have both a real
+                                            part, and an imaginary part.
+                                            $ \frac{2}{-1} = i $ \\ \hline
+  $\mathbb{P}$ & Prime Numbers      & No \footnote{They come up, but really, it's
+ only in factorization.}
+                                            & Numbers which are divisible only
+                                            by themselves and one.
+                                            $1, 2, 3, 5, 7, 11, 13 $ \\  \hline
+\end{tabularx}
+\caption{Types Of Numbers}
+\end{table}
+\newpage
+\section{Types of Symbols}
+\label{sec:TypesOfSymbols}
+Table \ref{tab:TypesOfSymbols} outlines the types of symbols you are likely
+to encounter in MATH130. This list is partially built from \citet{IjPb7}.
+\begin{table}[!htb]
+\label{tab:TypesOfSymbols}
+\begin{tabularx}{\linewidth}{| c || c | X |}
+  \hline
+  Symbol & Example & Read as \\ \hline \hline
+  $ \in    $ & $ x \in    \mathbb{R} $ & x is an element of $\mathbb{R}$ (real
+                                       numbers)                       \\ \hline
+  $ \notin $ & $ x \notin \mathbb{R} $ & x is not an element of $\mathbb{R}$
+                                       (real numbers)                 \\ \hline
+  $ \cup   $ & $ \mathbb{I} \cup \mathbb{Q} \in \mathbb{R}$
+                                       & The set $\mathbb{I}$ (irrational
+                                       numbers) and $ \mathbb{Q} $ (rational
+                                       numbers) are in set $\mathbb{R}$ (real
+                                       numbers).                      \\ \hline
+  $ =       $ & $ x = y       $ & x is equal to y                     \\ \hline
+  $ \neq    $ & $ x \neq    y $ & x is not equal to y                 \\ \hline
+  $ \approx $ & $ x \approx y $ & x is approximately equal to y       \\ \hline
+  $ \equiv  $ & $ x \equiv  y $ & x is equivalent to y                \\ \hline
+  $ <       $ & $ x < y       $ & x is less than y                    \\ \hline
+  $ >       $ & $ x > y       $ & x is greater than y                 \\ \hline
+  $ \leq    $ & $ x \leqslant $ & x is equal to or less than y        \\ \hline
+  $ \geq    $ & $ x \geqslant $ & x is equal to or greater than y     \\ \hline
+  $ f(x)    $ & $ f(x) = mx + b $ & function of x is equal to mx + b  \\ \hline
+  $ \sum    $ & $ \sum_{i=1}^{10} t_i $ & sum of terms t for values 1 to 10
+                                                                      \\ \hline
+  $ \int    $ & $ \int_0^\infty e^{-x}\,\mathrm{d}x $
+                                & integrate $ e^{-x} $ from 0 to $ \infty $
+                                with respect to x                     \\ \hline
+  $ f(x)\derivative $ & $ f(x)\derivative $ & differentiate $f(x)$ with respect
+                                            to x.                      \\ \hline
+  $ y'~\mathrm{d}x $ & $ y'~\mathrm{d}x   $ & differentiate $y$ with respect to
+                                            x.                         \\ \hline
+\end{tabularx}
+\caption{Types of mathematical symbols}
+\end{table}
+
+\section{A Brief Interlude on Language}
+\label{sec:ABriefInterludeOnLanguage}
+An expression and an equation are \emph{different} things, despite the fact that
+they look similar. An expression might be something like $3x - 8$, however, $x$
+has no value. By the fact that $3x - 8$ has no value \emph{assigned} to it, it
+is an expression. If we were to assign a value to it, $3x-8 = 0$ then we can
+call it an equation.
+
+\begin{align}
+  3x - 8 & & \text{an expression} \nonumber   \\
+  3x - 8 & = 0 & \text{an equation} \nonumber \\
+\end{align}

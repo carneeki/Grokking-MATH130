@@ -1,0 +1,201 @@
+%-----------------------------------------------------------------------------%
+%- Calculus :: Differentiation -----------------------------------------------%
+%-----------------------------------------------------------------------------%
+\newpage
+\chapter{Differentiation}
+\label{sec:Differentiation}
+In overly simplified terms, differentiation is the process of taking a curve
+on a graph and finding what the gradient of that curve is. There are 4
+methods which are useful for MATH130. These are:
+\begin{itemize}
+  \item Power Method (well, that's what I call it)
+  \item Product Rule
+  \item Quotient Rule
+  \item Chain Rule
+\end{itemize}
+Because the notion of calculus was a joint effort between several
+mathematicians\footnote{Gottfried Leibniz woke up one day and thought ``I'm
+going to invent a whole new branch of mathematics to annoy students for the
+next few hundred years.'' Approximately 10 years earlier, Sir Isaac Newton
+thought ``I know what will really get Leibniz's goat... I'll get the drop on
+him with this idea I have.'' Consequently, the two never became friends.}
+operating in secret, and without a project manager there are two important
+notations.\footnote{there are more, but we don't need to know about them for
+MATH130}
+\\
+The first notation is the ``dash'', ``prime'', or ``Lagrange's'' notation and
+appears as such:
+\begin{align}
+   f(x) & = ... \\
+  f'(x) & = ...
+  \intertext{Secondly is Leibniz's notation:}
+  \derivative f(x) &= ...
+  \intertext{Euler's notation: (not so common in MATH130)}
+   Df(x) & = ... \\
+\end{align}
+Each notation has their merits and usefulness; Lagrange's form is neat and
+compact for simple derivatives, however Leibniz's notation describe what is
+being differentiated and what is in respect to, which is useful for the chain
+rule discussed shortly. As such, it is important to be familiar with all the
+above forms as they will often be used interchangeably for brevity,
+neatness and ease of memorising them. In terms of how you answer a question - 
+if there is no stated style of notation, go for what ``looks'' like it works
+\footnote{Munner's Law: If it looks wrong it probably is. -- Cliff Munro,
+1996 Cranbrook School, Design and Technology teacher. Author's corollary: If it
+doesn't look wrong, hopefully it's right.} and is clear and neat. Clear and
+neat usually results in the marker understanding what you are on about, so even
+if you are wrong, you might get partial marks.
+\\
+A useful tip, when you are first getting used to differentiation, it may be
+handy to use Leibniz's notation and say in your mind what you are
+differentiating, and what it is in respect to.
+%-----------------------------------------------------------------------------%
+%- Calculus :: Differentiation :: Power Method -------------------------------%
+%-----------------------------------------------------------------------------%
+\section{Power Method}
+\label{sec:PowerMethod}
+The power method is by far the easiest to understand of all 3 methods, and if
+possible, it may be easier to rearrange a part of an equation into index
+notation and differentiate that way. This method is not always possible,
+but by using the power laws from the series of equations starting with
+\ref{eq:IndexLaw_Power0}, sometimes a shortcut can be made, which is why
+Section \ref{sec:ExponentialsAndLogarithms} important to know very well.
+\\
+Put simply, the power method can be understood as ``multiply the base by the
+power and subtract one from the power'', and is demonstrated in equation
+\ref{eq:DiffPowerMethod} below.
+\begin{align}
+  f(x) & =   {x}^{a} + k \label{eq:DiffPowerMethodKValue} \\
+  \derivative f(x) & =   a{x}^{a-1} \label{eq:DiffPowerMethod}
+\end{align}
+The value $k$ represents a constant, often just a plain number, though it
+doesn't have to be. The important thing about the $k$-value in this example is
+that there is no $x$ component. Hence it ``disappears''.\\
+Functions may have more than one term, consider the following quadratic:
+\begin{align}
+  f(x)             & = {x}^{2} + 2xb + {b}^{2} \\
+  \derivative f(x) & = 2{x}^{1} + 2b \\
+                   & = 2(x+b) \label{eq:DiffPowerMethodRespectTo}
+\end{align}
+Here we are asked to differentiate with respect to $x$ (denoted by the symbol
+$\derivative$). To do this, we bring the power of ${x}^{2}$ to the front, and
+subtract 1 to give $2{x}^{1}$, and we do the same for the term ${2xb}$ by
+looking at the invisible power (it's there, we just don't write it out of
+laziness!\footnote{Or convenience, neatness, brevity.}): $2*{x}^{1}*b$
+%-----------------------------------------------------------------------------%
+%- Calculus :: Differentiation :: Product Rules ------------------------------%
+%-----------------------------------------------------------------------------%
+\section{Product Rule}
+\label{sec:ProductRule}
+A function $f(x)$ is a product of two functions, $u(x) * v(x)$. For example:
+\begin{align}
+  f(x) & = {x}^{3} sin(x) \label{eq:DiffProdEx1}\\
+       & = u(x)v(x)
+\end{align}
+In this case, we can see that $u(x) = {x}^{3}$ and $v(x) = sin(x)$. While there
+is a mathematical proof\footnote{refer to section \ref{eq:ProofOfProductRule} of
+appendix} it is not necessary for MATH130. All we need to know is:
+\begin{align}
+              f(x) & = u(x)*v(x) \\
+  \derivative f(x) & = u'(x)*v(x) + v'(x)*u(x)
+\end{align}
+So for \ref{eq:DiffProdEx1}, to find the derivative:
+\begin{align}
+              f(x) & = {x}^{3}\,sin(x) \nonumber \\
+  \derivative f(x) & = \derivative ({x}^{3}) * sin(x) +
+                       {x}^{3} * \derivative (sin(x)) \\
+                   & = {3x}^{2}*sin(x) + {x}^{3}*cos(x)
+\end{align}
+This example makes use of a derivative of a trigonometric function. This will be
+explored in chapter \ref{chap:DifferentiationOfTrigFunctions}, ``Differentiation
+of Trig Functions'' - until then, just ignore the trigonometric part.
+%-----------------------------------------------------------------------------%
+%- Calculus :: Differentiation :: Quotient Rule ------------------------------%
+%-----------------------------------------------------------------------------%
+\section{Quotient Rule}
+\label{sec:QuotientRule}
+A quotient is a division - just like from primary school: $\frac{u}{v}$.
+Previously we may have called the $u$ part the numerator, nowadays it is
+called the \emph{dividend}, and the $v$ denominator previously called the
+denominator is now called the \emph{divisor}, with the \emph{quotient} being
+the result.
+\\
+To do quotient rule differentiation, we are actually using a modified version
+of the product rule, however for MATH130 it is only required to think of it as a
+separate rule.\footnote{Mathematical proof of this is in section 
+\ref{eq:ProofOfQuotientRule} of the appendix.} The rule takes the form of:
+\begin{align}
+  f(x) & = \frac{u}{v} \\
+  f(x)\derivative & = \frac{u\derivative\,v - u\,v\derivative}{{v}^{2}}
+                      \label{eq:DiffQuot1}
+  \intertext{ Although both \ref{eq:DiffQuot1} and \ref{eq:DiffQuot2} are
+  identical, \ref{eq:DiffQuot2} is tidier, and may be easier to remember.}
+  f'(x) & = \frac{u'\,v - u\,v'}{{v}^{2}} \label{eq:DiffQuot2}
+\end{align}
+Consider the following example:
+\begin{align}
+  f(x)  & = \frac{{x}^{2}}{4x} \\
+  f'(x) & = (4x){x}^{2}\derivative - {x}^{2} (4x\derivative) \\
+  f'(x) & = (4x)2x - {x}^{2}\,(4) \\
+  f'(x) & = 8{x}^{2} - 4{x}^{2} \\
+  f'(x) & = 4{x}^{2}
+\end{align}
+%-----------------------------------------------------------------------------%
+%- Calculus :: Differentiation :: Chain Rule ---------------------------------%
+%-----------------------------------------------------------------------------%
+\newpage
+\section{Chain Rule}
+\label{sec:ChainRule}
+The chain rule is useful for differentiation a function $f(x)$ where there are
+functions inside of functions (such as $ln(sin(x))$). To do this, we break
+the function up into it's components, give them some names \footnote{''
+\emph{Let}`` is possibly the most important word you will come across in
+mathematics. You can use it to redefine stuff if it's too complex and break it
+into smaller manageable pieces and put it back together again." -- Chris
+Gordon, MATH130 lecturer, Macquarie University, 2011} and apply the chain rule.
+The rule takes the form as follows:
+\begin{align}
+  f(x) & = v(u(x)) \\
+  f(x)\derivative & = f\derivative[u]\,u\derivative[x] \label{eq:DiffChainRule}
+\end{align}
+Here is an example of where we might use the chain rule:\footnote{Note that the
+$v$ function above in this example is simply ${u}^{3}$.}\footnote{While we
+could use the power method to solve this particular problem in 2 steps, we will
+demonstrate chain rule first, and then the power method.}
+\begin{align}
+  f(x) & = {({x}^{2})}^{3}
+  \intertext{Let $u = {x}^{2}$ such that}
+  f(x) & = {u}^{3} \label{eq:DiffChainRuleLet}
+  \intertext{The first step in \ref{eq:DiffChainRuleLet} is to identify the
+  chain rule, and to name the function inside $u$. It just makes things
+  easier this way for most of the time.}
+  f(x)\derivative & = f\derivative[u] * u\derivative[x] \\
+                  & = \left[ 3{u}^{2} \right]\,\left[ 2x \right]
+  \intertext{\ref{eq:DiffChainRuleLet} It often helps to rewrite the equation
+  in terms of $f(x)$ and $u$, and then to write out the chain rule. Normally we
+  are differentiating $f(x)$ with respect to $x$ ($\derivative$). Here we
+  differentiate $f(x)$ with respect to $u$ (ie $\derivative[u]$) \emph{THEN}
+  multiply by $u$. The rest is plain old algebra. So.. substitue values back
+  for $u$.}
+                  & = \left[ 3{({x}^{2})}^{2} \right] * 2x
+  \intertext{simplify the first set of brackets with basic power laws}
+                  & = (3{x}^{4})(2x) \\
+                  & = 6{x}^{5}
+\end{align}
+As a point of exercise, here's how much faster it is using the power method:
+\begin{align}
+  f(x) & = {({x}^{2})}^{3} \\
+  f(x)  & = {x}^{6}
+  \intertext{Now we use the differentiation power method, bring the power out
+  the front and reduce the power by one}
+  f(x)\derivative & = 6{x}^{5}
+  \intertext{Look! Only two steps!}
+\end{align}
+It should be noted however, that power method cannot be used for all chain rule
+problems (in fact, most of the time it can't - but for easy ones like this, it
+is far more efficient to use power method). The following example cannot use
+power method, and we \emph{should} use the chain rule:
+\begin{align}
+  f(x) & = ln(sin(x)) \\
+  \intertext{Let } u(x) & = sin(x)
+\end{align}
