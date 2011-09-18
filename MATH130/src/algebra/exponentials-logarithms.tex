@@ -22,8 +22,8 @@ itself to give us a total number. With this information in mind, we need to
 define some parts of the language behind how logs and indices should be
 used.
 \begin{align}
-  {a}^{x} & = y
-  \label{eq:ExponentialForm}
+  {b}^{x} & = y
+  \label{eq:IdxForm}
 \end{align}
 \begin{table}[!hbt]
 \label{tab:PartsOfAnExponential}
@@ -42,19 +42,20 @@ y & is the output\\
 When we want to perform manipulations to several numbers, there are various
 power laws we must bear in mind... They are summarised as follows:
 \begin{align}
-  {a}^{0}               & = 1 \label{eq:IndexLaw_Power0} \\
-  {a}^{1}               & = a \label{eq:IndexLaw_Power1} \\
-  {a}^{x} * {a}^{y}     & = {a}^{x+y} \label{eq:IndexLaw_AddExps} \\
-  {a}^{x} - {a}^{y}     & = {a}^{x-y} \label{eq:IndexLaw_SubExps} \\
-  {({a}^{x})}^{y}       & = {a}^{xy} \label{eq:IndexLaw_MultExps} \\
-  a{b}^{-x}             & = \frac{a}{{b}^{x}} \label{eq:IndexLaw_NegExp} \\
-  {a}^{(\frac{x}{y})}   & = {({a}^{x})}^{\frac{1}{y}}
-                            \label{eq:IndexLaw_FracExp0} \\
-                        & = \sqrt[y]{{a}^{x}} \label{eq:IndexLaw_FracExp1}\\
-  a{b}^{(-\frac{x}{y})} & = \frac{a}{\sqrt[y]{{b}^{x}}}
+  {b}^{0}               & = 1 \label{eq:IndexLaw_Power0} \\
+  {b}^{1}               & = b \label{eq:IndexLaw_Power1} \\
+  {b}^{x} * {b}^{y}     & = {b}^{x+y} \label{eq:IndexLaw_AddIdxs} \\
+  {b}^{x} - {b}^{y}     & = {b}^{x-y} \label{eq:IndexLaw_SubIdxs} \\
+  {({b}^{x})}^{d}       & = {b}^{xd} \label{eq:IndexLaw_MultIdxs} \\
+  b{x}^{-y}             & = \frac{b}{{x}^{y}} \label{eq:IndexLaw_NegIdx} \\
+  {b}^{(\frac{x}{y})}   & = {({b}^{x})}^{\frac{1}{y}}
+                            \label{eq:IndexLaw_FracIdx0} \\
+                        & = \sqrt[y]{{b}^{x}} \label{eq:IndexLaw_FracIdx1}\\
+  d{b}^{(-\frac{x}{y})} & = \frac{d}{\sqrt[y]{{b}^{x}}} ~ \text{combining \eqref{eq:IndexLaw_NegIdx} and \eqref{eq:IndexLaw_FracIdx0}} \\
+  {b}^{x}               & = 0 ~ \text{is impossible} \label{eq:IndexLaw_EqualsZero}
 \end{align}
 Converting notation between the forms exhibited in
-\ref{eq:IndexLaw_FracExp0} and \ref{eq:IndexLaw_FracExp1} is often
+\ref{eq:IndexLaw_FracIdx0} and \ref{eq:IndexLaw_FracIdx1} is often
 extremely useful in Calculus, in particular, differentiation.
 
 \section{Logarithms}
@@ -67,18 +68,37 @@ affected by it's power a logarithm is the way to undo the power.
   Gordon, MATH130 lecturer for algebra stream, evening session on logarithms,
   2011.}
 \end{quote}
-Referring back to \ref{eq:ExponentialForm}:
+
+\subsection{Log Laws}
+\label{sec:LogLaws}
+Many of these laws can be derived from the index laws, and have been included
+in a way to preserve order with those laws for easier reference.
 \begin{align}
-    {a}^{x} & = y \nonumber
-\intertext{Now for the ``undoing function'':}
-  \log_a(y) & = x
+  log_b(1)           & = 0                         & \quad & \text{by \eqref{eq:IndexLaw_Power0}} \\
+  log_b(b)           & = 1                         & \quad & \text{by \eqref{eq:IndexLaw_Power1}} \\
+  log_b(xy)          & = log_b(x) + log_b(y)       & \quad & \text{by \eqref{eq:IndexLaw_AddIdxs}} \\
+  log_b(\frac{x}{y}) & = log_b(x) - log_b(y)       & \quad & \text{by \eqref{eq:IndexLaw_SubIdxs}} \\
+  log_b(x^d)         & = d * log_b(x)              & \quad & \text{by \eqref{eq:IndexLaw_MultIdxs}} \\
+  log_b(\sqrt[y]{x}) & = \frac{log_b(x)}{y}        & \quad & \text{by \eqref{eq:IndexLaw_FracIdx0}} \\
+  log_b(0)           & = \text{undefined}          & \quad & \text{by \eqref{eq:IndexLaw_EqualsZero}} \\
 \end{align}
-This gives rise to the easy to remember translation between the logarithms
+Here's where some new stuff is introduced:
+\begin{align}
+  b^{log_b(x)}       & = x \text{Logs of the same base cancel as an index} \label{eq:LogLaw_BaseCancel0} \\
+  log_b(b^x)         & = x \text{Logs of the same base cancel as an index} \label{eq:LogLaw_BaseCancel1} \\
+  log_b(a)           & = \frac{1}{log_a(b)} \text{Remember back to the initial statement, that a log is an inverting function?} \label{eq:LogLaw_Inversion} \\
+  log_b(x)           & = \frac{log_a(x)}{log_a(b)} \text{We can change the base of one log to another} \label{eq:LogLaw_ChangeBase} \\
+  (log_a(b))(log_b(x)) & = log_a(x) 
+%
+\end{align}
+
+Referring back to \ref{eq:IdxForm}, but replace the variable $b$ with $a$ gives
+rise to the easy to remember translation between the logarithms
 and exponentials: ``logs are gay'' \footnote{Elizabeth Camilleri, advanced
 mathematics student, on my whiteboard at home. Though, this really needs her
 picture (included) to accompany the text for full effect.}
 \begin{align}
-  {a}^{x} = y & \equiv \log_a(y) = x \label{eq:LogsAreGay}
+  \log_a(y) = x ~ \Longleftrightarrow ~ {a}^{x} = y  \label{eq:LogsAreGay}
 \end{align}
 \begin{figure}[!htb]
   \centering
@@ -86,41 +106,37 @@ picture (included) to accompany the text for full effect.}
   \caption{LogsAreGay}
   \label{fig:LogsAreGay}
 \end{figure}
-The golden rule to remember when dealing with exponentials is the
-Svensson-Cranbrook Log Method, to be sung to ``When you're happy and you know
+
+\subsection{Converting Logarithm Bases}
+Suppose there are two logarithms, of different bases. It is often nice to use
+logarithms of the same base as it keeps the maths simpler (and sometimes things
+will divide or cancel out). To do this, we apply the change of base formula
+$\eqref{eq:LogLaw_ChangeBase}$. Consider the following:
+\begin{align}
+  b^{log_b(x)} & = x \\
+  log_a(b^{b * log_b(x)}) & = log_a(x) ~ \text{take log base-a of both sides} \\
+  (log_a(b))(log_b(x)) & = \text{by \eqref{eq:IndexLaw_MultIdxs}}
+\end{align}
+There is an alternate way using division, and can be memorised as wrote:
+\begin{align}
+  log_b(x) & = \frac{log_a(x)}{log_a(b)} ~ \text{ \label{eq:LogLaw_ChangeBase} }
+\end{align} 
+
+\subsection{Problem solving with logs}
+The golden rule to remember when dealing with indices and powers is the
+Svensson-Cranbrookian Log Method, to be sung to ``When you're happy and you know
 it'':
 \begin{quote}
   When you're having trouble with a power take a log.
 \end{quote}
 
-\subsection{Log Laws}
-\label{sec:LogLaws}
-
+Suppose we have to solve the following equation:
 \begin{align}
-  log_b(1)           & = 0                         & \text{because} ~ & b^0              & = 1                    && \\
-  log_b(b)           & = 1                         & \text{because} ~ & b^1              & = b                    && \\
-  log_b(a)           & = \frac{log_d(a)}{log_d(b)} &                ~ &                  &                        && \\
-  log_b(0)           & = \text{undefined}          & \text{because} ~ & b^x              & = 0 \text{is impossible} && \\
-  log_b(xy)          & = log_b(x) + log_b(y)       & \text{because} ~ & b^c * b^d        & = b^{c+d}              && \\
-  log_b(\frac{x}{y}) & = log_b(x) - log_b(y)       & \text{because} ~ & b^{c-d}          & = \frac{b^c}{b^d}      && \\
-  log_b(x^d)         & = d * log_b(x)              & \text{because} ~ & (b^c)^d          & = b^{c*d}              && \\
-  log_b(\sqrt[y]{x}) & = \frac{log_b(x)}{y}        & \text{because} ~ & \sqrt[y]{x}      & = x^{\frac{1}{y}}      && \\
-  x^{log_b(y)}       & = y^{log_b(x)}              & \text{because} ~ & x^{log_b(y)}     & = b^{log_b(x)log_b(y)} && \\
-                     &                             &                  &                  & = b^{log_b(y)log_b(x)} && \nonumber  \\
-                     &                             &                  &                  & = y^{log_b(x)} \nonumber \\
-  c * log_b(x) + d * log_b(y) & = log_b(x^c * y^d) & \text{because} ~ & log_b(x^c * y^d) & = log_b(y^d)           &&
-\end{align}
-
-\subsection{Converting Logarithm Bases}
-Suppose there are two logarithms, $log_e(x)$
-
-\subsection{Problem solving with logs}
-Suppose we have to solve:
-\begin{align}
-  2^{x} & = \frac{5}{3^{x+1}} \\
+  2^{x} & = \frac{5}{3^{x+1}}
 \end{align}
 We use logarithms:
 \begin{align}
+  2^{x} & = \frac{5}{3^{x+1}} \\
   log(2^x) & = log(\frac{5}{3^{x+1}}) \\
   x log(2) & = log(5) - log(3^{x+1}) \\
   x log(2) & = log(5) - (x+1) * log(3) \\
@@ -139,4 +155,14 @@ We use logarithms:
 Most calculations involving logarithms will be to various bases depending on
 the topic. In COMP it is often base 2 (binary), in other fields it is often base
 10. In MATH and most of the sciences it is often base \emph{e}, which is
-approximately 2.71828. \cite{duWGx}
+approximately 2.71828.\cite{duWGx} Numerically it is an interesting number as it
+crops up all over the place, sometimes in the most bizarre of locations; however
+we do not need to worry about that for MATH130.
+
+The base $e$ is used on most calculators with a button that looks like $e^x$. To
+use the logarithm with base $e$ it is usually a button that looks like ``ln'', or
+$log_e(x)$.
+
+An important thing to note about $e$, which will be raised further in calculus
+chapters is when you differentiate $e$, it is the only function where it's
+integral and derivative are both the same.   

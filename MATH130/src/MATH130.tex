@@ -108,6 +108,7 @@ longnamesfirst
   pdffitwindow=false,   % window fit to page when opened
   pdfstartview={Fit},   % fits the width of the page to the window
                         % all (useful) opts: Fit, FitH, FitV,
+  pdfpagelayout=TwoPageLeft,
   pdfnewwindow=true,    % open links in new window
   colorlinks=true,      % false = boxed links; true = colored links
   linkcolor=neekiRed, % color of internal links
@@ -180,6 +181,7 @@ longnamesfirst
 \include{calculus/diff-maxima-minima}
 \include{calculus/diff-grokking-word-problems}
 \include{calculus/diff-newtons-method}
+\include{calculus/diff-practical-uses}
 \include{calculus/integ-intro}
 \include{calculus/integ-trapezoidal-rule}
 \include{calculus/integ-simpsons-rule}
@@ -195,50 +197,10 @@ longnamesfirst
 \lipsum[1]
 \section{Calculus}
 \label{sec:AppCalculus}
-%-----------------------------------------------------------------------------%
-%- Appendix :: Proof of Product Rule -----------------------------------------%
-%-----------------------------------------------------------------------------%
-\newpage
-\subsection{Proof of Product Rule}
-\label{sec:ProofOfProductRule}
-\begin{align} 
-  \label{eq:ProofOfProductRule}
-  x & = 1
-\end{align}
-%-----------------------------------------------------------------------------%
-%- Appendix :: Proof of Quotient Rule ----------------------------------------%
-%-----------------------------------------------------------------------------%
-\newpage
-\subsection{Proof of Quotient Rule}
-\label{sec:ProofOfQuotientRule}
-\begin{align}
-  \label{eq:ProofOfQuotientRule}
-  x & = 1
-\end{align}
-%-----------------------------------------------------------------------------%
-%- Appendix :: Proof of Chain Rule -------------------------------------------%
-%-----------------------------------------------------------------------------%
-\newpage
-\subsection{Proof of Chain Rule}
-\label{sec:ProofOfChainRule}
-\begin{align}
-  \label{eq:ProofOfChainRule}
-  x & = 1
-\end{align}
-%-----------------------------------------------------------------------------%
-%- Appendix :: Differentiation Quickstart ------------------------------------%
-%-----------------------------------------------------------------------------%
-\newpage
-\subsection{Differentiation of Trig Functions Proof}
-\label{sec:DiffTrigProof}
-If we have the function $f(x) = sinx$, and take two points, $P$ and $Q$ where
-$P = (x,f(x))$ and $Q = (x+h, f(x+h)$ where $h \neq 0$ we can construct a line
-joining $P$ and $Q$, and the gradient of this line is given by the ``rise
-over run'' formula:
-\begin{align}
-  \frac{\Delta Y}{\Delta X} & = \frac{f(x+h) - f(x)}{(x+h) - x} \\
-                            & = \frac{sin(x+h) - sinx}{h}
-\end{align}
+
+\include{appendices/calculus-proofs}
+\include{appendices/differentiation-quickstart}
+
 %-----------------------------------------------------------------------------%
 %- Acknowledgments -----------------------------------------------------------%
 %-----------------------------------------------------------------------------%
