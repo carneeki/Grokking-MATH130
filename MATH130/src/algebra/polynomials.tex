@@ -20,7 +20,11 @@ approximate sin(x):
   &~ x - \frac{x^{3}}{6} + \frac{x^5}{120} \\
   &~ x - \frac{x^{3}}{3!} + \frac{x^5}{5!} \\
   &~ x - \frac{x^{3}}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} \\
-sin(x) &~ = x - \frac{x^{3}}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \ldots \\
+  &~ x - \frac{x^{3}}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \frac{x^9}{9!} \\
+  &~ x - \frac{x^{3}}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \frac{x^9}{9!} -
+  \frac{x^11}{11!} \\
+ sin(x) \approx &~ x - \frac{x^{3}}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} +
+ \frac{x^9}{9!} - \frac{x^11}{11!} \\
 \end{align}
 
 The main polynomials studied in MATH130 are:
@@ -28,20 +32,50 @@ The main polynomials studied in MATH130 are:
   \item[quadratics]
     \begin{align}
       y & = ax^2 + bx + c       && \text{General Form} \\
-      y & = a(x -h)^{2} + k     && \text{Standard Form} \\
+      y & = a(x - h)^{2} + k    && \text{Standard Form} \\
       y & = a(x - x_1)(x - x_2) && \text{Factored Form}
     \end{align}
   \item[cubics]
     \begin{align}
-      y = ax^3 + bx^2 + cx + d \\
+      y = ax^3 + bx^2 + cx + d
     \end{align}
 \end{description}
 
 \section{Quadratics}
-The standard form is useful for finding the roots / zeros (where $y = 0$).
+\subsection{General Form}
+\begin{align}
+  y & = ax^2 + bx + c \nonumber
+\end{align}
+This form is perhaps the most common form of an equation - it is completely
+unfactored and appears the most natural (at least to me).
+\\
+Key advantages of general form:
+\begin{itemize}
+  \item $c = y$-intercept and is easily read straight off the equation.
+  \item $a$ tells us a lot about the shape of the parabola:
+  \begin{itemize}
+      \item A ``happy'' parabola has a positive value
+      \item A ``sad'' parabola has a negative value
+      \item Larger values of $a$ give steeper parabolas
+  \end{itemize}
+\end{itemize}
+
+\subsection{Standard Form}
+\begin{align}
+  y & = a(x - h)^{2} + k \nonumber
+\end{align}
+Key advantages of standard form (sometimes called the \emph{vertex form}):
+\begin{itemize}
+  \item $a$ tells us the same information about the shape of the parabolas as in
+  the general form.
+  \item $h$ tells us the $x$ coordinate of the minimum/maximum point, however,
+  to get the coordinate, we must multiply $h$ by $-1$.
+  \item $k$ tells us the $y$ coordinate of the minimum/maximum point.
+  \item Useful for finding the roots / zeros (where $y = 0$) of a quadratic
+\end{itemize}
 Consider solving:
 \begin{align}
-  8(x - 7)^{2} - 41 = 0 \\
+  8(x - 7)^{2} - 41 = 0
 \end{align}
 Because there is only one $x$ value it makes it easier to solve:
 \begin{align}
@@ -71,3 +105,20 @@ It is also useful for sketching. Consider:
   $y = 2(x - 1)^2 +3$
 \end{enumerate}
 
+\subsection{Factored Form}
+\begin{align}
+  y & = a(x - x_1)(x - x_2) \nonumber
+\end{align}
+Key advantages of standard form:
+\begin{itemize}
+  \item $a$ tells us the same information about the shape of the parabolas as in
+  the general form.
+  \item $h$ tells us the $x$ coordinate of the minimum/maximum point, however,
+  to get the coordinate, we must multiply $h$ by $-1$.
+  \item $k$ tells us the $y$ coordinate of the minimum/maximum point.
+  \item Useful for finding the roots / zeros (where $y = 0$) of a quadratic
+\end{itemize}
+Factored form is useful for finding the equation given a parabola.
+
+\section{Cubics}
+\lipsum[1]
