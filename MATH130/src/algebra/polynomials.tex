@@ -113,12 +113,46 @@ Key advantages of standard form:
 \begin{itemize}
   \item $a$ tells us the same information about the shape of the parabolas as in
   the general form.
-  \item $h$ tells us the $x$ coordinate of the minimum/maximum point, however,
-  to get the coordinate, we must multiply $h$ by $-1$.
-  \item $k$ tells us the $y$ coordinate of the minimum/maximum point.
-  \item Useful for finding the roots / zeros (where $y = 0$) of a quadratic
+  \item $x_1$ and $x_2$ give us the $x$-intercepts (when multiplied by $-1$) of
+  the equation.
 \end{itemize}
-Factored form is useful for finding the equation given a parabola.
+Factored form is useful for finding the equation given a parabola. Suppose we
+know the $x$-intercepts of a parabola are $-3$ and $-1$, and it has a
+$y$-intercept of 6:
+\begin{align}
+  f(x) & = a(x - x_1)(x - x_2) \\
+       & = a(x - -3)(x - -1) \\
+       & = a(x +3)(x + 1) \\
+     6 & = a(0 + 3)(0 + 1) \text{substitute $x=0$ to get $y$-int} \\
+     6 & = a(3) \\
+     2 & = a \\
+     \therefore f(x) & = 2(x+3)(x+1) \\
+     & = 2x^2 + 8x + 6 
+\end{align}
+
+\subsection{Quadratic Formula}
+To get the roots of a quadratic (to factorize it), there is a
+long\footnote{horrible} formula we can use called the \emph{quadratic formula}
+to get values of $x$. If given the general form of the quadratic, we can
+substitute the values of $a$, $b$, and $c$ into this formula to get values for
+$x$ which can then be used in the factored form.
+\begin{align}
+  x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+\end{align}
+By applying the quadratic formula to our previous example from the factored
+form, we can show all 3 forms of the quadratic:
+\begin{align}
+  & = 2x^2 + 8x + 6 \nonumber \\
+  \text{where} & a = 2, b = 8, c = 6 \nonumber \\
+  x & = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} \\
+    & = \frac{-8 \pm \sqrt{8^2 - 4(2)(6}}{2(2)} \\
+    & = \frac{-8 \pm \sqrt{56 - 24}}{4} \\
+    & = \frac{-8 \pm \sqrt{32}}{4} \\
+    & = \frac{-8 \pm 4\sqrt{2}}{4}) \\    
+    & = \pm 8\sqrt{2} \\
+    \text{substitute $x$ into vertex form } \\
+    f(x) & = a()^2 + k
+\end{align}
 
 \section{Cubics}
 \lipsum[1]
