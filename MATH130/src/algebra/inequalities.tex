@@ -1,5 +1,127 @@
 %-----------------------------------------------------------------------------%
 %- Algebra :: Inequalities ---------------------------------------------------%
 %-----------------------------------------------------------------------------%
-\chapter{TODO: Inequalities}
+\chapter{TODO:Inequalities}
 \label{chap:Inequalities}
+When we multiply or divide by a negative, change the sign of the inequality.
+Eg
+\begin{align}
+  -3x & > 9 \\
+  \div \text{both sides by -3} \nonumber \\
+  x & > -3 \text{is NOT correct} \nonumber \\
+  x & < -3 \text{is correct}
+\end{align}
+Consider
+\begin{align}
+  \frac{3}{x-1} & > 4 \\
+  3 & > 4(x-1) \\
+  3 & > 4x - 4 \\
+  3 + 4 & > 4x \\
+  7 & > 4x \\
+  \frac{7}{4} & > x \\
+  \therefore x & < \frac{7}{4}
+\end{align}
+However, this presents a problem; if we substitute $x=1$ in, we have a
+``disaster'', with a quotient of $0$.
+\begin{align}
+  \frac{3}{1 - 1} & > 4~\text{cannot possibly be a solution}
+\end{align}
+Try $x=0$
+\begin{align}
+  \frac{3}{0 - 1} & > 4 \\
+  \frac{3}{-1} & > 4 \\
+  -3 & > 4~\text{which we know to be false}
+\end{align}
+Let's ask ourselves ``Why didn't this work?''. What went wrong was that we don't
+know whether $x-1$ is positive or negative. There are several resolutions to the
+problem.
+\begin{enumerate}
+  \item Take cases: consider
+  \begin{enumerate}
+    \item $x-1 > 0$
+    \item $x-1 < 0$
+  \end{enumerate}
+  And prove whether they are logically true.
+  \item Multiply by a non-negative. In this case $(x-1)^2$ because a square can
+  never be a negative number.
+  \item Rearrange to a form such as $\frac{A}{B} < 0$ and consider
+  signs.\footnote{it could also be $\frac{A}{B} > 0$}
+  \item Plot the inequality: $y = \frac{3}{x-1}$ and see where the $y$ value is
+  bigger than $4$.
+\end{enumerate}
+
+
+First way with cases:
+\begin{align}
+  \frac{3}{x-1} & > 4 \\
+  \text{Assume } x-1 & > 0 \\
+  3 & > 4(x-1) \\
+    & > 4x - 4 \\
+  7 & > 4x \\
+  \frac{7}{4} & > x \\
+  x & < \frac{7}{4} \\
+  \text{We only keep x's where $x-1 > 0$, $x > 1$} \nonumber \\
+  \text{Assume } x-1 & < 0 \\
+  \frac{3}{x-1} & < 4 \\
+  x & > \frac{7}{4} \\
+  \text{We only keep x's where $x-1 < 0$, $x < 1$} \nonumber
+\end{align}
+So we combine our answer is when we take the answers that are logically
+acceptable.\\
+\\
+Second way with squares:
+\begin{align}
+  \frac{3}{x-1} & > 4 \\
+  (x-1)^2 \times \frac{3}{x-1} & > 4 (x-1)^2 \\
+  (x-1)3 & > 4(x-1)^2 \\
+  0 & > 4(x-1)^2 - 3(x-1) \\
+    & > (x-1)(4(x-1) - 3) \\
+    & > (x-1)(4x - 7) \\
+\text{we can plot this} \\
+ \therefore 1 < x < \frac{7}{4} \\
+\end{align}
+% INCLUDE THE PLOT
+3rd Way: \\
+(was skipped for tutorial exercise) \\
+\\
+Graphical Way: \\
+Sketch $y = \frac{3}{x-1}$ \\
+Vertical asymptote $x = 1$.
+\begin{align}
+  x = 1 + \text{a small number} \\
+  y = \text{BIG}
+\end{align}
+% INCLUDE THE PLOT
+
+
+A second problem:
+\begin{align}
+  \frac{4x}{2x+3} > 2 \\
+\end{align}
+
+By squares (quadratic) method:
+\begin{align}
+  \frac{4x}{2x+3} > 2 \\
+  (2x+3)^2 \times \frac{4x}{2x+3} & > 2(2x+3)^2 \\
+  4x \times (2x+3) & >  2(2x+3)^2 \\
+  0 & > 2(2x+3)^2 - 4x(2x+3) \\
+    & > (2x+3)(2(2x+3) -4x) \\
+    & > (2x+3)(4x +6 -4x) \\
+    & > (2x+3)(6) \\
+    & > 12x + 18 \\
+    -12x & > 18 \\
+    12x  & < -18 \\
+       x & < -\frac{3}{2}
+    \therefore x < -\frac{3}{2}
+\end{align}
+
+By signs:
+\begin{align}
+  \frac{4x}{2x+3} -2 > 0 \\
+  \frac{4x}{2x+3} -\frac{2x+3}{2x+3} > 0 \\
+  \frac{-6}{2x+3} & > 0 \\
+  -6 \text{always -ve} \\
+  2x + 3 & < 0 \\
+  2x &< -3 \\
+  x & < \frac{-3}{2} \\
+\end{align}

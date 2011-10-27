@@ -54,8 +54,10 @@
 %
 %
 %- (03) Standard package includes and options --------------------------------%
-\usepackage{draftwatermark} % draft watermark. Comment these 2 lines in final
-\SetWatermarkLightness{0.9} %
+\usepackage[Lenny]{fncychap}
+%\usepackage[Bjornstrup]{fncychap}
+%\usepackage{draftwatermark} % draft watermark. Comment these 2 lines in final
+%\SetWatermarkLightness{0.9} %
 \usepackage{amsmath}       % amsmath & amssymb are almost ALWAYS required.
 \usepackage{amssymb}       %
 \usepackage{gensymb}       % for the degrees circle!
@@ -93,6 +95,7 @@ longnamesfirst
 %\usepackage{tgadventor}  % font
 %\usepackage[math]{iwona} % font
 \usepackage{kurier} % font
+
 %
 \linespread{1.5} % carneeki@ use approx 150% line spacing just like MaxDesign.
 \hypersetup{
@@ -118,8 +121,24 @@ longnamesfirst
 }
 %
 %- (05) Custom Commands ------------------------------------------------------%
+% MATH
 \newcommand{\derivative}[1][x]{\frac{\mathrm{d}}{\mathrm{d}#1}}
-\newcommand{\ndeg}{^\circ}
+\newcommand{\deriv}[2]{\frac{\mathrm{d}#1}{\mathrm{d}#2}}
+\newcommand{\ndeg}{^\circ} % the degrees symbol
+\newcommand{\neqref}[1]{\text{(#1)}}
+% trig
+\newcommand{\isin}{\sin^{-1}}
+\newcommand{\icos}{\cos^{-1}}
+\newcommand{\itan}{\tan^{-1}}
+% DMTH
+\newcommand{\lxor}{\oplus}
+\newcommand{\lxnor}{\lnot\lxor}
+\newcommand{\true}{(\mathbb{T})}
+\newcommand{\false}{(\mathbb{F})}
+% GENERAL
+\newcommand{\qedbitches}{\qed}
+\renewcommand{\labelenumi}{(\alph{enumi})}
+\renewcommand{\labelenumii}{(\roman{enumii})}
 %
 %- (06) Document Title and other metadata ------------------------------------%
 %
@@ -146,7 +165,6 @@ longnamesfirst
 %- (07) Start Document Content -----------------------------------------------%
 \begin{document}
 %- (07a) Misc Config ---------------------------------------------------------%
-%\cfoot{\thepage\ of \pageref{LastPage}} % page n of m
 %
 \maketitle
 %
@@ -156,7 +174,6 @@ longnamesfirst
 %semester 1, 2011. It is an interpretation that aims to make the very thorough
 %notes of Chen and Duong easier and more accessible to the rest of us.
 %\end{abstract}
-
 \include{appendices/introduction}
 
 \tableofcontents
@@ -190,14 +207,7 @@ longnamesfirst
 %-----------------------------------------------------------------------------%
 %- Appendix ------------------------------------------------------------------%
 %-----------------------------------------------------------------------------%
-\newpage
-\chapter{Appendix}
-\label{chap:Appendix}
-\section{Algebra}
-\lipsum[1]
-\section{Calculus}
-\label{sec:AppCalculus}
-
+\include{appendices/trig-identities}
 \include{appendices/calculus-proofs}
 \include{appendices/differentiation-quickstart}
 

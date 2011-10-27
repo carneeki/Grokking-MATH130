@@ -3,7 +3,7 @@
 %-----------------------------------------------------------------------------%
 \chapter{Differentiation of Trigonometric Functions}
 \label{chap:DifferentiationOfTrigFunctions}
-Consider the plot of the function $f(x) = sinx$
+Consider the plot of the function $f(x) = \sin(x)$
 \begin{figure}[!htb]
 \label{fig:GraphTemplate}
 \begin{tikzpicture}[samples=50,scale=1]
@@ -33,18 +33,19 @@ Here are some equations that are handy to remember. Source \cite{RHBDiffQuickSta
 \begin{align}
   \derivative {x}^{n} & = n{x}^{n-1} \\
   \derivative {\emph{e}}^{ax} & = a{\emph{e}}^{ax} \\
-  \derivative ln(ax) & = \frac{1}{x} \\
-  \derivative sin(ax) & = (a)cos(ax) \\
-  \derivative cos(ax) & = (-a)sin(ax) \\
-  \derivative tan(ax) & = (a){sec}^{2}(ax) \\
-  \derivative sec(ax) & = (a)sec(ax)tan(ax) \\
-  \derivative csc(ax) & = (-a)csc(ax)cot(ax) \\
-  \derivative cot(ax) & = (-a){csc}^{2}(ax) \\
-  \derivative {sin}^{-1}(\frac{x}{a}) & = \frac{1}{\sqrt[2]{{a}^{2} - {x}^{2}}}
+  \derivative \ln(ax) & = \frac{1}{x} \\
+  \derivative \sin(ax) & = (a)\cos(ax) \\
+  \derivative \cos(ax) & = (-a)\sin(ax) \\
+  \derivative \tan(ax) & = (a)\sec^2(ax) \\
+  \derivative \sec(ax) & = (a)\sec(ax)\tan(ax) \\
+  \derivative \csc(ax) & = (-a)\csc(ax)\cot(ax) \\
+  \derivative \cot(ax) & = (-a)\csc^2(ax) \\
+  \derivative{\sin}^{-1}(\frac{x}{a}) & = \frac{1}{\sqrt[2]{{a}^{2} - {x}^{2}}}
   \\
-  \derivative {sin}^{-1}(\frac{x}{a}) & = \frac{-1}{\sqrt[2]{{a}^{2} - {x}^{2}}}
+  \derivative{\sin}^{-1}(\frac{x}{a}) & = \frac{-1}{\sqrt[2]{{a}^{2} -
+  {x}^{2}}}
   \\
-  \derivative {sin}^{-1}(\frac{x}{a}) & = \frac{a}{\sqrt[2]{{a}^{2} - {x}^{2}}}  
+  \derivative{\sin}^{-1}(\frac{x}{a}) & = \frac{a}{\sqrt[2]{{a}^{2} - {x}^{2}}}  
 \end{align}
 For a proof, refer to appendix section \ref{sec:DiffTrigProof},
 ``Differentiation of Trig Functions Proof''

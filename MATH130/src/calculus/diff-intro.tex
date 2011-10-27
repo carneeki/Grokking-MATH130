@@ -89,10 +89,10 @@ laziness!\footnote{Or convenience, neatness, brevity.}): $2*{x}^{1}*b$
 \label{sec:ProductRule}
 A function $f(x)$ is a product of two functions, $u(x) * v(x)$. For example:
 \begin{align}
-  f(x) & = {x}^{3} sin(x) \label{eq:DiffProdEx1}\\
+  f(x) & = {x}^{3} \sin(x) \label{eq:DiffProdEx1}\\
        & = u(x)v(x)
 \end{align}
-In this case, we can see that $u(x) = {x}^{3}$ and $v(x) = sin(x)$. While there
+In this case, we can see that $u(x) = {x}^{3}$ and $v(x) = \sin(x)$. While there
 is a mathematical proof\footnote{refer to section \ref{eq:ProofOfProductRule} of
 appendix} it is not necessary for MATH130. All we need to know is:
 \begin{align}
@@ -101,10 +101,10 @@ appendix} it is not necessary for MATH130. All we need to know is:
 \end{align}
 So for \ref{eq:DiffProdEx1}, to find the derivative:
 \begin{align}
-              f(x) & = {x}^{3}\,sin(x) \nonumber \\
-  \derivative f(x) & = \derivative ({x}^{3}) * sin(x) +
-                       {x}^{3} * \derivative (sin(x)) \\
-                   & = {3x}^{2}*sin(x) + {x}^{3}*cos(x)
+              f(x) & = {x}^{3}\,\sin(x) \nonumber \\
+  \derivative f(x) & = \derivative ({x}^{3}) * \sin(x) +
+                       {x}^{3} * \derivative (\sin(x)) \\
+                   & = {3x}^{2}*\sin(x) + {x}^{3}*\cos(x)
 \end{align}
 This example makes use of a derivative of a trigonometric function. This will be
 explored in chapter \ref{chap:DifferentiationOfTrigFunctions}, ``Differentiation
@@ -147,7 +147,7 @@ Consider the following example:
 \section{Chain Rule}
 \label{sec:ChainRule}
 The chain rule is useful for differentiation a function $f(x)$ where there are
-functions inside of functions (such as $ln(sin(x))$). To do this, we break
+functions inside of functions (such as $\ln(\sin(x))$). To do this, we break
 the function up into it's components, give them some names \footnote{''
 \emph{Let}`` is possibly the most important word you will come across in
 mathematics. You can use it to redefine stuff if it's too complex and break it
@@ -196,6 +196,6 @@ problems (in fact, most of the time it can't - but for easy ones like this, it
 is far more efficient to use power method). The following example cannot use
 power method, and we \emph{should} use the chain rule:
 \begin{align}
-  f(x) & = ln(sin(x)) \\
-  \intertext{Let } u(x) & = sin(x)
+  f(x) & = \ln(\sin(x)) \\
+  \intertext{Let } u(x) & = \sin(x)
 \end{align}
