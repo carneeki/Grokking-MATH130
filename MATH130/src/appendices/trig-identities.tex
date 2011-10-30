@@ -38,5 +38,37 @@ if you can memorize others, it may save crucial seconds in exam situations.}
 \end{align}
 
 \section{Angle Sum Identities}
-
+\begin{align}
+  \sin(A \pm B)
+    & = \sin(A)\cos(B) \pm \sin(B)\cos(B) \\
+  \cos(A \pm B)
+    & = \cos(A)\cos(B) \mp \sin(A)\sin(B)
+\end{align}
 \section{Double Angle Identities}
+\begin{align}
+  \sin(A + A)
+    & = \sin(A)\cos(A) + \sin(A)\cos(A) \\
+    & = 2\sin(A)\cos(A)
+  \intertext{$\cos(2A)$ has 3 solutions we need to concern ourselves with in
+  MATH130. The 2nd and 3rd solutions combine rearrangements of the
+  primitive identity \ref{eq:TrigPrimitive}.}
+  \cos(A + A)
+    & = \cos(A)\cos(A) - \sin(A)\sin(A) \\
+    & = \cos^2(A) - \sin^2(A) \label{eq:TrigDAFirst}
+    \intertext{Or rearrange \ref{eq:TrigPrimitive} to make $\sin^2(A)$ the
+    subject}
+    \sin^2(A) + \cos^2(A) & = 1 \nonumber \\
+    \sin^2(A) & = 1 - \cos^2(A) \\
+    \text{sub into \ref{eq:TrigDAFirst}} \nonumber \\
+    & = \cos^2(A) - \sin^2(A) \nonumber \\
+    & = \cos^2(A) -(1 - \cos^2(A)) \\
+    & = 2\cos^2(A) - 1
+    \intertext{Or rearrange \ref{eq:TrigPrimitive} to make $\cos^2(A)$ the
+    subject}
+    \sin^2(A) + \cos^2(A) & = 1 \nonumber \\
+    \cos^2(A) & = 1 - \sin^2(A) \\
+    \text{sub into \ref{eq:TrigDAFirst}} \nonumber \\
+    & = \cos^2(A) - \sin^2(A) \nonumber \\
+    & = (1 - \sin^2(A)) - \sin^2(A) \\
+    & = 1 - 2\sin^2(A)
+\end{align}
