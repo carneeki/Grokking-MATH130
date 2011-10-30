@@ -29,7 +29,7 @@ appears as such:
    f(x) & = ... \\
   f'(x) & = ...
   \intertext{Secondly is Leibniz's notation:}
-  \derivative f(x) &= ...
+  \\deriv{f(x)}{x} &= ...
   \intertext{Euler's notation: (not so common in MATH130)}
    Df(x) & = ... \\
 \end{align}
@@ -65,8 +65,8 @@ Put simply, the power method can be understood as ``multiply the base by the
 power and subtract one from the power'', and is demonstrated in equation
 \ref{eq:DiffPowerMethod} below.
 \begin{align}
-  f(x) & =   {x}^{a} + k \label{eq:DiffPowerMethodKValue} \\
-  \derivative f(x) & =   a{x}^{a-1} \label{eq:DiffPowerMethod}
+             f(x) & = {x}^{a} + k \label{eq:DiffPowerMethodKValue} \\
+  \deriv{f(x)}{x} & = a{x}^{a-1} \label{eq:DiffPowerMethod}
 \end{align}
 The value $k$ represents a constant, often just a plain number, though it
 doesn't have to be. The important thing about the $k$-value in this example is
@@ -74,11 +74,11 @@ that there is no $x$ component. Hence it ``disappears''.\\
 Functions may have more than one term, consider the following quadratic:
 \begin{align}
   f(x)             & = {x}^{2} + 2xb + {b}^{2} \\
-  \derivative f(x) & = 2{x}^{1} + 2b \\
+  \deriv{f(x)}{x} & = 2{x}^{1} + 2b \\
                    & = 2(x+b) \label{eq:DiffPowerMethodRespectTo}
 \end{align}
 Here we are asked to differentiate with respect to $x$ (denoted by the symbol
-$\derivative$). To do this, we bring the power of ${x}^{2}$ to the front, and
+$\deriv{}{x}$). To do this, we bring the power of ${x}^{2}$ to the front, and
 subtract 1 to give $2{x}^{1}$, and we do the same for the term ${2xb}$ by
 looking at the invisible power (it's there, we just don't write it out of
 laziness!\footnote{Or convenience, neatness, brevity.}): $2*{x}^{1}*b$
@@ -96,15 +96,14 @@ In this case, we can see that $u(x) = {x}^{3}$ and $v(x) = \sin(x)$. While there
 is a mathematical proof\footnote{refer to section \ref{eq:ProofOfProductRule} of
 appendix} it is not necessary for MATH130. All we need to know is:
 \begin{align}
-              f(x) & = u(x)*v(x) \\
-  \derivative f(x) & = u'(x)*v(x) + v'(x)*u(x)
+             f(x) & = u(x)*v(x) \\
+  \deriv{f(x)}{x} & = u'(x)*v(x) + v'(x)*u(x)
 \end{align}
 So for \ref{eq:DiffProdEx1}, to find the derivative:
 \begin{align}
-              f(x) & = {x}^{3}\,\sin(x) \nonumber \\
-  \derivative f(x) & = \derivative ({x}^{3}) * \sin(x) +
-                       {x}^{3} * \derivative (\sin(x)) \\
-                   & = {3x}^{2}*\sin(x) + {x}^{3}*\cos(x)
+             f(x) & = {x}^{3}\,\sin(x) \nonumber \\
+  \deriv{f(x)}{x} & = \lderiv{({x}^{3})}{x} * \sin(x) + {x}^{3} * \lderiv{\sin(x)}{x} \\
+                  & = {3x}^{2}*\sin(x) + {x}^{3}*\cos(x)
 \end{align}
 This example makes use of a derivative of a trigonometric function. This will be
 explored in chapter \ref{chap:DifferentiationOfTrigFunctions}, ``Differentiation
@@ -125,17 +124,20 @@ of the product rule, however for MATH130 it is only required to think of it as a
 separate rule.\footnote{Mathematical proof of this is in section 
 \ref{eq:ProofOfQuotientRule} of the appendix.} The rule takes the form of:
 \begin{align}
-  f(x) & = \frac{u}{v} \\
-  f(x)\derivative & = \frac{u\derivative\,v - u\,v\derivative}{{v}^{2}}
-                      \label{eq:DiffQuot1}
-  \intertext{ Although both \ref{eq:DiffQuot1} and \ref{eq:DiffQuot2} are
-  identical, \ref{eq:DiffQuot2} is tidier, and may be easier to remember.}
-  f'(x) & = \frac{u'\,v - u\,v'}{{v}^{2}} \label{eq:DiffQuot2}
+  f(x)
+    & = \frac{u}{v} \\
+  f'(x)
+    & = \frac{\deriv{u}{x}\cdot v - u\cdot \deriv{v}{x}}{{v}^{2}} \label{eq:DiffQuot1}
+\intertext{OR}
+  f'(x)
+  & = \frac{u'v - uv'}{{v}^{2}} \label{eq:DiffQuot2}
 \end{align}
+Although both \ref{eq:DiffQuot1} and \ref{eq:DiffQuot2} are identical,
+\ref{eq:DiffQuot2} is tidier, and may be easier to remember.
 Consider the following example:
 \begin{align}
   f(x)  & = \frac{{x}^{2}}{4x} \\
-  f'(x) & = (4x){x}^{2}\derivative - {x}^{2} (4x\derivative) \\
+  f'(x) & = \deriv{(4x){x}^{2}}{x} - {x}^{2} (\deriv{4x}{x}) \\
   f'(x) & = (4x)2x - {x}^{2}\,(4) \\
   f'(x) & = 8{x}^{2} - 4{x}^{2} \\
   f'(x) & = 4{x}^{2}
@@ -152,50 +154,72 @@ the function up into it's components, give them some names \footnote{''
 \emph{Let}`` is possibly the most important word you will come across in
 mathematics. You can use it to redefine stuff if it's too complex and break it
 into smaller manageable pieces and put it back together again." -- Chris
-Gordon, MATH130 lecturer, Macquarie University, 2011} and apply the chain rule.
-The rule takes the form as follows:
+Gordon, MATH130 lecturer, Macquarie University, Semester 1 2011} and apply the
+chain rule.
+\\
+The rule takes the form as follows\footnote{using this notation makes it clear as to
+what is actually going on}:
 \begin{align}
-  f(x) & = v(u(x)) \\
-  f(x)\derivative & = f\derivative[u]\,u\derivative[x] \label{eq:DiffChainRule}
+  \deriv{y}{x} & = \deriv{y}{u} \cdot \deriv{u}{x} \\
 \end{align}
 Here is an example of where we might use the chain rule:\footnote{Note that the
 $v$ function above in this example is simply ${u}^{3}$.}\footnote{While we
 could use the power method to solve this particular problem in 2 steps, we will
 demonstrate chain rule first, and then the power method.}
 \begin{align}
-  f(x) & = {({x}^{2})}^{3}
+  f(x)
+    & = {({x}^{2})}^{3}
   \intertext{Let $u = {x}^{2}$ such that}
-  f(x) & = {u}^{3} \label{eq:DiffChainRuleLet}
+  f(x)
+    & = {u}^{3} \label{eq:DiffChainRuleLet}
   \intertext{The first step in \ref{eq:DiffChainRuleLet} is to identify the
   chain rule, and to name the function inside $u$. It just makes things
   easier this way for most of the time.}
-  f(x)\derivative & = f\derivative[u] * u\derivative[x] \\
-                  & = \left[ 3{u}^{2} \right]\,\left[ 2x \right]
+  f'(x)
+    & = \deriv{f}{u} \cdot \deriv{u}{x} \\
+    & = 3u^2 \cdot 2x
   \intertext{\ref{eq:DiffChainRuleLet} It often helps to rewrite the equation
   in terms of $f(x)$ and $u$, and then to write out the chain rule. Normally we
-  are differentiating $f(x)$ with respect to $x$ ($\derivative$). Here we
-  differentiate $f(x)$ with respect to $u$ (ie $\derivative[u]$) \emph{THEN}
-  multiply by $u$. The rest is plain old algebra. So.. substitue values back
-  for $u$.}
-                  & = \left[ 3{({x}^{2})}^{2} \right] * 2x
-  \intertext{simplify the first set of brackets with basic power laws}
-                  & = (3{x}^{4})(2x) \\
-                  & = 6{x}^{5}
+  are differentiating $f(x)$ with respect to $x$. Here we differentiate $f(x)$
+  with respect to $u$ (ie $\deriv{f}{u}$). \emph{THEN} we multiply by
+  $\deriv{u}{x}$. The rest is plain old algebra. So.. substitue values back for
+  $\deriv{u}{x}$.}
+    & = 3u^2 \cdot 2x \nonumber \\
+    & = 3(x^2)^2 \cdot 2x \\
+    & = 3x^4 \cdot 2x \\
+    & = 6x^5
 \end{align}
 As a point of exercise, here's how much faster it is using the power method:
 \begin{align}
-  f(x) & = {({x}^{2})}^{3} \\
-  f(x)  & = {x}^{6}
+  f(x)
+    & = {({x}^{2})}^{3} \nonumber \\
+  f(x)
+    & = {x}^{6}
   \intertext{Now we use the differentiation power method, bring the power out
   the front and reduce the power by one}
-  f(x)\derivative & = 6{x}^{5}
-  \intertext{Look! Only two steps!}
+  f'(x) & = 6{x}^{5}
 \end{align}
-It should be noted however, that power method cannot be used for all chain rule
-problems (in fact, most of the time it can't - but for easy ones like this, it
-is far more efficient to use power method). The following example cannot use
-power method, and we \emph{should} use the chain rule:
+Although the power method here took only two steps, it should be noted that
+power method cannot be used for all chain rule problems\footnote{in fact, most
+of the time the power method won't work because maths teachers are these
+hideous evil monsters who despise free time and kittens} - but for easy ones
+like this, it is far faster to use power method). The following example cannot
+use power method, and we \emph{should} use the chain rule:
 \begin{align}
-  f(x) & = \ln(\sin(x)) \\
-  \intertext{Let } u(x) & = \sin(x)
+  f(x)
+    & = \ln(\sin(x)) \\
+  \text{Let } u(x) & = \sin(x) \\
+  f'(x)
+    & = \deriv{f}{u} \cdot \deriv{u}{x} \\
+  \deriv{\sin(x)}{x}
+    & = \cos(x) \\
+  \deriv{\ln(u)}{u}
+    & = \frac{1}{u} \\
+  \text{substitute values back:} \\
+  f'(x)
+    & = \frac{1}{\sin(x)} \cdot \cos(x) \\
+    & = \csc(x) \cdot \cos(x) \\
+    \text{ or } \\
+    & = \frac{\cos(x)}{\sin(x)} \\
+    & = \cot(x)
 \end{align}

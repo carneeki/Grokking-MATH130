@@ -42,103 +42,7 @@
 %     menu on the LHS.
 %
 %
-%- (02) Document Class and Options -------------------------------------------%
-\documentclass[
-%  pagesize,
-  a4paper,
-  pdftex,
-%  fontsize=11pt,
-%  draft=true,
-  twoside,
-]{book}
-%
-%
-%- (03) Standard package includes and options --------------------------------%
-%\usepackage{draftwatermark} % draft watermark. Comment these 2 lines in final
-%\SetWatermarkLightness{0.9} %
-\usepackage{amsmath}       % amsmath & amssymb are almost ALWAYS required.
-\usepackage{amssymb}       %
-\usepackage{gensymb}       % for the degrees circle!
-%
-%\usepackage{verbatim}     % multiline commenting ( c++ equiv /* ... */ )
-%
-\usepackage{color}
-\usepackage{xcolor}         % pdflatex
-\definecolor{neekiRed}{RGB}{172,40,41}
-\definecolor{neekiBlue}{RGB}{62,70,157}
-\definecolor{neekiGreen}{RGB}{39,171,39}
-\definecolor{neekiPurple}{RGB}{105,39,171}
-%
-\usepackage{geometry}      % option for altering page dimensions if needed
-%\usepackage[pdftex]{graphicx} % including image files for figures (ie
-                              % non-[E]PS)
-%                          % valid types: jpeg, png, pdf
-\usepackage{wrapfig}       % the figures themselves
-\usepackage[numbers,
-square,
-longnamesfirst
-]{natbib}                  % prettybib
-\usepackage[pdftex]{hyperref} % clickable TOC and refs
-%\usepackage[all]{xy}      % category theory helpers
-%\xyoption{all}            % category theory helpers
-%\input xy                 % category theory helpers
-\usepackage{tikz}        % easy graphic thing
-\usepackage{tabularx}    % easy tables
-\usepackage{url}         % easy urls
-\usepackage{multirow}    %
-\usepackage{lipsum}      % autogen placeholder text
-%
-%- (04) Custom Definitions and Alterations -----------------------------------%
-\usepackage[T1]{fontenc} % font-doohickey
-%\usepackage{tgadventor}  % font
-%\usepackage[math]{iwona} % font
-\usepackage{kurier} % font
-
-%
-\linespread{1.5} % carneeki@ use approx 150% line spacing just like MaxDesign.
-\hypersetup{
-  % DO NOT CHANGE THESE
-%   pdftitle={\metaTitle},
-%   pdfauthor={\metaAuthorShort},
-%   pdfsubject={\metaSubject},
-%   pdfkeywords={\metaKeywords},
-  pdfcreator={LaTeX},
-  pdfproducer={LaTeX},
-  pdftoolbar=false,
-  % But change these to taste:
-  pdffitwindow=false,   % window fit to page when opened
-  pdfstartview={Fit},   % fits the width of the page to the window
-                        % all (useful) opts: Fit, FitH, FitV,
-  pdfpagelayout=TwoPageLeft,
-  pdfnewwindow=true,    % open links in new window
-  colorlinks=true,      % false = boxed links; true = colored links
-  linkcolor=neekiRed, % color of internal links
-  citecolor=neekiBlue, % color of links to bibliography
-  filecolor=red, % color of file links
-  urlcolor=red  % color of external links
-}
-\usepackage[Lenny]{fncychap}
-%\usepackage[Bjornstrup]{fncychap}
-%
-%- (05) Custom Commands ------------------------------------------------------%
-% MATH
-\newcommand{\derivative}[1][x]{\frac{\mathrm{d}}{\mathrm{d}#1}}
-\newcommand{\deriv}[2]{\frac{\mathrm{d}#1}{\mathrm{d}#2}}
-\newcommand{\ndeg}{^\circ} % the degrees symbol
-\newcommand{\neqref}[1]{\text{(#1)}}
-% trig
-\newcommand{\isin}{\sin^{-1}}
-\newcommand{\icos}{\cos^{-1}}
-\newcommand{\itan}{\tan^{-1}}
-% DMTH
-\newcommand{\lxor}{\oplus}
-\newcommand{\lxnor}{\lnot\lxor}
-\newcommand{\true}{(\mathbb{T})}
-\newcommand{\false}{(\mathbb{F})}
-% GENERAL
-\newcommand{\qedbitches}{\qed}
-\renewcommand{\labelenumi}{(\alph{enumi})}
-\renewcommand{\labelenumii}{(\roman{enumii})}
+\input{preamble}
 %
 %- (06) Document Title and other metadata ------------------------------------%
 %
@@ -180,6 +84,7 @@ longnamesfirst
 \include{algebra/number-systems-types-of-numbers}
 \include{algebra/number-systems-factorization}
 \include{algebra/exponentials-logarithms}
+\include{algebra/trig-identities}
 \include{algebra/trigonometry}
 \include{algebra/polynomials}
 \include{algebra/absolute-values}
@@ -207,7 +112,6 @@ longnamesfirst
 %-----------------------------------------------------------------------------%
 %- Appendix ------------------------------------------------------------------%
 %-----------------------------------------------------------------------------%
-\include{appendices/trig-identities}
 \include{appendices/calculus-proofs}
 \include{appendices/differentiation-quickstart}
 

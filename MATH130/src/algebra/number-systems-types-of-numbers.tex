@@ -53,39 +53,43 @@ to encounter in MATH130. This list is partially built from \citet{IjPb7}.
 \begin{tabularx}{\linewidth}{| c || c | X |}
   \hline
   Symbol & Example & Read as \\ \hline \hline
-  $ \in    $ & $ x \in    \mathbb{R} $ & x is an element of $\mathbb{R}$ (real
-                                       numbers)                       \\ \hline
-  $ \notin $ & $ x \notin \mathbb{R} $ & x is not an element of $\mathbb{R}$
-                                       (real numbers)                 \\ \hline
-  $ \cup   $ & $ \mathbb{I} \cup \mathbb{Q} \in \mathbb{R}$
-                                       & The set $\mathbb{I}$ (irrational
-                                       numbers) and $ \mathbb{Q} $ (rational
-                                       numbers) are in set $\mathbb{R}$ (real
-                                       numbers).                      \\ \hline
-  $ =       $ & $ x = y       $ & x is equal to y                     \\ \hline
-  $ \neq    $ & $ x \neq    y $ & x is not equal to y                 \\ \hline
-  $ \approx $ & $ x \approx y $ & x is approximately equal to y       \\ \hline
-  $ \equiv  $ & $ x \equiv  y $ & x is equivalent to y                \\ \hline
-  $ <       $ & $ x < y       $ & x is less than y                    \\ \hline
-  $ >       $ & $ x > y       $ & x is greater than y                 \\ \hline
-  $ \leq    $ & $ x \leqslant $ & x is equal to or less than y        \\ \hline
-  $ \geq    $ & $ x \geqslant $ & x is equal to or greater than y     \\ \hline
-  $ f(x)    $ & $ f(x) = mx + b $ & function of x is equal to mx + b  \\ \hline
-  $ \sum    $ & $ \sum_{i=1}^{10} t_i $ & sum of terms t for values 1 to 10
-                                                                      \\ \hline
-  $ \int    $ & $ \int_0^\infty e^{-x}\,\mathrm{d}x $
-                                & integrate $ e^{-x} $ from 0 to $ \infty $
-                                with respect to x                     \\ \hline
-  $ \derivative f(x) $ & $ \derivative f(x) $ & differentiate $f(x)$ with
-                                                respect to x.                     
-                                                \\ \hline
-  $ y'~\mathrm{d}x $ & $ y'~\mathrm{d}x   $ & differentiate $y$ with respect to
-                                            x.   
-                                            \\ \hline
+  $=$       & $ x = y$            & $x$ is equal to $y$                       \\
+  $\neq$    & $ x \neq y$         & $x$ is not equal to $y$                   \\
+  $\approx$ & $ x \approx y$      & $x$ is approximately equal to $y$         \\
+  $\equiv$  & $ x \equiv y$       & $x$ is equivalent to $y$                  \\ \hline
+  %
+  $<$       & $ x < y$            & $x$ is less than $y$                      \\
+  $>$       & $ x > y$            & $x$ is greater than $y$                   \\
+  $\leq$    & $ x \leq y$         & $x$ is equal to or less than $y$          \\
+  $\geq$    & $ x \geq y$         & $x$ is equal to or greater than $y$       \\
+  $!$       & $n!$                & $n$ factorial. ($n*(n-1)*\ldots*3*2*1$)   \\ \hline
+  $f(x)$    & $ f(x) = mx + b$    & Function of $x$ is equal to $mx + b$      \\ \hline
+  %
+  $\sum$    & $ \sum_{i=1}^{10} t_i$ & Sum of terms $t$ for values $1$ to $10$\\ \hline
+  %
+  $\int$    & $\myint{0}{\infty}{e^{-x}}{x}$ & Integrate $e^{-x}$ from $0$ to $\infty$ with respect to $x$\\ \hline
+  %
+  $\deriv{y}{x}$      & $\deriv{y}{x}$       & Differentiate $y$ with respect to $x$ \\
+  $\deriv{f(x)}{x} $  & $\deriv{f(x)}{x} $   & Differentiate $f(x)$ with respect to $x$ \\
+  $\lderiv{f(x)}{x}$  & $\lderiv{f(x)}{x}$   &                                \\
+  $y'~\mathrm{d}x$    & $y'~\mathrm{d}x$     & Differentiate $y$ with respect to $x$. This is called ``Newton's notation''. If no variable is listed, it safe to assume it is the variable supplied to the function. \\
+  $f'(x)$             & $f'(x)$              &                                \\
+  $f''(x)$            & $f''(x)$             & Differentiate $f(x)$ twice.    \\ \hline
+  %
+  $\in$     & $x\in\mathbb{R}$    & $x$ is an element of $\mathbb{R}$         \\
+  $\notin$  & $x\notin\mathbb{R}$ & $x$ is not an element of $\mathbb{R}$     \\ \hline
+  %
+  $\cup$    & $\mathbb{Z}\cup\mathbb{N} \in \mathbb{R}$
+                                  & The union of $\mathbb{Z}$ and $\mathbb{N}$ are in set $\mathbb{R}$.\\
+  $\cap$    & $\mathbb{Z}\cap\mathbb{N} \in \mathbb{N}$
+                                  & Common elements of $\mathbb{Z}$ and $\mathbb{N}$ are in set $\mathbb{N}$.
+                                                                       \\ \hline
+  %
 \end{tabularx}
 \caption{Types of mathematical symbols}
 \end{table}
 
+\newpage
 \section{A Brief Interlude on Language}
 \label{sec:ABriefInterludeOnLanguage}
 An expression and an equation are \emph{different} things, despite the fact that
@@ -93,8 +97,7 @@ they look similar. An expression might be something like $3x - 8$, however, $x$
 has no value. By the fact that $3x - 8$ has no value \emph{assigned} to it, it
 is an expression. If we were to assign a value to it, $3x-8 = 0$ then we can
 call it an equation.
-
 \begin{align}
-  3x - 8 & & \text{an expression} \nonumber   \\
-  3x - 8 & = 0 & \text{an equation} \nonumber \\
+  3x - 8 &     & \text{an expression}\\
+  3x - 8 & = 0 & \text{an equation}\\
 \end{align}
