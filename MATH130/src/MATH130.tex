@@ -45,7 +45,16 @@
 \input{preamble}
 %
 %- (06) Document Title and other metadata ------------------------------------%
-%
+\thiswatermark{
+% challenge accepted guy
+% bottom right: (220,-760)
+% bottom left: (-60,-760)
+\put(-60,-760){
+\begin{tikzpicture}
+  \node[opacity=0.1]{\includegraphics[scale=1.8]{img/challenge.jpg}};
+\end{tikzpicture}
+}
+}
 \title{
   The MATH130 Student's Guide to Chen and Duong's MATH130 notes.
 }
@@ -56,7 +65,7 @@
   Department of Electronic   Engineering\\
   Macquarie University\\
   Sydney, Australia 2109\\
-  Email: \url(adam.carmichael@ieee.org) \\
+  Email: \url{adam.carmichael@ieee.org} \\
 }% author END Brace
 %
 %- (07) Start Document Content -----------------------------------------------%

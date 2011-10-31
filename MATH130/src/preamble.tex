@@ -1,4 +1,4 @@
-% preamble.tex v 2011-10-30 1921AEDT
+% preamble.tex v 2011-10-31 2216AEDT
 %- (02) Document Class and Options -------------------------------------------%
 \documentclass[
 %  pagesize,
@@ -13,6 +13,7 @@
 %- (03) Standard package includes and options --------------------------------%
 %\usepackage{draftwatermark} % draft watermark. Comment these 2 lines in final
 %\SetWatermarkLightness{0.9} %
+\usepackage{watermark}
 \usepackage{amsmath}       % amsmath & amssymb are almost ALWAYS required.
 \usepackage{amssymb}       %
 \usepackage{gensymb}       % for the degrees circle!
@@ -80,9 +81,10 @@ longnamesfirst
 %- (05) Custom Commands ------------------------------------------------------%
 % MATH
 %\newcommand{\derivative}[1][x]{\frac{\mathrm{d}}{\mathrm{d}#1}}
-\newcommand{\deriv}[2]{\frac{\mathrm{d}\,#1}{\mathrm{d}#2}} % derivative of fn
+\newcommand{\md}[1]{\mathrm{d}#1}
+\newcommand{\deriv}[2]{\frac{\md{#1}}{\md{#2}}} % derivative of fn
 \newcommand{\lderiv}[2]{\deriv{}{#2}(#1)} % deriv of a long fn
-\newcommand{\myint}[4]{\int_{#1}^{#2} #3\,\mathrm{d}#4} % integrate
+\newcommand{\myint}[4]{\int_{#1}^{#2} #3~\md{#4}} % integrate
 \newcommand{\aderiv}[2]{\myint{}{}{#1}{#2}}
 \newcommand{\ndeg}{^\circ} % the degrees symbol
 \newcommand{\neqref}[1]{\text{(#1)}}
