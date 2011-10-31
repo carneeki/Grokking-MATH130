@@ -1,18 +1,252 @@
 %-----------------------------------------------------------------------------%
 %- Algebra :: Arithmetic & Geometric Progressions ----------------------------%
 %-----------------------------------------------------------------------------%
-\section{Progressions}
+\chapter{Progressions}
 \label{chap:Progressions}
 Progressions are when you have a bunch of numbers in a group, and they are
 related to eachother in an order, such as ``add one to the last one'', or
-``divide by one plus the last one.'' They fall into two types:
+``divide by one plus the last one.'' They fall into two types which resemble the
+form:\footnote{again, there are other types, but they fall out of the scope of
+MATH130. Some examples include Harmonic Progressions, and a Taylor Series}
+
 \begin{description}
-  \item[Arithmetic Progressions]
-  \item[Geometric Progressions]
+  \item[Arithmetic Progressions] $a_1 + (1-1)d, a_2 + (2-1)d, a_3 +(3-1)d,
+  \ldots$ Essentially, a bunch of numbers separated by a common delta. They
+  sometimes also go by the term \emph{arithmetic sequence}. I shall use the term
+  progression however, as it feels less confusing to me when we enter the topic
+  of sums.
+  \item[Geometric Progressions] $a, ar, ar^2, ar^3, ar^4, \ldots$
 \end{description}
+If you cannot recognise a form of numbers, you can perform what I call the
+``double difference test''. We can taking any $2$ consecutive numbers, and
+compare their difference with any other $2$ consecutive numbers.
+\begin{enumerate}
+  \item If the delta is identical between both pairs, you have an arithmetic
+  progression.
+  \item If the delta is different between both pairs, you have a geometric
+  progression.
+\end{enumerate}
 
 \section{Arithmetic Progressions}
 \label{ArithmeticProgressions}
+Arithmetic progressions are really nothing more than a set of numbers which have
+a difference from one number to the next of a common number, ($d$), as seen in
+the double difference test. An arithmetic progression takes the form:
+\begin{align}
+  a_n &= a_1 + (n-1)d
+\intertext{or more generally:}
+  a_n &= a_m + (n-m)d \label{eq:ArithmeticProgression}
+\intertext{Sometimes knowing the in the form of $n=$ is handy, this is derived
+in the subsection the sum of arithmetic progressions:}
+  n &= \frac{1}{d}(a_n - a_m) +m
+\end{align}
+\begin{table}[!htb]
+\begin{tabularx}{\linewidth}{| l X |}
+\hline
+\multicolumn{2}{|l|}{Where:} \\
+\hline \hline
+$a_n$ & is an arbitrary term we wish to determine \\
+$n$   & is the $n$\tsup{th} arbitrary value to index the term \\
+$m$   & is an arbitrary term we are given \\ 
+$a$   & is the number itself \\
+$d$   & is the delta between numbers \\
+\hline
+\end{tabularx}
+\caption{Components to an arithmetic progression.}
+\end{table} 
+\subsection{Determining the $n$\tsup{th} term of an arithmetic progression}
+\label{sec:nthTermOfAnArithmeticProgression}
+Given some sequence of numbers, $1, 3, 5, 7, 9, \ldots$, we can determine the
+delta, $d=2$ (as the difference of any pair of numbers is $2$), and $a_1 = 1$.
+Armed with this knowledge we can determine any term. For example the
+$1000$\tsup{th} term can be obtained as follows:
+\begin{align}
+  a_n &= a_m + (n-m)d \nonumber \\
+  a_{1000} &= a_{1} + (1000-1)*2 \\
+    &= 1 + 999*2 \\
+    &= 1 + 1998 \\
+    &= 1999
+\end{align}
+It also works backwards for numbers before first term, suppose given the same
+sequence as above we wanted to determine what the $-1000$\tsup{th}
+term\footnote{putting my poor language aside, let's pretend that a preceeding
+term could take place before the first term.},\tsup{,}\footnote{this is partly
+why math is better than English, we can describe things and even poor grammar
+can convey the meaning better in math than poor grammar in English.} is.
+\begin{align}
+  a_n &= a_m + (n-m)d \nonumber \\
+  a_{-1000} &= a_{1} + (-1000+1)*2 \\
+    &= 1 + (-999)*2 \\
+    &= 1 -1998 \\
+    &= -1997 \\
+\end{align}
+Now you might be saying ``whoa hold on a sec, we had $1999$ before, shouldn't we
+expect $-1999$?''. The answer is no. The reason: we must traverse across
+``zero'' to get to $-1$ as the term before $1$, so our negative number is always
+going to be $d$ less than than the positive number (and then multiplied by
+$-1$).
+\newpage
+\subsection{Sum of an Arithmetic Progression - aka Arithmetic Series}
+\label{sec:ArithmeticSeries}
+For some reason\footnote{no pun intended}, we call a sum of subset of elements
+in an arithmetic progression an \emph{arithmetic series}. To determine the sum:
+\begin{align}
+%   S_n
+%     &= a_1 + (a_1 + d) + (a_1 + 2d) + \ldots + (a_1 + (n-2)d) + (a_1 + (n-1)d) \\
+%     &= (a_n - (n-1)d) + (a_n - (n-2)d) + \ldots + (a_n - 2d) + (a_n -d) + a_n \\
+%   2S_n
+%     &= n(a_1 + a_n) \\
+  S_n
+    &= \frac{n}{2}(a_1 + a_n) \label{eq:ArithmeticSum1}\\
+    \text{or}
+    &= \frac{n}{2}(2a_1 + (n-1)d) \label{eq:ArithmeticSum2}
+\end{align}
 
+\begin{table}[!htb]
+\begin{tabularx}{\linewidth}{| l X |}
+\hline
+\multicolumn{2}{|l|}{Where:} \\
+\hline \hline
+$Sn$  & is the sum of an arbitrary term \\
+$a_n$ & is the arbitrary term \\
+$a_1$ & is the first term \\
+$d$   & is the delta between numbers \\
+\hline
+\end{tabularx}
+\caption{Components to an arithmetic series.}
+\end{table}
+\noindent
+Let's take our odd number progression from before: $1, 3, 5, 7, 9, \ldots, 1999$
+and determine what the sum of these numbers are.
+\begin{align}
+\intertext{First we need to find what the value of $n$ in the progression is,
+pretending we don't know it from before). We can rearrange
+\eqref{eq:ArithmeticProgression} to make $n$ the subject of the equation:}
+  a_n
+    &= a_m + (n-m)d \nonumber \\
+  a_n
+    &= a_1 + (n-1)d \nonumber \\
+  a_1 + (n-1)d
+    &= a_n                       &\text{swap sides}\\
+  (n-1)d
+    &= a_n - a_1                 &\text{subtract $a_1$}\\
+  n-1
+    &= \frac{1}{d}(a_n - a_1)    &\text{divide by $d$}\\ 
+  n &= \frac{1}{d}(a_n - a_1) +m &\text{add $m$}
+  \intertext{Substitute values:}
+  n &= \frac{1}{2}(1999 - 1) + 1 \\
+    &= \frac{1}{2}(1998) + 1 \\
+    &= 999 + 1 \\
+    &= 1000
+\intertext{Now we can substitute into the sum equation
+\eqref{eq:ArithmeticSum1}}
+  S_n
+    &= \frac{n}{2}(a_1 + a_n) \nonumber \\
+  S_{1000}
+    &= \frac{1000}{2}(1 + 1999) \\
+    &= 500 \cdot 2000 \\
+    &= 1 000 000
+\end{align}
+\newpage
 \section{Geometric Progressions}
 \label{GeometricProgressions}
+Geometric progressions are really nothing more than a set of numbers which have
+a ratio-based difference from one number to the next of a common ration, ($r$).
+If you apply the double difference test, a geometric progression will fail,
+however if you either divide two pairs of numbers by their previous or next
+consecutive number (a ``double quotient test''), you should have the same ratio.
+\\
+\\
+A finite geometric progression of numbers will look like $ar^0, ar^1, ar^2,
+\ldots ar^{n-1}$
+\begin{align}
+  a_n &= ar^{n-1} \label{eq:GeometricProgression}
+\intertext{Sometimes knowing the in the form of $n=$ is handy, we can do this
+with logarithms (see section \ref{sec:LogLaws} for a list of log laws - many
+of which should be committed to memory)}
+  \frac{a_n}{a} &= r^{n-1} \\
+  \log_r(\frac{a_n}{a}) & = \log_r(n-1) \\
+  \log_r(a_n) - \log_r(a) & = \log_r(n-1) \\
+  a_n - a &= n -1 \\
+  a_n - a + 1 & = n \\
+\intertext{From this form, getting $a$ is a matter of rearranging:}
+  a_n - n & = a
+\end{align}
+\begin{table}[!htb]
+\begin{tabularx}{\linewidth}{| l X |}
+\hline
+\multicolumn{2}{|l|}{Where:} \\
+\hline \hline
+$a$ & is the first term of the geometric progression \\
+$a_n$ & is an arbitrary term we wish to determine \\
+$r$ & is the ratio between numbers \\ 
+$n$ & is the $n$\tsup{th} arbitrary value to index the term \\
+\hline
+\end{tabularx}
+\caption{Components to a Geometric Progression.}
+\end{table} 
+\subsection{Determining the $n$\tsup{th} term of an geometric progression}
+\label{sec:nthTermOfAnGeometricProgression}
+Given some sequence of numbers, $1, 2, 4, 8, 16, 32, \ldots$, we can see the
+formula follows: $1=ar^{(1-1)}=ar^0=a*1=a=1$, and we can see that the
+ratio is that of doubling ($r=2$), such that $1=a2^{(1-1)}=a2^0=a*1=a=1$. Armed
+with this knowledge we can determine any term. For example the $10$\tsup{th}
+term can be obtained as follows:
+\begin{align}
+  a_n &= ar^{n-1} && \text{by \eqref{eq:GeometricProgression}} \nonumber \\
+  a_{10} &= 1*2^{10-1} \\
+    &= 1*2^{10-1} \\
+    &= 1*2^9 \\
+    &= 512
+\end{align}
+Another example that is easily worked out using finders and no calculator.
+\begin{align}
+    a_n &= ar^{n-1} && \text{by \eqref{eq:GeometricProgression}} \nonumber \\
+  a_{5} &= 1*2^{5-1} \\
+    &= 1*2^{5-1} \\
+    &= 1*2^4 \\
+    &= 16
+\end{align}
+Simply raise one finger\footnote{ideally your thumb or pinky!}, and each time
+you double, raise another finger. If you have the normal number of digits per
+hand, the $5$\tsup{th} will match the result.
+\newpage
+\subsection{Sum of an Geometric Progression - aka Geometric Series}
+\label{sec:GeometricSeries}
+We call a sum of subset of elements in an geometric progression an
+\emph{geometric series}. To determine the sum:
+\begin{align}
+  S_n
+    &= ar^0 + ar^1 + ar^2 + \ldots + ar^{n-1} \label{eq:GeometricSum1}
+\intertext{If we multiply both sides by $r$}
+  rS_n
+    &= ar^1 + ar^2 + \ldots + ar^{n-1} + ar^n \\
+\intertext{and we take the difference of these two equations:}
+  S_n - rS_n
+    &= a - ar^n
+\intertext{$S_n$ can also be expressed as:}
+  S_n 
+    &= \frac{a-ar^n}{1-r} \\
+\intertext{Because (and it's easier to understand why when you see this
+working):}
+  S_n
+    &= \frac{S_n - rS_n}{x} \\
+  \text{Let $S_n=y$} \nonumber \\
+   y &= \frac{y-(ry)}{x} \\
+  yx &= y-yr \\
+   x &= 1-r
+\end{align}
+
+\begin{table}[!htb]
+\begin{tabularx}{\linewidth}{| l X |}
+\hline
+\multicolumn{2}{|l|}{Where:} \\
+\hline \hline
+$Sn$ & is the sum of an arbitrary term \\
+$n$  & is the $n$\tsup{th} index of the term we are interested in \\
+$a$  & is the first term \\
+$r$  & is the ratio between numbers \\
+\hline
+\end{tabularx}
+\caption{Components to a geometric series.}
+\end{table}
