@@ -5,33 +5,26 @@
 \label{chap:Parabolas}
 \begin{figure}[!hbt]
 \label{fig:FuncGraphParabola}
-\begin{tikzpicture}[scale=1]
-  \def\xmin{-5}
-  \def\xmax{5}
-  \def\ymin{-2}
-  \def\ymax{5}
-  \clip
-    (\xmin,\ymin) rectangle (\xmax,\ymax);
-  \filldraw[fill=blue,fill opacity=0.15, color=neekiBlue, <->, variable=x]
-    plot[id=parabola, raw gnuplot, smooth]
-    function{
-      set xrange [\xmin:\xmax];
-      set yrange [\ymin:\ymax];
-      plot x**2;}
-    node[right] {$f(x) = {x}^{2}, x \in \{ -5,5 \} $};
-  % grid
-  \draw[very thin, color=black!30, ystep=1, xstep=1]
-    (\xmin,\ymin) grid (\xmax,\ymax);
-  % x-axis
-  \draw[<->]
-    (\xmin,0) -- (\xmax,0) node[right] {$x$};
-  % y-axis
-  \draw[<->]
-    (0,\ymin) -- (0,\ymax) node[above] {$f(x)$};
+\begin{tikzpicture}[domain=-5:5]
+  \draw [color=neekiGrey,dash pattern=on 1pt off 1pt,xstep=1cm,ystep=1cm]
+  (-5,-5) grid (5,5); \draw[->,color=black] (-5,0) -- (5,0);
+  \foreach \x in {-5,-4,-3,-2,-1,0,1,2,3,4,5}
+    \draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below]
+    {\footnotesize $\x$};
+  \draw[->,color=black] (0,-5) -- (0,5);
+  \foreach \y in {-5,-4,-3,-2,-1,0,1,2,3,4,5}
+    \draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left]
+    {\footnotesize $\y$};
+  \clip(-5,-5) rectangle (5,5);
+  \draw[color=neekiBlue,samples=100,thick]
+    plot[id=parabolaxsquared] function{x**2}
+    node[right] at (1.5,1.5) {$f(x)=x^2$};
+  \draw[color=neekiRed,samples=100,thick]
+    plot[id=parabola-xsquared] function{-x**2}
+    node[left] at (-1.5,-1.5) {$f(x)=-x^2$};
 \end{tikzpicture}
 \caption{A parabolic function: $f(x) = {x}^{2}$}
 \end{figure}
-A parabolic function in the form $f(x) = mx^2 + c$
 \begin{table}[!hbt]
 \label{tab:PartsOfAParabolicFunction}
 \begin{tabularx}{\linewidth}{| l X |}

@@ -9,7 +9,7 @@
   twoside,
 ]{book}
 %
-%
+%\clip(-11.74,-31.43) rectangle (11.68,35.96);
 %- (03) Standard package includes and options --------------------------------%
 %\usepackage{draftwatermark} % draft watermark. Comment these 2 lines in final
 %\SetWatermarkLightness{0.9} %
@@ -22,6 +22,7 @@
 %
 \usepackage{color}
 \usepackage{xcolor}         % pdflatex
+\definecolor{neekiGrey}{RGB}{192,192,192}
 \definecolor{neekiRed}{RGB}{172,40,41}
 \definecolor{neekiBlue}{RGB}{62,70,157}
 \definecolor{neekiGreen}{RGB}{39,171,39}
@@ -40,7 +41,7 @@ longnamesfirst
 %\usepackage[all]{xy}      % category theory helpers
 %\xyoption{all}            % category theory helpers
 %\input xy                 % category theory helpers
-\usepackage{tikz}        % easy graphic thing
+\usepackage{pgf,tikz}      % easy graphic thing
 \usepackage{tabularx}    % easy tables
 \usepackage{url}         % easy urls
 \usepackage{multirow}    %
@@ -51,6 +52,8 @@ longnamesfirst
 %\usepackage{tgadventor}  % font
 %\usepackage[math]{iwona} % font
 \usepackage{kurier} % font
+
+\usetikzlibrary{arrows}
 
 %
 \linespread{1.5} % carneeki@ use approx 150% line spacing just like MaxDesign.
