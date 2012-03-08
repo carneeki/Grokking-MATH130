@@ -3,17 +3,55 @@
 %-----------------------------------------------------------------------------%
 \chapter{Number Systems \& Factorization}
 \label{sec:NumberSystemsAndFactorization}
+The following are the laws of \emph{Associativity}:
+\begin{align}
+  a + (b + c) & = (a+ b) + c \label{eq:assoc0}\\
+  a * (b * c) & = (a * b) * c \label{eq:assoc1}
+\end{align}
+
+
+The following are laws of \emph{Commutativity}:
+\begin{align}
+  a + b & = b + a \label{eq:commut0} \\
+  a * b & = b * a \label{eq:commut1}
+\end{align}
+
+By combining these rules we get the \emph{Distributite Laws}:
+
+\begin{align}
+      a* (b+c) & = a*b + a*c \label{eq:distrib0} \\
+   (b+c) * a & = (b * a) + (c * a) \label{eq:distrib1} \\
+    & = (a*b) + (a * c) \label{eq:distrib2}
+\end{align}
+
+\emph{These laws are not compatible with subtraction or division}.
+
+These give rise to special cases called a quadratic which will be introduced in
+section \ref{sec:IntroductionToPolynomials}, Introduction to Polynomials, and in
+further detail in chapter \ref{chap:Polynomials}, Polynomials. A brief summary
+is as follows:
+\begin{align}
+  (a + b)^2 & = (a+b)*(a+b) \\
+   & = (a+b) * a + (a+b)* b \\
+   & = a^2 + ba + ab + b^2 \\
+   & = a^2 + 2ab + b^2 \\
+\end{align}
+
+In turn:
+\begin{align}
+  (a-b)^2 = a^2 - 2ab - +b^2 \\
+\end{align} 
+And
+\begin{align}
+  a^2 - b^2 & = (a-b)(a+b) \\
+\end{align}
+\begin{align}
+  a^3 - b^3 & =(a-b)(a^2+2ab+b^2) \\ 
+\end{align}
+
+
 There are some basic laws that need to be understood to manipulate numbers
 The first group of laws are called the "Distributive laws".
-\begin{align}
-      a(b+c) & = ab + ac \label{eq:distrib0} \\
-      (a+b)c & = ac + bc \label{eq:distrib1} \\
-  (a+b)(c+d) & = ac + ad + bc + bd \label{eq:distrib2}
-\end{align}
-Equation \ref{eq:distrib2} gives rise to a special case called a quadratic
-which will be introduced in section \ref{sec:IntroductionToPolynomials},
-Introduction to Polynomials, and in further detail in chapter
-\ref{chap:Polynomials}, Polynomials. 
 \\
 The distributive laws are all about expanding brackets, that is to say, in
 \ref{eq:distrib1}, first we multiply $a$ with the first term inside the
@@ -25,6 +63,34 @@ Another way to think about it is $a$ is distributed to each term inside the
 brackets. This also applies in \ref{eq:distrib2} with $c$, and it yields the 
 same result as in \ref{eq:distrib1}.
 
+An integer is \emph{even} iff \footnote{and only if = iff} it's square is
+\emph{even}. An integer is \emph{odd} iff it's square is \emph{odd} \\
+
+Why? If $x$ is even, then $x = 2k$ for some other integer $k$ then $x^2 = 4k^2$
+so $\frac{x^2}{2} = 2k$ and so $x^2 is even$.\\
+Similarly, if $x$ is odd, then $x-1 = 2l$ for some integer $l$. \\
+Then $x = 2l + 1$, hence $x^2 = (2l +1)^2 = 4l^2 + 4l + 1$. \\
+So $x^2 - 1 = 4l^2 + 4l$. Given $4l^2 + 4l$ is even, so $x^2 = 1 + $ even so
+$x^2$ is odd.
+
+This proves that some numbers in reality are not fractions, such as \emph{surds}
+(irrational numbers) eg $\sqrt{2}$. An alternate way to prove this, is to assume
+$\sqrt{2} \in \mathbb{Q}$ and derive a contradiction.
+
+Fractions ($\mathbb{Q}$) take the form $\frac{a}{b}$ where $a$ and $b$ are
+integers. We can always assume that $a$ and $b$ are not even (because they are
+divisible by $2$ and cancel out).\\
+\begin{align}
+  \text{Then} \sqrt{2}*b & = a \text{hence} \\
+  2* b^2 & = a^2 \text{even} \\
+  a^2 & = 2k \text{for another integer} k \\
+  \text{so} a^2 = 4k^2 \\
+  4k^2 & = 2b^2 \\
+  2k^2 & = b^2 \\
+  \text{so} b^2 \text{even}
+  \text{so} b \text{even}
+\end{align}
+
 %-----------------------------------------------------------------------------%
 %- Algebra :: Number Systems & Factorization :: Fractions --------------------%
 %-----------------------------------------------------------------------------%
@@ -35,20 +101,20 @@ It turns out that any repeating decimal can be written as a fraction:
 \begin{align}
   2.1 \times 100000 & = \\
     & = 2.1 \times \frac{10}{10} \\
-    & = \frac{21}{10} \\
+    & = \frac{21}{10}
 \end{align}
 
 What about $1.33333\ldots$?
 \begin{align}
-  1.33333 & = \frac{4}{3} \\
+  1.33333 & = \frac{4}{3}
 \end{align}
 
 Or $1.373737\ldots$ ??
 \begin{align}
-  let     x & = 1.373737\ldots\\
-       100x & = 137.3737\ldots\\
-   100x - x & = 137.373737\ldots - 1.373737\ldots\\
-        99x & = 136 \\
+  \text{Let } x & = 1.373737\ldots\\
+           100x & = 137.3737\ldots\\
+       100x - x & = 137.373737\ldots - 1.373737\ldots\\
+            99x & = 136 \\
   so \nonumber \\
         x & = \frac{136}{99} \\
         \therefore 1.373737\ldots = x & = \frac{136}{99}  
@@ -58,7 +124,7 @@ For longer decimal places we need to create 2 numbers using $x$ with the same
 decimal part so that when we subtract the decimal part we get a whole number.
 
 \begin{align}
-         let  x & = 36.2593593593\ldots \\
+\text{Let } x & = 36.2593593593\ldots \\
        so 10x & = 362.593593\ldots \\
        10000x & = 362593.593\ldots \\
    10000x-10x & = 362593.593\ldots - 362.593\ldots \\
