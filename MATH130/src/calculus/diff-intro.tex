@@ -4,9 +4,25 @@
 \newpage
 \chapter{Differentiation}
 \label{sec:Differentiation}
-In overly simplified terms, differentiation is the process of taking a curve
-on a graph and finding what the gradient of that curve is. There are 4
-methods which are useful for MATH130. These are:
+In a nutshell, differentiation is the process of finding the rate of change at
+an instant point in time. Often, we are looking at data or formulae that has
+been plotted on a graph to form a curve.\footnote{We say curve, and we can do it
+on a straight line too, but given a straight line is, well, straight, there is
+no change in the rate of change}
+
+An example of this would be if we throw a ball in the air. The velocity of the
+ball changes from second to second, however, the rate at which the velocity
+changes (called acceleration) also changes. At first, the ball slows down quite
+quickly, and at the maximum heigh, the velocity plateaus, reaches zero, and then
+starts falling, slowly at first then faster and faster until it hits the ground.
+
+In reality, cannot get an exact value for instantaneous points in time, however,
+we can measure the height of the ball at sufficiently fast intervals to
+get sufficiently accurate average velocities. At some point, the value of what
+you measure will not change by very much with respect to the change in time.
+This is what we call the \emph{limit} when the measured data is constant.
+
+There are 4 methods of differentiation which are useful for MATH130. These are:
 \begin{itemize}
   \item Power Method (well, that's what I call it)
   \item Product Rule
@@ -26,26 +42,30 @@ MATH130}
 The first notation is the ``dash'', ``prime'', or ``Lagrange's'' notation and
 appears as such:
 \begin{align}
-   f(x) & = ... \\
-  f'(x) & = ...
+   f(x) & = \ldots \nonumber \\
+  f'(x) & = \ldots \nonumber
   \intertext{Secondly is Leibniz's notation:}
-  \\deriv{f(x)}{x} &= ...
+  y & = \ldots \nonumber \\
+  \deriv{y}{x} &= \ldots \nonumber
   \intertext{Euler's notation: (not so common in MATH130)}
-   Df(x) & = ... \\
+    f(x) & = \ldots \nonumber \\
+   Df(x) & = \ldots \nonumber
 \end{align}
 Each notation has their merits and usefulness; Lagrange's form is neat and
 compact for simple derivatives, however Leibniz's notation describe what is
-being differentiated and what is in respect to, which is useful for the chain
-rule discussed shortly. As such, it is important to be familiar with all the
-above forms as they will often be used interchangeably for brevity,
-neatness and ease of memorising them. In terms of how you answer a question - 
-if there is no stated style of notation, go for what ``looks'' like it works
-\footnote{Munner's Law: If it looks wrong it probably is. -- Cliff Munro,
-1996 Cranbrook School, Design and Technology teacher. Author's corollary: If it
-doesn't look wrong, hopefully it's right.} and is clear and neat. Clear and
-neat usually results in the marker understanding what you are on about, so even
-if you are wrong, you might get partial marks.
-\\
+being differentiated and what is in respect to\footnote{which is useful for the
+chain rule discussed shortly}.
+
+It is important to be familiar with both Lagrange's and Leibniz's as they will
+often be used interchangeably for brevity, neatness and ease of memorising them.
+In terms of how you answer a question - if there is no stated style of notation,
+go for what ``looks'' like it works \footnote{Munner's Law: If it looks wrong it
+probably is. -- Cliff Munro, 1996 Cranbrook School, Design and Technology
+teacher. Author's corollary: If it doesn't look wrong, hopefully it's right.}
+and is clear and neat. Clear and neat usually results in the marker
+understanding what you are on about, so even if you are wrong, you might get
+partial marks.
+
 A useful tip, when you are first getting used to differentiation, it may be
 handy to use Leibniz's notation and say in your mind what you are
 differentiating, and what it is in respect to.
