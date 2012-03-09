@@ -29,9 +29,9 @@ used.
 \label{tab:PartsOfAnExponential}
 \begin{tabularx}{\linewidth}{| l X |}
 \hline
-\multicolumn{2}{|l|}{Where:} \\
+\multicolumn{2}{|l|}{The convention I will use here is:} \\
 \hline \hline
-a & is the base or \emph{radix}\\
+b & is the base or \emph{radix}\\
 x & is the index\\
 y & is the output\\
 \hline
@@ -45,13 +45,20 @@ power laws we must bear in mind... They are summarised as follows:
   {b}^{0}               & = 1 \label{eq:IndexLaw_Power0} \\
   {b}^{1}               & = b \label{eq:IndexLaw_Power1} \\
   {b}^{x} * {b}^{y}     & = {b}^{x+y} \label{eq:IndexLaw_AddIdxs} \\
-  {b}^{x} - {b}^{y}     & = {b}^{x-y} \label{eq:IndexLaw_SubIdxs} \\
+  {b}^{x} - {b}^{y}     & = b^x * \frac{1}{b^y} \\
+                        & = {b}^{x-y} \label{eq:IndexLaw_SubIdxs} \\
+  {b}^{-(x+y)}          & = ({b}^{-1})^{x} * (a^{-1})^y \\
+                        & = (b^{-x}) * (b^{-y}) \\
   {({b}^{x})}^{d}       & = {b}^{xd} \label{eq:IndexLaw_MultIdxs} \\
   b{x}^{-y}             & = \frac{b}{{x}^{y}} \label{eq:IndexLaw_NegIdx} \\
+  \text{similarly} \nonumber \\
+  b{x}^{-1}             & = \frac{1}{b} \label{eq:IndexLaw_Neg1} \\
   {b}^{(\frac{x}{y})}   & = {({b}^{x})}^{\frac{1}{y}}
                             \label{eq:IndexLaw_FracIdx0} \\
                         & = \sqrt[y]{{b}^{x}} \label{eq:IndexLaw_FracIdx1}\\
   d{b}^{(-\frac{x}{y})} & = \frac{d}{\sqrt[y]{{b}^{x}}} ~ \text{combining \eqref{eq:IndexLaw_NegIdx} and \eqref{eq:IndexLaw_FracIdx0}} \\
+  \nonumber \\
+  \text{Also note that }
   {b}^{x}               & = 0 ~ \text{is impossible} \label{eq:IndexLaw_EqualsZero}
 \end{align}
 Converting notation between the forms exhibited in
