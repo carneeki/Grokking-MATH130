@@ -106,33 +106,75 @@ they equal a simpler equation''}\footnote{according to Gareth Richardson}
 \clearpage
 \section{Linear Functions}
 \label{sec:LinearFunctions}
+Linear functions are functions with a \emph{constant rate of change}. What this
+means is that over the entire range of the function, the \emph{gradient} or
+slope remains the same.
+
+The gradient can be determined by:
+\begin{align}
+  \text{Rate of change} & = \frac{\Delta\text{function}}{\Delta\text{input}}
+\end{align}
+
+Often in high school this is called ``rise over run'' and takes the form:
+\begin{align}
+  m & = \frac{\Delta y}{\Delta x}  = \frac{y_2 - y_1}{x_2 - x_1}
+\end{align}
+(or the ``final y minus the initial y divided by the final x minus the initial
+x'').
+
 \begin{figure}[!hbt]
 \label{fig:FuncGraphLinear}
-\begin{tikzpicture}[scale=0.5]
-  \label{fig:FuncGraphLine}
-  \draw[<->]  (-3.9, -1.9) -- (3.9,9.9) node[right] {$f(x) = mx + b$};
-  \draw[<->]   (0.0, -1.9) -- (0.0,9.9) node[above] {$f(x)$};
-  \draw[<->]  (-3.9,  0.0) -- (3.9,0.0) node[right] {$x$};
+\begin{tikzpicture}[domain=-5:5]
+  \draw [color=neekiGrey,dash pattern=on 1pt off 1pt,xstep=1cm,ystep=1cm]
+  (-5,-5) grid (5,5); \draw[->,color=black] (-5,0) -- (5,0);
+  \foreach \x in {-5,-4,-3,-2,-1,0,1,2,3,4,5}
+    \draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below]
+    {\footnotesize $\x$};
+  \draw[->,color=black] (0,-5) -- (0,5);
+  \foreach \y in {-5,-4,-3,-2,-1,0,1,2,3,4,5}
+    \draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left]
+    {\footnotesize $\y$};
+  \clip(-5,-5) rectangle (5,5);
+  \draw[color=neekiBlue,samples=100,thick]
+    plot[id=linearx] function{f(x) = (4/3)x + 2}
+    node[right] at (1,1.5) {$f(x)=(4/3)x + 2$};
 \end{tikzpicture}
 \caption{A linear function: $f(x) = mx + b$}
 \end{figure}
+
+% \begin{figure}[!hbt]
+% \label{fig:FuncGraphLinear}
+% \begin{tikzpicture}[scale=0.5]
+%   \label{fig:FuncGraphLine}
+%   \draw[<->]  (-3.9, -1.9) -- (3.9,9.9) node[right] {$f(x) = mx + b$};
+%   \draw[<->]   (0.0, -1.9) -- (0.0,9.9) node[above] {$f(x)$};
+%   \draw[<->]  (-3.9,  0.0) -- (3.9,0.0) node[right] {$x$};
+% \end{tikzpicture}
+% \caption{A linear function: $f(x) = mx + b$}
+% \end{figure}
 %
 Linear function in the \emph{General Form} $Ax + By + C= 0$. It may also take
 the handy \emph{Slope-intercept form} $ f(x) = mx + b $. This is useful because
 the gradient of the line cane be read straight from the equation, and is just
-a rearrangement of the general form. 
-\begin{table}[!hbt]
-\label{tab:PartsOfALinearFunction}
-\begin{tabularx}{\linewidth}{| l X |}
-  \hline
-  \multicolumn{2}{|l|}{Where:} \\
-  \hline \hline
-  m & represents the gradient\\
-  x & is the independent variable\\
-  y & is the dependent variable\\
-\hline
-\end{tabularx}
-\end{table}
+a rearrangement of the general form.
+
+Another useful form of the linear function is:
+\begin{align}
+  y & = m(x - x_1) + y_1
+\end{align}
+
+% \begin{table}[!hbt]
+% \label{tab:PartsOfALinearFunction}
+% \begin{tabularx}{\linewidth}{| l X |}
+%   \hline
+%   \multicolumn{2}{|l|}{Where:} \\
+%   \hline \hline
+%   m & represents the gradient\\
+%   x & is the independent variable\\
+%   y & is the dependent variable\\
+% \hline
+% \end{tabularx}
+% \end{table}
 
 If given only 2 points and we are to find the equation of the line:
 \begin{enumerate}
@@ -142,7 +184,7 @@ If given only 2 points and we are to find the equation of the line:
 
 Determining the gradient is done using the formula:
 \begin{align}
-  \frac{y_{2} - y_{1}}{x_{2} - x_{1}} & = m
+  \frac{y_{2} - y_{1}}{x_{2} - x_{1}} & = m \nonumber
 \end{align}
 
 Example: we are given the points (7,1), (2,5) and need to find the equation of
@@ -155,22 +197,82 @@ the line connecting these points.
 If we want to find a parallel line passing through specific points, remember
 that the gradient ($m$) must be the same in both equations, and we must
 subtitute the $x$ and $y$ values for the specific points into the new arbitrary
-equation to solve for the new equation:
-
+equation to solve for the new equation.
+\\
 Example: find an equation for the line through $(3,4)$ and parallel to the line
 through $(7,1)$ and $(2,5)$ from out previous example:
 \begin{align}
-  \intertext{let}
-  m & = -\frac{4}{5} \nonumber \\
-  \intertext{substitute x,y values into slope-intercept equation}
+  \text{let } m & = -\frac{4}{5} \nonumber \\
+  \intertext{Now substitute x \& y values into the slope-intercept form:}
   y & = mx + b \nonumber \\
-  4 & = -frac{4}{5}\times3 + b
+  4 & = -\frac{4}{5}\times3 + b
   \intertext{and solve for b}
   4 + \frac{4}{5}\times3 & = b \\ 
   4 + \frac{12}{5}       & = b \\
   \frac{32}{5}           & = b \\
   \therefore y & = -\frac{4}{5}x + \frac{32}{5}
 \end{align}
+
+\subsection{Perpendicular Lines}
+\label{subsec:PerpendicularLines}
+Perpendicular lines has a particular special property.
+
+\begin{figure}[!hbt]
+\label{fig:FuncGraphPerpendicularLines}
+\begin{tikzpicture}[domain=-5:5]
+  \draw [color=neekiGrey,dash pattern=on 1pt off 1pt,xstep=1cm,ystep=1cm]
+  (-5,-5) grid (5,5); \draw[->,color=black] (-5,0) -- (5,0);
+  \foreach \x in {-5,-4,-3,-2,-1,0,1,2,3,4,5}
+    \draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below]
+    {\footnotesize $\x$};
+  \draw[->,color=black] (0,-5) -- (0,5);
+  \foreach \y in {-5,-4,-3,-2,-1,0,1,2,3,4,5}
+    \draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left]
+    {\footnotesize $\y$};
+  \clip(-5,-5) rectangle (5,5);
+  \draw[color=neekiBlue,samples=100,thick]
+    plot[id=linearperpxa] function{(1/2)*x + 2}
+    node[right] at (1,1.5) {$f(x)=\frac{1}{2}x + 2$};
+  \draw[color=neekiRed,samples=100,thick]
+    plot[id=linearperpxb] function{y = -2x - 2}
+    node[right] at (1,-1.5) {$f(x)=-2x - 2$};
+\end{tikzpicture}
+\caption{A linear function: $x = 2$}
+\end{figure}
+
+
+
+\subsection{Vertical lines}
+\label{subsec:VerticalLines}
+There is a special case where you cannot work out the gradient, suppose there
+was no change in an $x$ value.
+
+\begin{align}
+  m & = \frac{\Delta y}{\Delta x}
+\end{align}
+
+\emph{BUT} we cannot divide by zero! So we could say the the line has no slope.
+
+\begin{figure}[!hbt]
+\label{fig:FuncGraphVerticalLines}
+\begin{tikzpicture}[domain=-5:5]
+  \draw [color=neekiGrey,dash pattern=on 1pt off 1pt,xstep=1cm,ystep=1cm]
+  (-5,-5) grid (5,5); \draw[->,color=black] (-5,0) -- (5,0);
+  \foreach \x in {-5,-4,-3,-2,-1,0,1,2,3,4,5}
+    \draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below]
+    {\footnotesize $\x$};
+  \draw[->,color=black] (0,-5) -- (0,5);
+  \foreach \y in {-5,-4,-3,-2,-1,0,1,2,3,4,5}
+    \draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left]
+    {\footnotesize $\y$};
+  \clip(-5,-5) rectangle (5,5);
+  \draw[<->,color=neekiBlue,thick] (2, -5) -- (2, 5)
+    node[right] at (2.5,1.5) {$x = 2$};
+  \draw[<->,color=neekiRed,thick] (-5, 2) -- (5, 2)
+    node[right] at (-3.5,1.5) {$y = 2$};
+\end{tikzpicture}
+\caption{A linear function: $x = 2$}
+\end{figure}
 %
 \clearpage
 \section{Parabolic Functions}
