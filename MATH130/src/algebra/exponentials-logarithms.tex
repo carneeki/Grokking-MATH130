@@ -81,22 +81,27 @@ affected by it's power a logarithm is the way to undo the power.
 Many of these laws can be derived from the index laws, and have been included
 in a way to preserve order with those laws for easier reference.
 \begin{align}
-  \log_b(1)           & = 0                         & \quad & \text{by
-  \eqref{eq:IndexLaw_Power0}} \\ log_b(b)           & = 1                         & \quad & \text{by \eqref{eq:IndexLaw_Power1}} \\
-  log_b(xy)          & = log_b(x) + log_b(y)       & \quad & \text{by \eqref{eq:IndexLaw_AddIdxs}} \\
-  log_b(\frac{x}{y}) & = log_b(x) - log_b(y)       & \quad & \text{by \eqref{eq:IndexLaw_SubIdxs}} \\
-  log_b(x^d)         & = d * log_b(x)              & \quad & \text{by \eqref{eq:IndexLaw_MultIdxs}} \\
-  log_b(\sqrt[y]{x}) & = \frac{log_b(x)}{y}        & \quad & \text{by \eqref{eq:IndexLaw_FracIdx0}} \\
-  log_b(0)           & = \text{undefined}          & \quad & \text{by \eqref{eq:IndexLaw_EqualsZero}} \\
+  \log_b(1)           & = 0                     & \text{by \eqref{eq:IndexLaw_Power0}} \\
+  \log_b(b)           & = 1                     & \text{by \eqref{eq:IndexLaw_Power1}} \\
+  \log_b(xy)          & = \log_b(x) + \log_b(y) & \text{by \eqref{eq:IndexLaw_AddIdxs}} \\
+  \log_b(\frac{x}{y}) & = \log_b(x) - \log_b(y) & \text{by \eqref{eq:IndexLaw_SubIdxs}} \\
+  \log_b(x^d)         & = d * \log_b(x)         & \text{by \eqref{eq:IndexLaw_MultIdxs}} \\
+  \log_b(\sqrt[y]{x}) & = \frac{\log_b(x)}{y}   & \text{by \eqref{eq:IndexLaw_FracIdx0}} \\
+  \log_b(0)           & = \text{undefined}      & \text{by \eqref{eq:IndexLaw_EqualsZero}}
 \end{align}
 Here's where some new stuff is introduced:
 \begin{align}
-  b^{log_b(x)}       & = x \text{Logs of the same base cancel as an index} \label{eq:LogLaw_BaseCancel0} \\
-  log_b(b^x)         & = x \text{Logs of the same base cancel as an index} \label{eq:LogLaw_BaseCancel1} \\
-  log_b(a)           & = \frac{1}{log_a(b)} \text{Remember back to the initial statement, that a log is an inverting function?} \label{eq:LogLaw_Inversion} \\
-  log_b(x)           & = \frac{log_a(x)}{log_a(b)} \text{We can change the base of one log to another} \label{eq:LogLaw_ChangeBase} \\
-  (log_a(b))(log_b(x)) & = log_a(x) 
-%
+  b^{\log_b(x)}       & = x & \text{Logs of the same base cancel as an index}
+  \label{eq:LogLaw_BaseCancel0} \\
+  \log_b(b^x)         & = x & \text{Logs of the same base cancel as an index}
+  \label{eq:LogLaw_BaseCancel1} \\
+  \log_b(a)           & = ~ \frac{1}{\log_a(b)} & \text{Remember back to the
+  initial statement\footnote{a log is an inverting function}}
+  \label{eq:LogLaw_Inversion}
+  \\
+  \log_b(x)           & = \frac{\log_a(x)}{\log_a(b)} & \text{Changing log
+  bases} \label{eq:LogLaw_ChangeBase} \\
+  (\log_a(b))(\log_b(x)) & = \log_a(x)
 \end{align}
 
 Referring back to \ref{eq:IdxForm}, but replace the variable $b$ with $a$ gives
