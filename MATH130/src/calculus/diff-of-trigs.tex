@@ -3,32 +3,45 @@
 %-----------------------------------------------------------------------------%
 \chapter{Differentiation of Trigonometric Functions}
 \label{chap:DifferentiationOfTrigFunctions}
-Consider the plot of the function $f(x) = \sin(x)$
+This section combines aspects of the unit circle with aspects of
+differentiation. A solid foundation in both of these may not be necessary, but
+it will certainly help. Consider the plot of the function $f(x) = \sin(x)$.
+While doing so, recall what the derivative actually is\footnote{It is the rate
+of change of something, and it is represented by the slope of the graph you are
+looking at. If this is at all foreign, consider looking at Chapter
+\ref{chap:Differentiation}.}. In particular, pay attention to \emph{how the
+slope changes as you move back and forth along the graph}. 
 \begin{figure}[!htb]
 \label{fig:GraphTemplate}
-\begin{tikzpicture}[samples=50,scale=1]
-   \draw[color=neekiRed,domain=0:pi,variable=x]
-     plot[id=sinx] function{1/x}
-     node[right] {$f(x) = \frac{1}{x}, x \in \{ -5,-\frac{1}{5} \} $};
-%   \draw[color=neekiBlue,domain=0:5,variable=x]
-  \draw[<->]  (0.0,-5.0) -- (0.0,5.0) node[above] {$f(x)$};
-  \draw[<->] (-5.0, 0.0) -- (5.0,0.0) node[right] {$x$};
-\end{tikzpicture}
-\caption{A hyperbolic function: $f(x) = \frac{1}{x}$}
-\end{figure}
-A hyperbolic function in the form $ f(x) = \frac{1}{x}$
-\begin{table}[!hbt]
-\label{tab:GraphTemplateParts}
-\begin{tabularx}{\linewidth}{| l X |}
-  \hline
-  \multicolumn{2}{|l|}{Where:} \\
-  \hline \hline
-  x & is the independent variable\\
-  y & is the dependent variable\\
-\hline
-\end{tabularx}
-\end{table}
+\begin{tikzpicture}[samples=1000,domain=-6.28:6.28]
+  \draw [color=neekiGrey,dash pattern=on 1pt off 1pt,xstep=1cm,ystep=1cm]
+  (-7,-3) grid (7,3);
+  \draw[->,color=black] (-7,0) -- (7,0);
 
+  % x axis labels are not easily looped sadly
+  \draw (-6.283185307,0) node[below]{${-2\pi}$};
+  \draw (-4.71238898,0)  node[below]{$-\frac{3\pi}{2}$};
+  \draw (-3.14159,0)     node[below]{${-\pi}$};
+  \draw (-1.570795,0)    node[below]{$-\frac{\pi}{2}$};
+  
+  \draw (1.570795,0)     node[below]{$\frac{\pi}{2}$};
+  \draw (3.14159,0)      node[below]{${\pi}$};
+  \draw (4.71238898,0)   node[below]{$\frac{3\pi}{2}$};
+  \draw (6.283185307,0)  node[below]{${2\pi}$};
+  \foreach \y in {-1,1}
+    \draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left]
+    {\footnotesize $\y$};
+   \draw[color=neekiRed,variable=x]
+     plot function{sin(x)}
+     node[right] at (1.5,1.5) {$f(x) = \sin(x)$};
+%   \draw[color=neekiBlue,domain=0:5,variable=x]
+  \draw[<->]  (0,-3) -- (0,3) node[above] {$y$};
+  \draw[<->] (-7, 0) -- (7,0) node[right] {$x$};
+  \clip(-5,-5) rectangle (5,5); 
+\end{tikzpicture}
+\caption{$\sin(x)$}
+\end{figure}
+ 
 Here are some equations that are handy to remember. Source \cite{RHBDiffQuickStart}.
 \begin{align}
   \deriv{x^n}{x}             & = n{x}^{n-1} \\
