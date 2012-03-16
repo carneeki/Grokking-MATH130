@@ -21,13 +21,35 @@ get sufficiently accurate average velocities. At some point, the value of what
 you measure will not change by very much with respect to the change in time.
 This is what we call the \emph{limit} when the measured data is constant.
 
-There are 4 methods of differentiation which are useful for MATH130. These are:
+There are 5 methods of differentiation which are useful for MATH130. These are:
 \begin{itemize}
+  \item Fundamental theorem of Calculus
   \item Power Method (well, that's what I call it)
   \item Product Rule
   \item Quotient Rule
   \item Chain Rule
 \end{itemize}
+
+%-----------------------------------------------------------------------------%
+%- Calculus :: Differentiation :: Power Method -------------------------------%
+%-----------------------------------------------------------------------------%
+\section{Fundamental Theorem of Calculus}
+\label{sec:FundamentalTheoremOfCalculus}
+
+The \emph{fundamental theorem of calculus} which is the basis for the other 4
+rules. We measure the change in the $y$ value of a function divided by the
+change in the $x$ value. What this boils down to is:
+\begin{align}
+  \frac{\Delta y}{\Delta x} & = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h} 
+  \label{eq:FundamentalTheoremOfCalculus}
+\end{align}
+
+\noindent \emph{It is sometimes called the limit of the difference quotient.}
+
+\noindent If this quantity makes sense as $h \to 0$ ($h$ approaches zero), we
+end up with the exact rate of change of $f$ at $x$. This is called \emph{the
+derivative of $f$ at $x$}.
+
 Because the notion of calculus was a joint effort between several
 mathematicians\footnote{Gottfried Leibniz woke up one day and thought ``I'm
 going to invent a whole new branch of mathematics to annoy students for the
@@ -68,9 +90,48 @@ partial marks.
 A useful tip, when you are first getting used to differentiation, it may be
 handy to use Leibniz's notation and say in your mind what you are
 differentiating, and what it is in respect to.
+
+\subsection{Using the Fundamental Theorem of Calculus}
+\label{subsec:UsingTheFundamentalTheoremOfCalculus}
+
+Suppose we drop a ball from a height ($s = 0$). The formula is given by
+\begin{align}
+  s & = f(t) \nonumber \\
+    & = 5t^2 \nonumber \\
+    & = \frac{1}{2}gt^2
+\intertext{Height at $1$ second:}
+    & = 5(1)^2
+\intertext{Height at $1.2$ seconds}
+    & = 5(1.2)^2
+\intertext{The difference is given by:}
+  \frac{\Delta s}{\Delta t} & = \lim_{t \to 0} \\
+  & = \lim_{t \to 0} \frac{f(1.2) - f(1)}{0.2} \\
+  & = \lim_{t \to 0} \frac{5(1.2)^2 - 5(1)^2}{0.2} \\
+  & = 11
+\end{align}
+
+\noindent If we try successively smaller values for $h$, we get a table that
+looks like this:
+
+\begin{table}[!htb]
+\label{tab:TypesOfNumbers}
+\begin{tabularx}{\linewidth}{ r | c | X} \hline
+  h & $\frac{f(1+h)-f(1)}{h}$ & value \\
+                                            \hline \hline
+  $0.2$     & $\frac{s(1.2)^2-5(1)^2}{0.2}$ & $11$ m/s \\
+  $0.1$     & $\frac{s(1.1)^2-5(1)^2}{0.1}$ & $10.5$ m/s \\
+  $0.05$    & $\frac{s(1.05)^2-5(1)^2}{0.05}$ & $10.25$ m/s \\
+  $0.01$    & \ldots & $10.05$ m/s \\
+  $0.001$   & \ldots & $10.005$ m/s \\ \hline
+\end{tabularx}
+\caption{The ball falling}
+\end{table}
+
+We have shown $f'(1) = 10$.
+
 %-----------------------------------------------------------------------------%
 %- Calculus :: Differentiation :: Power Method -------------------------------%
-%-----------------------------------------------------------------------------%
+%------------------------------------------------------------af-----------------%
 \section{Power Method}
 \label{sec:PowerMethod}
 The power method is by far the easiest to understand of all 3 methods, and if
