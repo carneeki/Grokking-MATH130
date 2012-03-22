@@ -45,6 +45,7 @@
 \input{preamble}
 %
 %- (06) Document Title and other metadata ------------------------------------%
+\begin{titlepage}
 \thiswatermark{
 % challenge accepted guy
 % bottom right: (220,-760)
@@ -68,6 +69,8 @@
   Email: \url{adam.carmichael@ieee.org}
 }% author END Brace
 %
+%\date{\currenttime}
+\end{titlepage}
 %- (07) Start Document Content -----------------------------------------------%
 \begin{document}
 %- (07a) Misc Config ---------------------------------------------------------%
@@ -113,9 +116,9 @@
 %-----------------------------------------------------------------------------%
 %- Appendix ------------------------------------------------------------------%
 %-----------------------------------------------------------------------------%
+\include{appendices/glossary}
 \include{appendices/calculus-proofs}
 \include{appendices/differentiation-quickstart}
-
 %-----------------------------------------------------------------------------%
 %- Acknowledgments -----------------------------------------------------------%
 %-----------------------------------------------------------------------------%
