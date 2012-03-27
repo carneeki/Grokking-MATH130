@@ -30,15 +30,15 @@ There are 5 methods of differentiation which are useful for MATH130. These are:
   \item Chain Rule
 \end{itemize}
 
-%-----------------------------------------------------------------------------%
-%- Calculus :: Differentiation :: Power Method -------------------------------%
-%-----------------------------------------------------------------------------%
+%------------------------------------------------------------------------------%
+%- Calculus :: Differentiation :: Fundamental Theorem of Calculus -------------%
+%------------------------------------------------------------------------------%
 \section{Fundamental Theorem of Calculus}
 \label{sec:FundamentalTheoremOfCalculus}
 
-The \emph{fundamental theorem of calculus} which is the basis for the other 4
-rules. We measure the change in the $y$ value of a function divided by the
-change in the $x$ value. What this boils down to is:
+The \emph{fundamental theorem of calculus} is the basis for the other $4$ rules.
+We measure the change in the $y$ value of a function divided by the change in
+the $x$ value. What this boils down to is:
 \begin{align}
   \frac{\Delta y}{\Delta x} & = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h} 
   \label{eq:FundamentalTheoremOfCalculus}
@@ -50,15 +50,24 @@ change in the $x$ value. What this boils down to is:
 end up with the exact rate of change of $f$ at $x$. This is called \emph{the
 derivative of $f$ at $x$}.
 
+\noindent It is worth noting at this point that we are finding the
+\emph{tangent} of a point along a curve which is a fancy way of saying that as
+we ``zoom in'', the gradient of the line starts to resemble the curve
+itself.\footnote{This is hardly a mathematical definition, but it describes the
+process of what is going on.}
+
+\subsection{Language of Calculus}
+\label{subsec:LanguageOfCalculus}
+
 Because the notion of calculus was a joint effort between several
 mathematicians\footnote{Gottfried Leibniz woke up one day and thought ``I'm
 going to invent a whole new branch of mathematics to annoy students for the
 next few hundred years.'' Approximately 10 years earlier, Sir Isaac Newton
 thought ``I know what will really get Leibniz's goat... I'll get the drop on
 him with this idea I have.'' Consequently, the two never became friends.}
-operating in secret, and without a project manager there are two important
-notations.\footnote{there are more, but we don't need to know about them for
-MATH130}
+operating in secret from each other, and without a project manager there are two
+important notations.\footnote{there are more, but we don't need to know about
+them for MATH130}
 \\
 The first notation is the ``dash'', ``prime'', or ``Lagrange's'' notation and
 appears as such:
@@ -130,8 +139,85 @@ looks like this:
 We have shown $f'(1) = 10$.
 
 %-----------------------------------------------------------------------------%
+%- Calculus :: Differentiation :: Approximating Functions --------------------%
+%-----------------------------------------------------------------------------%
+\section{Approximating Functions}
+\label{sec:ApproximatingFunctions}
+One use of tangents is to approximate functions. By finding the tangent of a
+line at a point, you get a rough idea of the function itself. This becomes
+useful for very complicated functions\footnote{probably beyond the realm of
+MATH130}, given that the complexity of a function may make computing the
+function itself prohibitive, and ``near enough is good enough'' as we are taking
+an arbitrarily close value of $h$ in the fundamental theorem of calculus.
+
+A different method for approximation is covered in significantly more detail
+in Chapter \ref{chap:NewtonsMethod}, ``Newton's Method''. Newton's method
+provides increasingly higher levels of precision in an estimation, and can be
+applied ad infinitum to many functions.
+
+\noindent For example: Suppose we are to approximate the function of $f(x) =
+\sqrt{x}$.
+\begin{figure}[!hbt]
+\label{fig:FuncSqrtX}
+\begin{tikzpicture}[domain=0:10]
+  \draw [color=neekiGrey,dash pattern=on 1pt off 1pt,xstep=1cm,ystep=1cm]
+  (-1,-1) grid (10,6);
+  \draw[->,color=black] (-1,0) -- (10,0);
+  \draw[shift={(0,0)},color=black]  (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $0$};
+  \draw[shift={(1,0)},color=black]  (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $5$};
+  \draw[shift={(2,0)},color=black]  (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $10$};
+  \draw[shift={(3,0)},color=black]  (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $15$};
+  \draw[shift={(4,0)},color=black]  (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $20$};
+  \draw[shift={(5,0)},color=black]  (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $25$};
+  \draw[shift={(6,0)},color=black]  (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $30$};
+  \draw[shift={(7,0)},color=black]  (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $35$};
+  \draw[shift={(8,0)},color=black]  (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $40$};
+  \draw[shift={(9,0)},color=black]  (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $45$};
+  \draw[shift={(10,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $50$};
+  \draw[->,color=black] (0,-1) -- (0,6);
+  \foreach \y in {-1,0,1,2,3,4,5,6}
+    \draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left]
+    {\footnotesize $\y$};
+  \draw[color=neekiBlue,thick,samples=1000]
+    plot function{ sqrt(5*x)/2 }
+    node[below] at (2,1) {$f(x)=\sqrt{x}$};
+\end{tikzpicture}
+\caption{Function: $f(x) = \sqrt{x}$}
+\end{figure}
+\begin{align}
+                 f(x) & = \sqrt{x} \\
+  \text{Then} ~ f'(x) & = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h} \\
+                      & = \lim_{h \to 0} \frac{\sqrt{x+h} - \sqrt{x}}{h} \\
+                      & = \lim_{h \to 0} \frac{\sqrt{x+h} - \sqrt{x}}{h} \frac{( \sqrt{x+h}-\sqrt{x}) }{ (\sqrt{x+h}-\sqrt{x}) }
+  \intertext{identify difference of two squares}
+            a^2 - b^2 & = (a-b)(a+b) \nonumber \\
+       \text{Let} ~ a & = \sqrt{x+h} \\
+                    b & = \sqrt{x} \\
+    \text{So} ~ f'(x) & = \lim_{h \to 0} \frac{x + h - x}{h(\sqrt{x+h} + \sqrt{x})} \\
+                      & = \lim_{h \to 0} \frac{h}{h(\sqrt{x+h} + \sqrt{x})} \\
+                      & = \lim_{h \to 0} \frac{1}{\sqrt{x+h} + \sqrt{x}} \\
+ \intertext{it is now safe to take a limit of $h = 0$}
+                      & = \frac{1}{2\sqrt{x}}
+ \intertext{We have found that if}
+   f(x) & = \sqrt{x} = x^{\frac{1}{2}}
+ \intertext{then}
+   f'(x) & = \frac{1}{2\sqrt{x}} \\         
+         & = \frac{1}{2} x^{-\frac{1}{2}}
+ \intertext{The slope of the tangent to $\sqrt{x}$ at $x=36$ is}
+  f'(36) & = \frac{1}{2\sqrt{36}} \\
+         & = \frac{1}{12}
+ \intertext{The equation of the tangent is found using $y = m(x-a)+b$ using the
+ slope in point form $(a,b)$ so}
+    T(x) & = \frac{1}{12} \cdot (x-36)+6
+ \intertext{$\sqrt{37}$ from our diagram is approximately $T(37)$}
+   T(37) & = \frac{1}{12} + 6 \\
+         & = 6\frac{1}{12} \\
+  \sqrt{37} & \approx 6.083\ldots 
+\end{align}
+
+%-----------------------------------------------------------------------------%
 %- Calculus :: Differentiation :: Power Method -------------------------------%
-%------------------------------------------------------------af-----------------%
+%-----------------------------------------------------------------------------%
 \section{Power Method}
 \label{sec:PowerMethod}
 The power method is by far the easiest to understand of all 3 methods, and if
