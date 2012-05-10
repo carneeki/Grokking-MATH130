@@ -135,6 +135,45 @@ There is an alternate way using division, and can be memorised as wrote:
   \nonumber
 \end{align} 
 
+\subsection{Solving Logarithm Equations}
+Solve
+\begin{align}
+  2^{(2^x)} = 4^x
+\end{align}
+
+By plotting:
+\begin{figure}[!hbt]
+\begin{tikzpicture}[domain=-2:6, auto,scale=1.5]
+  \draw [color=neekiGrey,dash pattern=on 1pt off 1pt]
+  (-2.5,-2.5) grid (6,6);
+  \draw[->,color=gray] (-2.5,0) -- (6,0);
+  \foreach \x in {-2,-1,1,2,3,4,5,6}
+    \draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below]
+    {\footnotesize $\x$};
+  \draw[->,color=gray] (0,-2.5) -- (0,6);
+  \foreach \y in {-2,-1,0,1,2,3,4,5,6}
+    \draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left]
+    {\footnotesize $\y$};
+  \clip (-2.5,-2.5) rectangle (6,6);
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  % END GRAPH PREAMBLE
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \draw[color=neekiBlue,thick,smooth,samples=1000] plot[id=solvelogeqnsex02pwrx] function {2**x};
+  \draw[color=neekiRed,thick,smooth,samples=1000]  plot[id=solvelogeqnsex02x]    function {2*x};
+\end{tikzpicture}
+\label{fig:SolvingLogEqnsEx0}
+\end{figure}
+
+By Audrey's Squaring method:
+\begin{align}
+  2^{(2^x)} = 4^x
+\end{align}
+
+By Frank's Algebra method:
+\begin{align}
+  2^{(2^x)} = 4^x
+\end{align}
+
 \subsection{Problem solving with logs}
 The golden rule to remember when dealing with indices and powers is the
 Svensson-Cranbrookian Log Method, to be sung to ``When you're happy and you know
