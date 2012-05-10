@@ -7,14 +7,17 @@ Definition: Sum of natural powers of $x$, scaled and added.
 
 Example:
 \begin{align}
-  6x^4 + 20x^3 + \sqrt{2}x^2 + 13x - 2 \\
+  6x^4 + 20x^3 + \sqrt{2}x^2 + 13x - 2
 \end{align}
+More generally:
+$\mathbb{R} \to \mathbb{R} : x \mapsto a_nx^n + a_{n-1}x^{n-1} + \ldots a_1x + a_0$ 
+Where all $a_i$'s are given constants and $n \in \mathbb{N}$.
 
-Two important terms are \emph{coefficient}; which is a number in front of the
-$x$, and \emph{degree} which is the highest power of $x$ in the expression.
+\noindent Two important terms are \emph{coefficient}; which is a number in front
+of the $x$, and \emph{degree} which is the highest power of $x$ in the expression.
 
-Polynomials are useful and common for approximating other functions. Here we
-approximate sin(x):
+\noindent Polynomials are useful and common for approximating other functions.
+Here we approximate sin(x):
 \begin{align}
   &~ x - \frac{x^{3}}{6} \\
   &~ x - \frac{x^{3}}{6} + \frac{x^5}{120} \\
@@ -40,6 +43,53 @@ The main polynomials studied in MATH130 are:
       y = ax^3 + bx^2 + cx + d
     \end{align}
 \end{description}
+
+\noindent If we plot a graph of a function, the points of intersection with the
+horizontal axis correspond with points $p(x)=0$, then $x$ are \emph{roots} of
+the polynomial.
+% TODO plot above polynomial from before
+
+\noindent The fundamental theorem of algebra\footnote{the part relevant to this
+part anyway formed by Gauss, a way smart German dude} states that a polynomial
+of degree $n$ has at most $n$ distinct real roots.\footnote{this is easy to
+state but requires MATH236 to prove. Let's just accept it as is for the moment}.
+
+$p(x) = \pi x^3 + ex^2 + 2x - 1$ is a degree $3$ polynomial.
+
+\noindent If $x$ is positive and increases (moving along the horizontal axis),
+$y$ increases mostly along the largest degree of $x$. That is to say, the highest
+power of $x$ becomes the \emph{dominant} term. This results in $2$ cases, when:
+\\
+$a_n > 0 \to x ~ y$ approaches infinity \\
+$a_n < 0 \to x ~ y$ approaches negative infinity
+
+\noindent $p_1(x) = x^4$ has only one term, so $x^4$ becomes the dominant term.
+
+\noindent When the dominant term is \emph{even}, $y$ approaches infinity. When
+the dominant term is \emph{odd} then $y$ approaches negative infinity for
+negative $x$ values.
+
+\noindent Polynomials crop up in:
+\begin{itemize}
+  \item Classical mechanics
+  \begin{enumerate}
+    \item $x(t) = at$ a = acceleration, t = time
+    \item $z(t) = bt - \frac{1}{2}gt^2$
+  \end{enumerate}
+  \item Trajectory
+  \begin{enumerate}
+    \item $t = \frac{x}{a} \Rightarrow z(x) = b(\frac{x}{a}) - \frac{1}{2}g\frac{x^2}{a^2}$
+  \end{enumerate}
+\end{itemize}
+
+Hence, finding the roots of a polynomial is kind of important. (ie, when
+$p(x) = 0$).
+
+For:
+\begin{itemize}
+  \item Degree 1: $ax$
+  \item Degree 2: $ax^2 + bx + c = 0$, iff $b^2-4ac \geq 0$ (quadratic formula)
+\end{itemize}
 
 \section{Quadratics}
 \subsection{General Form}
