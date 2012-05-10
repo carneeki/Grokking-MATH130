@@ -24,6 +24,8 @@ This is what we call the \emph{limit} when the measured data is constant.
 There are 5 methods of differentiation which are useful for MATH130. These are:
 \begin{itemize}
   \item Fundamental theorem of Calculus
+  \item Scaling Rule
+  \item Sum Rule
   \item Power Method (well, that's what I call it)
   \item Product Rule
   \item Quotient Rule
@@ -213,6 +215,39 @@ applied ad infinitum to many functions.
    T(37) & = \frac{1}{12} + 6 \\
          & = 6\frac{1}{12} \\
   \sqrt{37} & \approx 6.083\ldots 
+\end{align}
+
+%-----------------------------------------------------------------------------%
+%- Calculus :: Differentiation :: Scaling Method -----------------------------%
+%-----------------------------------------------------------------------------%
+\section{Scaling Method}
+\label{sec:ScalingMethod}
+Consider $f(x)$ and $2f(x)$.
+
+This method, we simply double the function $f(x)$ to get $2f(x)$.
+
+TODO: include graph of $y=x^3$ and $y=2x^3$.
+
+Take a derivative of $f(x)$ at $x=a$ (ie, take a tangent line at $x=a$), and
+then take a derivative of $2f(x)$ at $x=a$. We find that $2f'$ is $2 \cdot
+f'$\footnote{this sounds less derpy when said out aloud}.
+\begin{align}
+  \deriv{2f(x)}{x} & = 2\deriv{f(x)}{x}
+\intertext{likewise}
+  \deriv{3f(x)}{x} & = 3\deriv{f(x)}{x}
+\intertext{this gives rise to the general statement:}
+  \deriv{~ a \cdot f(x)}{x} &= a \cdot \deriv{f(x)}{x}
+\end{align}
+
+%-----------------------------------------------------------------------------%
+%- Calculus :: Differentiation :: Sum Rule -----------------------------------%
+%-----------------------------------------------------------------------------%
+\section{Sum Method}
+\label{sec:SumMethod}
+The derivative of a sum of functions is the sum of the derivatives.
+\begin{align}
+  (x^2+3x)' &= (x^2)' + (3x)' \\
+  & = 2x + 3 ~ \text{either by power method or of limit of difference quotient}
 \end{align}
 
 %-----------------------------------------------------------------------------%
