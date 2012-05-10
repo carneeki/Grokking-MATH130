@@ -1,14 +1,16 @@
 %-----------------------------------------------------------------------------%
 %- Calculus :: Differentiation of Trigonometric Functions --------------------%
 %-----------------------------------------------------------------------------%
-\chapter{TODO: Newton's Method}
+\chapter{The Newton-Raphson Method}
 \label{chap:NewtonsMethod}
 \begin{align}
-  x_1 = x_0 - \frac{f(x_0)}{f'(x_0)}
+  x_1 &= x_0 - \frac{f(x_0)}{f'(x_0)}
+\intertext{or more generally:}
+  x_{i+1} &= x_i - \frac{f(x_i)}{f'(x_i)} \\
 \end{align}
 Newton's Method is used to find successively better approximations of a function.
 
-\noindent We take a value of $x$, $x_0$ and subtract the function at $x_0$
+\noindent We take a value of $x$, ($x_0$) and subtract the function at $x_0$
 divided by the derivative of that function at $x_0$. The result, $x_1$ is an
 answer close to the roots of that function.
 
@@ -16,3 +18,145 @@ answer close to the roots of that function.
 better approximation of the function. If we repeat this over and over, we will
 either get an exact value of the roots of the function, or we will get
 arbitrarily close to it.
+
+\noindent To approximate a function, it is important that the function is
+arranged to equal zero.
+
+\section{Example of Newton-Raphson Method}
+Here is an example from \url{http://www.youtube.com/watch?v=lFYzdOemDj8}.
+
+\noindent Suppose we want to find the approximate value of $x$ given the
+following:
+\begin{enumerate}
+  \item $x^3 = 20$
+  \item $x_0 = 3.0$
+\end{enumerate}
+over three iterations
+\begin{align}
+  x^3 &= 20 \\
+  f(x) &= 0 \\
+\intertext{subtract 20 such that}
+  f(x) &=& x^3 -20 &=& 0 \\
+  f'(x) &= 3x^2 &&\\
+\intertext{Now let's do 3 iterations using}
+  x_{i+1} = x_i - \frac{f(x_i)}{f'(x_i)} \\
+\end{align}
+This is where our first iteration starts:
+\begin{align}
+  \text{Let:} ~
+    i &= 0 \nonumber \\
+  x_1 &= x_0 - \frac{f(x_{0})}{f'(x_{0})} \\
+\intertext{substitute $x_0$ in:}
+  x_1 &= x_0 - \frac{{x_{0}}^3 -20}{3{x_{0}}^2} \\
+\intertext{substitute numerical values}
+  x_1 &= 3.0 - \frac{{3.0}^3 -20}{3(3.0)^2} \\
+      &= 3.0 - \frac{27 -20}{27} \\
+      &= 3.0 - \frac{7}{27}  ~ \text{\emph{(use a calculator to evaluate)}}\\
+      &= 2.741 ~\text{(wolframalpha reports $2.\overline{740}$)}
+\intertext{calculate the absolute approximation error:}
+  |\epsilon_a| &= \left|\frac{2.741 -3.0}{2.741}\right| \cdot 100 \label{eq:absApproxErrorExample} \\
+        &= 9.45\%
+\end{align}
+\noindent Equation \ref{eq:absApproxErrorExample} discusses a concept called the
+absolute approximation error, and comes up in the YouTube link at about $4$
+minutes in. I have not seen this in MATH130, but this is a good little trick to
+tell you how far off your initial estimate is. In this case, we're about 10\%
+too high, but this will diminish in the second iteration.
+\begin{align}
+  \text{Let:} ~
+    i &= 1 \nonumber \\
+  x_2 &= x_1 - \frac{f(x_{1})}{f'(x_{1})} \\
+\intertext{substitute $x_1$ in:}
+  x_2 &= x_1 - \frac{{x_{1}}^3-20}{{x_{1}}^2)} \\
+\intertext{substitute numerical values}
+      &= 2.741 - \frac{{2.741}^3 -20}{3(2.741)^2} \\
+      &= 2.715 \\
+\intertext{calculate the absolute approximation error:}
+  |\epsilon_a| &= \left|\frac{2.715 -2.741}{2.715}\right| \cdot 100 \label{eq:absApproxErrorExample} \\
+        &= 0.96\%
+\end{align}
+\noindent Notice that the absolute approximation error has reduced rather
+quickly in just a second iteration. This shows that the Newton-Raphson method
+\emph{converges} rather quickly. A third iteration will have an even more
+precise answer.
+\begin{align}
+  \text{Let:} ~
+    i &= 2 \nonumber \\
+  x_3 &= x_2 - \frac{f(x_{2})}{f'(x_{2})} \\
+\intertext{substitute $x_2$ in:}
+  x_3 &= x_2 - \frac{{x_{2}}^3-20}{{x_{2}}^2)} \\
+\intertext{substitute numerical values}
+      &= 2.715 - \frac{{2.715}^3 -20}{3(2.715)^2} \\
+      &= 2.714 \\
+\intertext{calculate the absolute approximation error:}
+  |\epsilon_a| &= \left|\frac{2.714 -2.715}{2.714}\right| \cdot 100 \label{eq:absApproxErrorExample} \\
+      &= 0.009\%
+\end{align}
+\noindent Our absolute approximation error has reduced in a fast manner:
+$9.45\% \to 0.096\% \to 0.009\%$
+We know how many significant figures our answer is accurate to by the following
+table of percentages: 
+\begin{table}[!htb]
+\label{tab:significant figures of accuracy in terms of approximation error}
+\begin{tabularx}{\linewidth}{c c} \hline
+\# of sig figs & $\epsilon_a$ \\
+\hline \hline
+1sf & $\leq 5.0\%$ \\
+2sf & $\leq 0.5\%$ \\
+3sf & $\leq 0.05\%$ \\
+4sf & $\leq 0.005\%$ \\
+5sf & $\leq 0.0005\%$ \\
+\end{tabularx}
+\end{table}
+
+\section{Example of Newton-Raphson Method}
+\noindent Example from Youtube:
+\url{http://www.youtube.com/watch?v=oE98W4A7Zio}. In this example, we are asked
+to find an approximate value of $x$ given
+\begin{enumerate}
+  \item $x^2 - 2x -2 = 0$
+  \item $x_0 \approx 3$
+\end{enumerate}
+
+\noindent (Note: Normally we would use the quadratic formula to solve something
+like this, this method produces some really really long numbers to many decimal
+places for this example.)
+
+\begin{align}
+  f(x)  &= x^2 -2x -2 \\
+  f'(x) &= 2x -2 \\
+\intertext{Iteration 1}
+  \text{Let:} ~
+      i &= 0 \\
+    x_1 &= x_0 -\frac{f(x_0)}{f'(x_0)} \\
+    x_1 &= 3 -\frac{f(3)}{f'(3)} \\
+        &= 3 -\frac{(3)^2 - 2(3)-2}{2(2)-2} \\
+        &= 3 -\frac{9 -6 -2}{4} \\
+        &= 3 -\frac{1}{4} \\
+        &= \frac{15}{4} \\
+        &= 2.75 \\
+\intertext{Iteration 2}
+  \text{Let:} ~
+      i &= 1 \\
+    x_2 &= x_1 -\frac{f(x_1)}{f'(x_1)} \\
+    x_2 &= \frac{11}{4} -\frac{f(\frac{11}{4})}{f'(\frac{11}{4})} \\
+        &= \frac{11}{4} -\frac{(\frac{11}{4})^2 - 2(\frac{11}{4})-2}{2(\frac{11}{4})-2} \\
+        &= \frac{153}{56} \\
+        &= 2.73214\ldots \\
+\intertext{Iteration 3}
+  \text{Let:} ~
+      i &= 2 \\
+    x_3 &= x_2 -\frac{f(x_2)}{f'(x_2)} \\
+    x_3 &= \frac{153}{56} -\frac{f(\frac{153}{56})}{f'(\frac{153}{56})} \\
+        &= \frac{153}{56} -\frac{(\frac{153}{56})^2 - 2(\frac{153}{56})-2}{2(\frac{153}{56})-2} \\
+        &= \frac{29681}{10864} \\
+        &= 2.732050810\ldots \\
+\intertext{Iteration 4}
+  \text{Let:} ~
+      i &= 3 \\
+    x_4 &= x_3 -\frac{f(x_3)}{f'(x_3)} \\
+    x_3 &= \frac{29681}{10864} -\frac{f(\frac{29681}{10864})}{f'(\frac{29681}{10864})} \\
+        &= \frac{29681}{10864} -\frac{(\frac{29681}{10864})^2 - 2(\frac{29681}{10864})-2}{2(\frac{29681}{10864})-2} \\
+        &= \frac{29681}{10864} \\
+        &= 2.73205080756\ldots
+\end{align}
