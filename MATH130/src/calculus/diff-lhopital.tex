@@ -1,0 +1,148 @@
+%-----------------------------------------------------------------------------%
+%- Calculus :: L'Hopital's Rule ----------------------------------------------%
+%-----------------------------------------------------------------------------%
+\chapter{L'H\^{o}pital's Rule}
+\label{chap:LHopitalsRule}
+L'H\^{o}pital's Rule is a way of determining the limit of a function. It has not
+been a part of the MATH130 syllabus in recent years, but is incredibly simple
+and helps you understand what's going on, so I've included it anyway. Consider
+this section optional.
+
+L'H\^{o}pital's Rule states that the limit of a function is defined as the
+earliest (or smallest) derivative of the numerator divided by the earliest (or
+smallest) derivative of the denominator that can be evaluated as $x$ approaches
+the point in question.
+
+This has one important caveat, and that is, that a limit exists. If no limit
+exists on the function then L'H\^{o}pital's Rule does not apply.
+
+\section{Example}
+\begin{align}
+  \lim_{x \to \infty} \frac{6x^2 -x}{6x^2 -5x} &= \\
+\intertext{Obviously, we cannot evaluate when $x=\infty$, so we take the
+derivative of both numerator, and denominator}
+  &= \frac{12x -1}{12x-5} \\
+\intertext{We still cannot evaluate this, so we repeat}
+  &= \frac{12}{12} \\
+  &= 1 \\
+\intertext{A limit of $1$, shows that the function $\frac{6x^2-x}{6x^2-5x}$ is
+asympotic at $x=1$.}
+\end{align}
+\begin{figure}[!hbt]
+\begin{tikzpicture}[domain=-5:5, auto,scale=1]
+  \draw [color=neekiGrey,dash pattern=on 1pt off 1pt]
+  (-5,-2) grid (5,2);
+  \draw[->,color=gray] (-5,0) -- (5,0);
+  \foreach \x in {-5,-4,-3,-2,-1,1,2,3,4,5}
+    \draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below]
+    {\footnotesize $\x$};
+  \draw[->,color=gray] (0,-2) -- (0,2);
+  \foreach \y in {-2,-1,0,1,2}
+    \draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left]
+    {\footnotesize $\y$};
+  \clip (-5,-2) rectangle (5,2);
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  % END GRAPH PREAMBLE
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \draw[color=neekiBlue,thick,smooth,samples=100,domain=-5:0.8]
+    plot[id=lhopital_ex1a] function{ (6*x**2-x)/(6*x**2-5*x) }
+    node at (2,-1) {$y=\frac{6x^2-x}{6x^2-5x}$};
+  \draw[color=neekiBlue,thick,smooth,samples=100,domain=0.9:5]
+    plot[id=lhopital_ex1b] function{ (6*x**2-x)/(6*x**2-5*x) };
+  \draw[color=neekiRed,dash pattern=on 2pt off 2pt,thick]
+    (-5,1) -- (5,1);
+\end{tikzpicture}
+\label{fig:lhopital_ex1}
+\caption{Limit as $x\to\infty$}
+\end{figure}
+
+\section{Example}
+\begin{align}
+  \lim_{x \to \infty} \frac{-2x^3+5x^2}{-x^3} &= \\
+\intertext{We cannot evaluate when $x=\infty$, so we take the
+derivative of both numerator, and denominator}
+  &= \frac{6x^2+10x}{-3x^2} \\
+\intertext{We still cannot evaluate at $x=\infty$, so we repeat}
+  &= \frac{12x+10}{-6x} \\
+\intertext{We still cannot evaluate at $x=\infty$, so we repeat}
+  &= \frac{12}{-6} \\
+  &= -2 \\
+\intertext{A limit of $-2$, shows that the function is asympotic at
+$x=-2$.}
+\end{align}
+\begin{figure}[!hbt]
+\begin{tikzpicture}[domain=-10:10, auto,scale=1,x=0.75cm]
+%  \draw [color=neekiGrey,dash pattern=on 1pt off 1pt]
+%  (-10,-5) grid (10,2);
+  \draw[->,color=gray] (-10,0) -- (10,0);
+  \foreach \x in {-10,-9,-8,-7,-6,-5,-4,-3,-2,-1,1,2,3,4,5,6,7,8,9,10}
+    \draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below]
+    {\footnotesize $\x$};
+  \draw[->,color=gray] (0,-5) -- (0,2);
+  \foreach \y in {-5,-4,-3,-2,-1,0,1,2}
+    \draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left]
+    {\footnotesize $\y$};
+  \clip (-10,-5) rectangle (10,2);
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  % END GRAPH PREAMBLE
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \draw[color=neekiBlue,thick,smooth,samples=100,domain=-10:-0.1]
+    plot[id=lhopital_ex2a] function{ (2*x**3+5*x**2)/(-x**3) }
+    node at (2,-1) {$y=\frac{-2x^3+5x^2}{-x^3}$};
+  \draw[color=neekiBlue,thick,smooth,samples=100,domain=0.1:10]
+    plot[id=lhopital_ex2b] function{ (2*x**3+5*x**2)/(-x**3) };
+  \draw[color=neekiRed,dash pattern=on 2pt off 2pt,thick]
+    (-10,-2) -- (10,-2);
+\end{tikzpicture}
+\label{fig:lhopital_ex2}
+\caption{Limit as $x\to\infty$}
+\end{figure}
+
+
+\section{Example}
+\begin{align}
+  \lim_{x \to \infty} \frac{-3x^3-6x^2}{6x^3-4x^2} &= \\
+\intertext{We cannot evaluate when $x=0$, so we take the
+derivative of both numerator, and denominator}
+  &= \frac{-9x^2-12x}{18x^2-8x} \\
+\intertext{We still cannot evaluate at $x=0$, so we repeat}
+  &= \frac{-18x-12}{36x-8} \\
+\intertext{At this point, we can evaluate at $x=0$,}
+  &= \frac{-18(0)-12}{36(0)-8} \\
+  &= \frac{-12}{-8} \\
+  &= \frac{3}{2}
+\end{align}
+A limit of $\frac{3}{2}$, shows that when $x=0$, it cuts the $y$-axis, but in
+this particular case, is not asymptoic at this point. If we were to take the
+limit at $x\to\infty$, we would find it is $-\frac{1}{2}$, indicated in red
+below.
+
+\begin{figure}[!hbt]
+\begin{tikzpicture}[domain=-10:10, auto,scale=1,x=0.75cm]
+%  \draw [color=neekiGrey,dash pattern=on 1pt off 1pt]
+%  (-10,-5) grid (10,2);
+  \draw[->,color=gray] (-10,0) -- (10,0);
+  \foreach \x in {-10,-9,-8,-7,-6,-5,-4,-3,-2,-1,1,2,3,4,5,6,7,8,9,10}
+    \draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below]
+    {\footnotesize $\x$};
+  \draw[->,color=gray] (0,-5) -- (0,2);
+  \foreach \y in {-5,-4,-3,-2,-1,0,1,2}
+    \draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left]
+    {\footnotesize $\y$};
+  \clip (-10,-5) rectangle (10,2);
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  % END GRAPH PREAMBLE
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \draw[color=neekiBlue,thick,smooth,samples=100,domain=-10:0.6]
+    plot[id=lhopital_ex3a] function{ (-3*x**3-6*x**2)/(6*x**3-4*x**2) }
+    node at (2,1) {$y=\frac{-3x^3-6x^2}{6x^3-4x^2}$};
+  \draw[color=neekiBlue,thick,smooth,samples=100,domain=0.8:10]
+    plot[id=lhopital_ex3b] function{ (-3*x**3-6*x**2)/(6*x**3-4*x**2) };
+  \draw[color=neekiPurple,dash pattern=on 2pt off 2pt,thick]
+    (-10,1.5) -- (10,1.5);
+  \draw[color=neekiRed,dash pattern=on 2pt off 2pt,thick]
+    (-10,-0.5) -- (10,-0.5);
+\end{tikzpicture}
+\label{fig:lhopital_ex3}
+\caption{Limit as $x\to 0$ (purple) and $x \to \infty$ (red).}
+\end{figure}
