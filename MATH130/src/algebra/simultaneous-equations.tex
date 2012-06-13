@@ -1,5 +1,117 @@
 %-----------------------------------------------------------------------------%
 %- Algebra :: Simultaneous Equations------------------------------------------%
 %-----------------------------------------------------------------------------%
-\chapter{TODO: Simultaneous Equations}
+\chapter{Simultaneous Equations}
 \label{chap:SimultaneousEquations}
+
+Different cases, but one general strategy. We want to isolate variables, and
+substitute them back in to solve for remaining variables.
+
+\begin{enumerate}
+  \item One variable, eg $5x = -3$
+  \begin{align}
+    5x &= -3 \\
+    x &= -\frac{3}{5}
+  \end{align}
+  \item Two variables of linear equations have 3 cases
+  \begin{enumerate}
+  \item eg Two linear equations in two variables
+  \begin{align}
+    x - y &= 14 \\
+    x + y &= 26 \\
+\intertext{Find $x$ and $y$ such that the two equations hold simultaneously}
+\intertext{Lines are given by}
+    ax +by &= c ~ (\text{for given $a,b,c | a\neq 0, b \neq 0$}) \nonumber \\
+\intertext{So a linear equation in 2 variables is the algebraic way of
+representing a line in the plane. We want to find the point(s) where these lines
+intersect. Rearranging we can get}
+    y &= -\frac{a}{b}x + \frac{c}{b} \\
+\intertext{where}
+    -\frac{a}{b} &= ~ \text{gradient} \\
+    \frac{c}{b} &= ~ \text{y-intercept}
+  \end{align}
+  \item Second case of parallel lines
+\begin{align}
+  a_1x +b_1 &= c_1 \\
+  a_2x +b_2 &= c_2 \\
+\intertext{so a point has to satisfy both equations. In equations where there
+are equal gradients there is no solution, as the lines never intersect}
+  \end{align}
+  \item Third case of parallel equal lines
+  This case has infinitely many solutions as there really is only one line. 
+  \end{enumerate}
+\end{enumerate}
+
+\section{Example}
+\begin{align}
+ x-y &= 14 \\
+ x+y &= 26 \\
+\intertext{Two operations we are allowed to do. We can multiply an equation by
+a non-zero number or we can add /subtract equations.}
+  (x-y)+(x+y) &= 14 +26 = 40 \\
+  2x &= 40 \\
+  x &= 20 \\
+  \intertext{substitute this into either equation, by first eq}
+  20 -y &= 14 \\
+      y &= 6 \\
+  \intertext{or into second eq:}
+  20 +y &= 26 \\
+      y &= 6
+\intertext{A unique solution is given by $(x,y)=(20,6)$.}
+\end{align}
+
+\subsection{Example}
+\begin{align}
+  4x -3y &= 14 \\
+  9x -4y &= 26 \\
+\intertext{Suppose we eliminate $y$ we can cross multiply by the $y$
+  coefficients:}
+  16x -12y &= 56 \\
+  27x -12y &= 78 \\
+\intertext{Now we subtract one from the other we eliminate $y$}
+  27x-16x -12y --12y &=78 -56 \\
+  11x &= 22 \\
+  x &= 2\\
+\intertext{Having found $x$ we can substitute back into first equation}
+  3y &= 4x -16 \\
+     &= 8 -16 \\
+     &= -6 \\
+   y &= -2
+\intertext{Or by second equation:}
+  4y &= 9x -26 \\
+     &= -8 \\ 
+   y &= -2 \\
+\intertext{Solution given by $(x,y)=(2,-2)$.}
+\end{align}
+One can verify by substituting both $x,y$ values into either (and both)
+original equations to see if they hold true.
+
+\section{Example}
+\begin{align}
+   4x -3y &= 14 \\
+  12x -9y &= 26 \\
+  \intertext{Eliminate $y$}
+  12x -9y &= 42 \\
+  12x -y9 &= 26 \\
+  (12x-9y)-(12x-9y) &= 42-26 \\
+   12x -9y -12x +9y &= 16 \\
+  0 &= 16 \\
+\intertext{This does not hold true therefore no solutions.}
+\end{align}
+
+\section{Example}
+\begin{align}
+   4x -3y &= 14 & \label{simeqex_3_eq1}\\
+  12x -9y &= 42 & \label{simeqex_3_eq2}\\
+\intertext{Eliminate $y$, multiply eq:\ref{simeqex_3_eq1} $\times 3$}
+  12x -9y &= 42 & (\ref{simeqex_3_eq1} \times 3)\\
+  12x -9y &= 42 & \text{(by eq:\ref{simeqex_3_eq1})} \nonumber
+\intertext{Same equation therefore infinite solutions. For each $x$ there is a
+corresponding $y$ given by either eq:\ref{simeqex_3_eq1} or
+eq:\ref{simeqex_3_eq2}, or a rearrangement like}
+  y &= \frac{4}{3}x - \frac{14}{3} &
+\end{align}
+
+These relatively simply simultaneous equations can be solved using 3 methods,
+elimination (as demonstrated), substitution (TODO) and matrices, in chapter
+\ref{chap:Matrices} on page \pageref{chap:Matrices}.

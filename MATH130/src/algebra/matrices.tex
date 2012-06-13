@@ -6,28 +6,28 @@
 
 \begin{align}
   \intertext{Addition}
-  \mathbb{Z}_{M,N} & = \mathbb{A} + \mathbb{B} \nonumber \\
+  \mathbf{Z}_{M,N} & = \mathbf{A} + \mathbf{B} \nonumber \\
          {z}_{i,j} & = {a}_{i,j} + {b}_{i,j} \\
   \intertext{Subtraction}
-  \mathbb{Z}_{M,N} & = \mathbb{A} - \mathbb{B} \nonumber \\
+  \mathbf{Z}_{M,N} & = \mathbf{A} - \mathbf{B} \nonumber \\
          {z}_{i,j} & = {a}_{i,j} - {b}_{i,j} \\
   \intertext{Multiplication}
-  \mathbb{Z}_{M,N} & = \mathbb{A} \times \mathbb{B} \nonumber \\
+  \mathbf{Z}_{M,N} & = \mathbf{A} \times \mathbf{B} \nonumber \\
          {z}_{i,j} & = \sum_{k=1}^{N} {a}_{i,k} \times {b}_{k,j}
 \end{align}
 
 \section{Language of Matrices}
 \label{sec:LanguageOfMatrices}
 A matrix is nothing more than a bunch of numbers arranged into a grid of
-\emph{M} rows and \emph{N} columns and is represented usually by $\mathbb{A}$.
-To represent a specific element inside the matrix $\mathbb{A}$, it is usually
+\emph{M} rows and \emph{N} columns and is represented usually by $\mathbf{A}$.
+To represent a specific element inside the matrix $\mathbf{A}$, it is usually
 referred to as $a_{i,j}$ \footnote{I don't know why we change to lowercase, but
 it is the convention. Maybe it is to prevent confusion between referring to a
 whole matrix (of particular dimensions) and a specific element of a matrix.}
 
-An example of a ``3 by 4'' matrix called $\mathbb{A}$ is as follows:
+An example of a ``3 by 4'' matrix called $\mathbf{A}$ is as follows:
 \begin{align}
-\mathbb{A}_{2,3} & = 
+\mathbf{A}_{2,3} & = 
 \begin{pmatrix}
   a_{1,1}   &   a_{1,2}   &   a_{1,3}   &   a_{1,4}   \\
   a_{2,1}   &   a_{2,2}   &   a_{2,3}   &   a_{2,4}   \\
@@ -36,7 +36,7 @@ An example of a ``3 by 4'' matrix called $\mathbb{A}$ is as follows:
 \end{align}
 Or more generally:
 \begin{align}
-\mathbb{A}_{M,N} & = 
+\mathbf{A}_{M,N} & = 
 \begin{pmatrix}
   a_{1,1}   &   a_{1,2}   &   a_{1,3}   &   \ldots   &   a_{1,j}   \\
   a_{2,1}   &   a_{2,2}   &   a_{2,3}   &   \ldots   &   a_{2,j}   \\
@@ -51,13 +51,13 @@ horizontally we describe the columns.}\footnote{This is in contrast to the
 cartesian plane e.g. map reading where we go horizontally then vertically.}
 
 There is also a special kind of matrix called the \emph{identity matrix} often
-represented by $\mathbb{I}$. This is a special matrix, which must be square in
-shape (ie for $\mathbb{A}_{M,N}, M = N$), and consists of all zeroes except for
+represented by $\mathbf{I}$. This is a special matrix, which must be square in
+shape (ie for $\mathbf{A}_{M,N}, M = N$), and consists of all zeroes except for
 a diagonal row of ones from the top left corner to the bottom right corner.
 
 A 4x4 identity matrix:
 \begin{align}
-  \mathbb{I}_{4,4}~&=
+  \mathbf{I}_{4,4}~&=
   \begin{pmatrix}
     ~1~&~0~&~0~&~0~\\
     ~0~&~1~&~0~&~0~\\
@@ -70,7 +70,7 @@ A 4x4 identity matrix:
 An important property of the identity matrix is that when a matrix is multiplied
 by it's identity matrix, the product is the original matrix.
 \begin{align}
-  \mathbb{A}~\times~\mathbb{I}~&=~\mathbb{A}
+  \mathbf{A}~\times~\mathbf{I}~&=~\mathbf{A}
 \end{align}
 Another impotant property is that a matrix can be multiplied by it's identity
 matrix in either order (we will see later in section
@@ -78,36 +78,36 @@ matrix in either order (we will see later in section
 algebra, order is important\footnote{as opposed to normal algebra where you can
 multiply in any which way and it doesn't matter}.
 \begin{align}
-  \mathbb{I}~\times~\mathbb{A}~&=~\mathbb{A}
+  \mathbf{I}~\times~\mathbf{A}~&=~\mathbf{A}
 \end{align}
 
 \section{Adding Matrices}
 \label{sec:AddingMatrices}
 
-Two matrices, $\mathbb{A}$ and $\mathbb{B}$ can be summed if and only if the
-matrices have equal rows and columns. To add $\mathbb{A}$ and
-$\mathbb{B}$, sum the elements ${a}_{i,j}$ with ${b}_{i,j}$
+Two matrices, $\mathbf{A}$ and $\mathbf{B}$ can be summed if and only if the
+matrices have equal rows and columns. To add $\mathbf{A}$ and
+$\mathbf{B}$, sum the elements ${a}_{i,j}$ with ${b}_{i,j}$
 such that:
 \begin{align}
-  \mathbb{Z} & = \mathbb{A} + \mathbb{B}
+  \mathbf{Z} & = \mathbf{A} + \mathbf{B}
   \intertext{where}
   {z}_{i,j}  & = {a}_{i,j} + {b}_{i,j}
 \end{align}
 An example:
 \begin{align}
-  \mathbb{A}_{2,2} & = 
+  \mathbf{A}_{2,2} & = 
     \begin{pmatrix}
       1  &   5  \\
       3  &  -4  \\
     \end{pmatrix}
   \\
-  \mathbb{B}_{2,2} & =
+  \mathbf{B}_{2,2} & =
     \begin{pmatrix}
       4  &  -8  \\
       2  &  10  \\
     \end{pmatrix} 
   \\
-  \mathbb{Z} & = \mathbb{A} + \mathbb{B} \\
+  \mathbf{Z} & = \mathbf{A} + \mathbf{B} \\
   & =
     \begin{pmatrix}
       1  &   5  \\
@@ -134,30 +134,30 @@ An example:
 
 \section{Subtracting Matrices}
 \label{sec:SubtractingMatrices}
-Two matrices, $\mathbb{A}$ and $\mathbb{B}$ can be subtracted if and only if the
-matrices have matching rows and columns. To subtract $\mathbb{B}$ from
-$\mathbb{A}$, subtract the elements ${b}_{i,j}$ from ${a}_{i,j}$
+Two matrices, $\mathbf{A}$ and $\mathbf{B}$ can be subtracted if and only if the
+matrices have matching rows and columns. To subtract $\mathbf{B}$ from
+$\mathbf{A}$, subtract the elements ${b}_{i,j}$ from ${a}_{i,j}$
 such that:
 \begin{align}
-  \mathbb{Z} & = \mathbb{A} - \mathbb{B}
+  \mathbf{Z} & = \mathbf{A} - \mathbf{B}
   \intertext{where}
   {z}_{i,j}  & = {a}_{i,j} - {b}_{i,j}
 \end{align}
 An example:
 \begin{align}
-  \mathbb{A}_{2,2} & = 
+  \mathbf{A}_{2,2} & = 
     \begin{pmatrix}
       1  &   5  \\
       3  &  -4  \\
     \end{pmatrix}
   \\
-  \mathbb{B}_{2,2} & =
+  \mathbf{B}_{2,2} & =
     \begin{pmatrix}
       4  &  -8  \\
       2  &  10  \\
     \end{pmatrix} 
   \\
-  \mathbb{A} - \mathbb{B} & =
+  \mathbf{A} - \mathbf{B} & =
     \begin{pmatrix}
       1  &   5  \\
       3  &  -4  \\
@@ -190,19 +190,19 @@ additions.
 
 \begin{enumerate}
 \item The first rule for multiplying matrices is that the number of columns in
-      $\mathbb{A}$ matches the number of rows in $\mathbb{B}$ (that is to say
-      $\mathbb{A}_{N}$ = $\mathbb{B}_{M}$).
-\item Remember that $\mathbb{Z}_{i,j}$ is a merely sum of several
+      $\mathbf{A}$ matches the number of rows in $\mathbf{B}$ (that is to say
+      $\mathbf{A}_{N}$ = $\mathbf{B}_{M}$).
+\item Remember that $\mathbf{Z}_{i,j}$ is a merely sum of several
       multiplication operations.
 \end{enumerate}
 
-Formally, $ {z}_{i,j} = \sum_{k=1}^{N} {a}_{i,k} \times {b}_{k,j} $
+Formally, ${z}_{i,j} = \sum_{k=1}^{N} {a}_{i,k} \times {b}_{k,j} $
 
 Broken down, this means for each element in a given row in
-$\mathbb{A}$, we must multiply that element by a matching element in it's
-corresponding column in $\mathbb{B}$ and sum all the results.
+$\mathbf{A}$, we must multiply that element by a matching element in it's
+corresponding column in $\mathbf{B}$ and sum all the results.
 
-For the matrices $\mathbb{A}$, $\mathbb{B}$ and $\mathbb{P}$:
+For the matrices $\mathbf{A}$, $\mathbf{B}$ and $\mathbf{P}$:
 \begin{align}
 \begin{pmatrix}
   ~\textcolor{neekiRed}{p_{1,1}}~&~p_{1,2}~ \\
@@ -230,9 +230,13 @@ p_{2,2}&~=~a_{2,1}~\times~b_{1,2}~+~a_{2,2}~\times~b_{2,2}~+~a_{2,3}~\times~b_{3
 
 \section{Identity Matrix}
 \label{sec:IdentityMatrix}
+There is a special kind of matrix called the \emph{identity matrix}. It has the
+special property that ``it plays the role of a one''\footnote{Frank
+Valkenborgh, Semester 1, 2012}.
+
 For the identity matrix:
 \begin{align}
-  \mathbb{A}~\times~\mathbb{I}~&=~\mathbb{A} \nonumber
+  \mathbf{A}~\times~\mathbf{I}~&=~\mathbf{A} \nonumber
 \end{align}
 
 Proof by general case:
@@ -248,7 +252,7 @@ Proof by general case:
   \end{pmatrix}
   &=
   \begin{pmatrix}
-    ~[(1~\times~a)+(0~\times~c)]~&~[(1~\times~b)+(0~\times~c)]~\\
+    ~[(1~\times~a)+(0~\times~c)]~&~[(1~\times~b)+(0~\times~d)]~\\
     ~[(0~\times~a)+(1~\times~c)]~&~[(0~\times~b)+(1~\times~d)]~\\
   \end{pmatrix}\\
   &=
@@ -258,14 +262,15 @@ Proof by general case:
   \end{pmatrix}
 \end{align}
 
-This is the matrix equivalent of the number 1\footnote{NOTE: this is only
-equivalent to one, it is not actually the value of one (to my knowledge).}
+This is the matrix equivalent of the number 1, not actually the number one.
+%\footnote{NOTE: this is only equivalent to one, it is not actually the value of
+% one (to my knowledge).}
 
 \begin{align}
   1~\times~a~&=~a \\
   \frac{1}{a}~\times~a~&=~1 \\
   \intertext{in matrix terms:}
-  \mathbb{A}^{-1}~\times~\mathbb{A} = \mathbb{I}
+  \mathbf{A}^{-1}~\times~\mathbf{A} = \mathbf{I}
 \end{align}
 
 This leads into the topic of calculating the inverse of a matrix.
@@ -274,13 +279,13 @@ This leads into the topic of calculating the inverse of a matrix.
 \label{sec:InverseOfMatrices}
 For a 2x2 matrix:
 \begin{align}
-  \mathbb{A} & = 
+  \mathbf{A} & = 
     \begin{pmatrix}
       a & b \\
       c & d
     \end{pmatrix}
     \\
-  \mathbb{A}^{-1} & =
+  \mathbf{A}^{-1} & =
     \frac{1}{ad-bc} \times
     \begin{pmatrix}
       &~d~&~-b~& \\
@@ -297,8 +302,82 @@ TODO THIS\ldots
 For a 4x4 matrix, in the words of Sal Kahn, ``You'll be there all day, and for a
 5x5 you're almost bound to make a mistake and is best left for a
 computer.''\footnote{``In my mind, the only thing less pleasant than inverting
-a 3 by 3 matrix is inverting a 4 by 4 matrix.'' -- both quotes from
-http://www.khanacademy.org/video/inverting-matrices--part-2?playlist=Linear\%20Algebra}
+a 3 by 3 matrix is inverting a 4 by 4 matrix.'' -- both quotes from \url{
+http://www.khanacademy.org/video/inverting-matrices--part-2?playlist=Linear\%20Algebra} }
+\section{The Determinate}
+\label{sec:MatrixDeterminate}
+The determinate of a matrix allows you to \emph{determine} whether a matrix has
+a solution. For a unique solution to exist in matrix $\mathbf{A}$:
+\begin{align}
+  \det(\mathbf{A}) & \neq 0 \\
+  \intertext{The determinate of a $2$ by $2$ matrix can be calculated as such:}
+  \det(\mathbf{A}) & = a \cdot d - b \cdot c
+  \quad \text{where} ~
+  \begin{cases} 
+  \mathbf{A} & = 
+    \begin{pmatrix}
+      a & b \\
+      c & d
+    \end{pmatrix}
+  \end{cases}
+\end{align}
+
+\section{Solving linear equations with Matrices}
+\label{sec:SolvingLinearEqsWithMatrices}
+We want to put our $x$ and $y$ co-ordinates into the matrix for such that it
+resembles the form
+\begin{align}
+  x -y &= 14 \\
+  x +y &= 26 \\
+\mathbf{A}\vec{x} = \vec{b} \\
+\mathbf{A}^{-1}\mathbf{A}\vec{x} &= \mathbf{A}^{-1}\vec{b} \\
+  \begin{pmatrix}
+    1 & -1 \\
+    1 & 1
+  \end{pmatrix}
+  \cdot
+  \begin{pmatrix}
+  x \\
+  y
+  \end{pmatrix}
+  & =
+  \begin{pmatrix}
+  14 \\
+  26
+  \end{pmatrix}
+  \\
+  & =
+  \begin{pmatrix}
+  x-y \\
+  x+y
+  \end{pmatrix}
+  \\
+  \begin{pmatrix}
+    1 & -1 \\
+    1 & 1
+  \end{pmatrix}
+  \cdot
+  \begin{pmatrix}
+  x \\
+  y
+  \end{pmatrix}
+  & =
+  \begin{pmatrix}
+  x-y \\
+  x+y
+  \end{pmatrix}
+\end{align}
+
+In general:
+$\mathbf{B}\cdot\mathbf{A}\cdot x= \mathbf{B}\cdot b$ \\
+Where $\mathbf{B}\cdot\mathbf{A} = \mathbf{I}$ \\
+$\mathbf{B}\cdot\mathbf{A}\cdot x= \mathbf{B}\cdot b \Rightarrow \mathbf{I}\cdot
+x = \mathbf{B}\cdot b \\
+\Rightarrow x = \mathbf{B} \cdot b$
+
+So we must find B st B.A = A.B = I.
+
+Because of this property, we call it the inverse of A, or $A^{-1}$.
 
 \section{TODO: Dividing Matrices}
 \label{sec:DividingMatrices}

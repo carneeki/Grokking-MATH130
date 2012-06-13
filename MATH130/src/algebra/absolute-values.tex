@@ -1,5 +1,94 @@
 %-----------------------------------------------------------------------------%
 %- Algebra :: Absolute Values ------------------------------------------------%
 %-----------------------------------------------------------------------------%
-\chapter{TODO: Absolute Values}
+\chapter{Absolute Values}
 \label{chap:AbsoluteValues}
+\begin{align}
+  |x| &= x ~ \text{when} ~ x > 0 \\
+\intertext{and}
+  |x| &= -x ~ \text{when} ~ x < 0
+\end{align}
+
+\noindent Properties:
+\begin{align}
+ | \alpha \cdot x| &= |\alpha| \cdot |x| \\
+ | \alpha + y| & \leq |\alpha| + |y| \label{eq:triangleInequality} \\
+ | x | &\geq 0 \\
+ | x | &\geq x ~ \text{for all $x$} \\
+ | x | &\leq a ~ \text{iff} ~ -a \leq x \leq +a ~ \text{if} a \geq 0 \\
+ | x | &< a ~ \text{iff} ~ -a < x < +a ~ \text{if} a > 0 \\
+ {| x |}^2 & = x^2 for x \geq 0 = x^2
+           & = -x^2 for x<0     = x^2
+\end{align}
+\begin{itemize}
+  \item equation \ref{eq:triangleInequality} is called a triangle inequality
+%TODO include picture of triangle with sides |X|, |Y|, |X+Y|
+  \item 
+\end{itemize}
+Graphs look like:
+%TODO plot y = |x|
+
+\section{Example 1 - one way}
+Find all $x$ such that $|5x -3| =1$
+\begin{align}
+  |5x -3| &= 1 \\
+\intertext{Part 1}
+  |5x -3| &= 5x -3 \geq 0 \\
+  5x &\geq 3 \\
+  \therefore x &\geq \frac{3}{5} \\
+  5x -3 &=1
+  5x &= 4
+\intertext{Part 2}
+  |5x -3| &= 5x -3 < 0 \\
+  5x &< 3 \\
+  x &< \frac{3}{5} \\
+  3 -5x &= 1 \\
+\intertext{Two solutions:}
+  x &= \frac{2}{5} ~ \text{or} \\
+  x &= \frac{4}{5}
+\end{align}
+
+\section{Example 1 - an alternate way}
+\begin{align}
+  |5x -3| &= 1 \\
+  |\frac{1}{5}(5x-3)| &= \frac{1}{5} \\
+  |x - \frac{3}{5}| &= \frac{1}{5}
+\intertext{Check on number line}
+\end{align}
+
+\section{Example 1 - a third way}
+\begin{align}
+  |5x -3| &= 1 \Rightarrow {|5x-3|}^2 = 1^2 = 1 \\
+  \sqrt{{|5x -3}^2} &= \sqrt{1^2} \\
+\intertext{These two equations are equivalent, so we have to solve}
+  (5x -3)^2 &= 1 \\
+    &= 25x -30x +9 \\
+  25x^2 -30x +8 = 0 \\
+\intertext{apply quadratic method}
+  x &= \frac{30 \pm \sqrt{(-30)^2 -4 \cdot 25 \cdot}}{2 \cdot 25} \\
+    &= \frac{30 \pm 10}{50} \\
+  x &= \frac{4}{5} ~\text{or} ~ x = \frac{2}{5} 
+\end{align}
+
+\section{Example by geometry}
+Find all $x$ such that $|x-7|$ = $|x+4|$
+
+TODO Numberline from -4 to 7
+
+Distance from $-4 \to 7 = 11$ \\
+Half this distance = $\frac{11}{2}$
+$-4 + \frac{11}{2} = \frac{2}{3}$ \\
+$7 - \frac{11}{2} = \frac{3}{2}$
+
+\section{Example by using the definition}
+Using the definition:
+
+TODO: rearrange from Frank's notes\ldots It didn't quite make sense in lecture,
+need additional time to absorb.
+%\begin{align}
+%  |x -7| &= \left\{ \frac{x-7, x \geq 7}{7-x, x<7} \right,
+%
+%\intertext{when $x>7$}
+%  x-7 &= x +4
+%\end{align}
+

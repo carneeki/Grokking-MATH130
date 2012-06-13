@@ -205,4 +205,100 @@ form, we can show all 3 forms of the quadratic:
 \end{align}
 
 \section{Cubics}
+Cubics can be solved by a cubic formula (which is rather complicated). Another
+trick to do is to reduce the cubic to a quadratic:
+
+\subsection{Example}
+Solve
+\begin{align}
+  4x^3 + 9x^2 +2x &= 0 \\
+\intertext{Factor $x-0$ out:}
+  (x-0)(4x^2 +9x +2) &= 0 \\
+\intertext{This holds true exactly when}
+  x &= \frac{-9+\sqrt{9^2-4 \cdot4 \cdot 2}}{4 \cdot 2} \\
+    &= \frac{-9\pm\sqrt{9^2-4 \cdot 4 \cdot 2}}{2 \cdot 4} \\
+  \sqrt{81-32} &= \sqrt{49} = 7 \\
+  x &= \frac{-9 -7}{8} \\
+    &= -2
+\intertext{So}
+  4x^2 +9x +2 &= 4\left(x-\left(-\frac{1}{4}\right)\right)(x-(-2)) \\
+  &= 4(x+\frac{1}{4})(x+2) \\
+\intertext{Hence}
+  4x^2 +9x +2 &= x \cdot(4x+1)(x+2) =0 \\
+\intertext{and so}
+  x &= 0 ~ \text{or} \\
+  x &=\frac{1}{4} ~\text{or} \\
+  x &= -2
+\end{align}
+
+\subsection{Example}
+Find all pairs of numbers $(x,y)$ such that
+\begin{align}
+  8x -2xy -xy^2 &=0 \\
+\intertext{take out $x$ as common factor}
+  &= (x)(8 -2y -y^2)
+\intertext{Hence}
+  x &= 0 ~ \text{or} \\
+  8 -2y -y^2 &= 0\\
+\intertext{Now $8-2y-y^2 =0$ iff}
+%  -(y -2)(y +4)
+  y &= \frac{2 \pm \sqrt{(-2)^2 -4 \cdot 8(-1)}}{2(-4)} \\
+    &= \frac{2 \pm \sqrt{36}}{-2} \\
+    &= \frac{2 \pm 6}{-2} \\
+    &= -4 ~ \text{or} \\
+    &= 2 \\
+\intertext{Altogether, $8x -2xy -y^2 =0$ iff }
+  x(2-y)(y+4) &= 4
+\end{align}
+Solutions are given by
+$\{ (x,y) \in \mathbb{R}^2 | x = 0 ~\text{or}~ y=2 ~\text{or} ~ y= -4$
+
+\subsection{Example}
+Solve $4x^4 +13x^3 +11x^2 +2x = 0$. This is a polynomial of degree 4. This has
+an even tougher formula than a cubic, so let's reduce it to a cubic and then a
+quadratic.
+\begin{align}
+  4x^4 +13x^3 +11x^2 +2x &= 0 \\
+  &= x(4x^3 +13x^2 +11x +2) =0 \\
+\intertext{let's get this cubic into a quadratic:}
+  4x^3 +13x^2 +11x +2 &= (x \pm a)(x \pm b) \\
+  \text{by trial and error} \nonumber \\
+  x &= -1
+  4(-1)^3 +13(-1)^2 +11(-1) +2 &= 0 \\
+  -4 +13 -11 +2 &= 0 ~\text{true}
+  \therefore a &= 1 \\
+  4x^3 +13x^2 +11x +2 &= (x+1)(4x^2 +9x +2) \\
+\intertext{this quadratic has already been solved above\ldots}
+\intertext{So}
+  4x^4 +13x^3 +11x^2 +2x &= x(x+1)(4x+1)(x+2) &= 0
+\therefore & x=0 ~\text{or} ~ x=-1 ~\text{or} ~ x=-\frac{1}{4} ~\text{or} ~ x =-2
+\end{align}
+
+\subsection{Example}
+Solve $x^4 +8x^3 +24x^2 +32x +16 =0$ \\
+Try: $x=0$ does not work. \\
+Try: $x=1$ does not work. \\
+Try: $x=-1$ does not work. \\
+Try: $x=2$ does not work. \\
+Try: $x=-2$ works. \\
+\begin{align}
+  x^4 +8x^3 +24x^2 +32x +16 &= (x+2)(\text{some cubic})
+\end{align}
+
+\section{Rational Functions}
+A rational function is a quotient of two polynomials. Examples:
+\begin{align}
+  f_1(x) &= \frac{x^2+1}{x-1} \\
+  f_2(x) &= \frac{(x+1)^2}{x^3 +x^2 +x +1} \\
+\end{align}
+
+\noindent These functions are rational when
+\begin{enumerate}
+  \item The denominator is $\neq 0$
+\end{enumerate}
+
+\noindent The dominant polynomial (ie, numerator vs denominator) is determined
+by the denominant term from the both of them.
+
+\subsection{TODO: Example. IMPORT FRANK'S WEEK9 EXAMPLE FRRM NOTES}
 \lipsum[1]

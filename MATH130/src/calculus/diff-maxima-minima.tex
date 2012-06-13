@@ -10,9 +10,11 @@ only instantaneously flat. If you think about it, 0 is slightly bigger than
 -0.00001 and slightly smaller than 0.00001 (and you can find arbitrarily
 smaller numbers that zero fits between)}
 \begin{align}
-  f \downarrow \Leftrightarrow f' < 0 \\
   f \uparrow \Leftrightarrow f' > 0 \\
+  f \downarrow \Leftrightarrow f' < 0
 \end{align}
+
+\noindent $f$ has a local maxima at $x=a$ if $f'$ changes sign.
 
 Suppose we were to take the derivative of a derivative. This is called the
 \emph{second derivative} and can be written as:
@@ -20,3 +22,102 @@ Suppose we were to take the derivative of a derivative. This is called the
               f''(x) & = \ldots \nonumber \\
   \frac{d^2 f}{dx^2} & = \ldots \nonumber
 \end{align}
+
+\noindent If you want to locate maxima and minima using the second derivative:
+$f''$ be aware that the sign change test is more robust than the second
+derivative test for local maxima and minima that are undefined.
+
+\noindent In sketching, $f''$, is useful as the sign of $f''$ gives the
+concavity (bending up vs down):
+\begin{align}
+  f'' &> 0 ~ \text{concave up} \\
+  f'' &< 0 ~ \text{concave down}
+\end{align}
+
+\section{Example}
+Suppose the following information has been collected for $f$:
+
+$y' > 0$   at $x<1$
+$y' = 0$   at $x=1$
+$y' > 0$   at $x=3$
+$y' = 0$   at $x=5$
+$y' < 0$   at $x>5$
+
+$y'' < 0$   at $x<1$
+$y'' = 0$   at $x=1$
+$y'' > 0$   at $x=3$
+$y'' = 0$   at $x=5$
+$y'' < 0$   at $x>5$
+
+
+\section{Example}
+Sketch the curve given by
+$y = \frac{x}{x^2+1}$ using $y$, $y'$, $y''$
+
+\begin{align}
+  y  &= \frac{x}{x^2+1} \\
+  y' &= \frac{1-x^2}{(x^2+1)^2}
+\end{align}
+
+\begin{figure}[!hbt]
+\begin{tikzpicture}[domain=-5:5, auto,scale=1.5]
+  \draw [color=neekiGrey,dash pattern=on 1pt off 1pt]
+  (-5,-2) grid (5,2);
+  \draw[->,color=gray] (-5,0) -- (5,0);
+  \foreach \x in {-5,-4,-3,-2,-1,1,2,3,4,5}
+    \draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below]
+    {\footnotesize $\x$};
+  \draw[->,color=gray] (0,-2) -- (0,2);
+  \foreach \y in {-2,-1,0,1,2}
+    \draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left]
+    {\footnotesize $\y$};
+  \clip (-5,-2) rectangle (5,2);
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  % END GRAPH PREAMBLE
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \draw[color=neekiBlue,thick,smooth,samples=1000]
+    plot[id=maxima_minima_ex2_y] function{ x/(x**2+1) }
+    node at (0.5,-0.5) {$y = \frac{x}{x^2+1}$};
+  \draw[color=neekiRed,thick,smooth,samples=1000]
+    plot[id=maxima_minima_ex2y1] function{ (1-x**2)/(x**2 +1)**2}
+    node at (-1.5,0.5) {$y' = \frac{1-x^2}{(x^2+1)^2}$};
+  \draw[color=neekiGreen,thick,smooth,samples=1000]
+    plot[id=maxima_minima_ex2y11] function{ ( ((x**2 +1)**2)*(-2*x) - (1-x**2)*(4*x*(x**2+1))   )/(((x**2+1)**2)**2)) }   
+    node at (-1,1.5) {y'' };
+\end{tikzpicture}
+\label{fig:maxima_minima_ex2y}
+\caption{1 function, and 2 less pleasant functions.}
+\end{figure}
+
+\section{Example}
+Sketch $y = \frac{2x^2}{x-1}$
+
+\begin{figure}[!hbt]
+\begin{tikzpicture}[domain=-5:5, auto,scale=1.5]
+  \draw [color=neekiGrey,dash pattern=on 1pt off 1pt]
+  (-5,-2) grid (5,2);
+  \draw[->,color=gray] (-5,0) -- (5,0);
+  \foreach \x in {-5,-4,-3,-2,-1,1,2,3,4,5}
+    \draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below]
+    {\footnotesize $\x$};
+  \draw[->,color=gray] (0,-2) -- (0,2);
+  \foreach \y in {-2,-1,0,1,2}
+    \draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left]
+    {\footnotesize $\y$};
+  \clip (-5,-2) rectangle (5,2);
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  % END GRAPH PREAMBLE
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \draw[color=neekiBlue,thick,smooth,samples=1000]
+    plot[id=maxima_minima_ex2_y] function{ x/(x**2+1) }
+    node at (0.5,-0.5) {$y = \frac{x}{x^2+1}$};
+  \draw[color=neekiRed,thick,smooth,samples=1000]
+    plot[id=maxima_minima_ex2y1] function{ (1-x**2)/(x**2 +1)**2}
+    node at (-1.5,0.5) {$y' = \frac{1-x^2}{(x^2+1)^2}$};
+  \draw[color=neekiGreen,thick,smooth,samples=1000]
+    plot[id=maxima_minima_ex2y11] function{ ( ((x**2 +1)**2)*(-2*x) - (1-x**2)*(4*x*(x**2+1))   )/(((x**2+1)**2)**2)) }   
+    node at (-1,1.5) {y'' };
+\end{tikzpicture}
+\label{fig:maxima_minima_ex3y}
+\caption{1 function, and 2 less pleasant functions.}
+\end{figure}

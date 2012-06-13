@@ -1,15 +1,22 @@
 %-----------------------------------------------------------------------------%
 %- Algebra :: Inequalities ---------------------------------------------------%
 %-----------------------------------------------------------------------------%
-\chapter{TODO:Inequalities}
+\chapter{Inequalities}
 \label{chap:Inequalities}
-When we multiply or divide by a negative, change the sign of the inequality.
-Eg
+If $a \leq b$, then $a+c \leq b+c$ \\
+If $a < b$, then $a+c < b+c$ \\
+\\
+If $a \leq b$ and $c > 0$, then $a \cdot c \leq b \cdot c$ \\
+If $a < b$ and $c > 0$, then $a \cdot c < b \cdot c$ \\
+
+However, when we multiply or divide by a negative, change the sign of the
+inequality.
+\section{Example}
 \begin{align}
   -3x & > 9 \\
-  \div \text{both sides by -3} \nonumber \\
-  x & > -3 \text{is NOT correct} \nonumber \\
-  x & < -3 \text{is correct}
+\intertext{$\div$ both sides by  $-3$}
+  x & > -3~ \text{is NOT correct} \nonumber \\
+  x & < -3 ~ \text{is correct}
 \end{align}
 Consider
 \begin{align}
@@ -122,4 +129,40 @@ By signs:
   2x + 3 & < 0 \\
   2x &< -3 \\
   x & < \frac{-3}{2} \\
+\end{align}
+
+\section{Cauchy-Schwartz Inequalities}
+\begin{align}
+  (a-b)^2 &\geq 0 \\
+  a^2 + b^2 -2ab &\geq 0 \\
+  a^2 +b^2 &\geq 2ab %~\text{\textbb{ALWAYS}}
+\end{align}
+
+\subsection{Examples}
+Solve $2 -x -x^2 \geq 0$
+\begin{align}
+2 -x -x^2 \geq 0 \\
+\intertext{we can factorize}
+  2 -x -x^2 &= -(x+2)(x-1) \geq 0 \\
+  &= (x+2)(1-x) \geq 0 \\
+\intertext{so either}
+  x+2 &\geq 0 ~ \text{and} ~ 1-x \geq 0 \\
+\intertext{or}
+  x+2 &\leq 0 ~ \text{and} ~ 1-x \leq 0 \\
+\intertext{first case:}
+  x & \geq -2 ~\text{and}~ 1 \geq x \\
+  -2 & \leq x \leq 1 \\
+\intertext{second case:}
+  x &\leq -2 ~\text{and}~ x \geq 1 ~\text{, no additional solutions}
+\end{align}
+so, $2-x-x^2$ iff $-2 \leq x \leq 1$.
+
+\subsection{Example - TODO: finish from frank's notes}
+Solve 
+\begin{align}
+  2 &\leq& \frac{4x-2}{x+4} &<& 3 \\
+\intertext{case where x+4 > 0}
+x + 4 &>& 0 2(x+4) \leq 4x-2 < 3(x+4) \\
+\intertext{case where x+4 < 0}
+x+4 < 0 : 2(x+4) \geq 4x-2 > 3(x+4)
 \end{align}

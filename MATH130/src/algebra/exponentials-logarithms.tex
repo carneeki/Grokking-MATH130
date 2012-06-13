@@ -125,13 +125,15 @@ logarithms of the same base as it keeps the maths simpler (and sometimes things
 will divide or cancel out). To do this, we apply the change of base formula
 $\eqref{eq:LogLaw_ChangeBase}$. Consider the following:
 \begin{align}
-  b^{log_b(x)} & = x \\
-  log_a(b^{b * log_b(x)}) & = log_a(x) ~ \text{take log base-a of both sides} \\
-  (log_a(b))(log_b(x)) & = \text{by \eqref{eq:IndexLaw_MultIdxs}}
+  b^{\log_b(x)} & = x \\
+  \log_a(b^{b * \log_b(x)}) & = \log_a(x) ~ \text{take log base-a of both sides}
+  \\
+  (\log_a(b))(\log_b(x)) & = \text{by \eqref{eq:IndexLaw_MultIdxs}}
 \end{align}
 There is an alternate way using division, and can be memorised as wrote:
 \begin{align}
-  log_b(x) & = \frac{log_a(x)}{log_a(b)} ~ \text{ \eqref{eq:LogLaw_ChangeBase} }
+  \log_b(x) & = \frac{\log_a(x)}{\log_a(b)} ~ \text{
+  \eqref{eq:LogLaw_ChangeBase} }
   \nonumber
 \end{align} 
 
@@ -189,13 +191,13 @@ Suppose we have to solve the following equation:
 We use logarithms:
 \begin{align}
   2^{x} & = \frac{5}{3^{x+1}} \\
-  log(2^x) & = log(\frac{5}{3^{x+1}}) \\
-  x log(2) & = log(5) - log(3^{x+1}) \\
-  x log(2) & = log(5) - (x+1) * log(3) \\
-  x log(2) + x log(3)  & = log - log(3) \\
-  x(log(2) + x log(3)) & = log(5) - log(3) \\
-  x & = \frac{log(5) - log(3)}{log(2) + log(3)} \\
-    & = \frac{log(\frac{5}{3})}{log(6)} \\
+  \log(2^x) & = \log(\frac{5}{3^{x+1}}) \\
+  x \log(2) & = \log(5) - \log(3^{x+1}) \\
+  x \log(2) & = \log(5) - (x+1) * \log(3) \\
+  x \log(2) + x \log(3)  & = \log - \log(3) \\
+  x(\log(2) + x \log(3)) & = \log(5) - \log(3) \\
+  x & = \frac{\log(5) - \log(3)}{\log(2) + \log(3)} \\
+    & = \frac{\log(\frac{5}{3})}{\log(6)} \\
     & = \text{\ldots some decimal \ldots }
 \end{align}
 
@@ -213,7 +215,7 @@ we do not need to worry about that for MATH130.
 
 The base $e$ is used on most calculators with a button that looks like $e^x$. To
 use the logarithm with base $e$ it is usually a button that looks like ``ln'', or
-$log_e(x)$.
+$\log_e(x)$.
 
 An important thing to note about $e$, which will be raised further in calculus
 chapters is when you differentiate $e$, it is the only function where it's

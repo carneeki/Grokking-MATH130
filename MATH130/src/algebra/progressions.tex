@@ -7,15 +7,17 @@ Progressions are when you have a bunch of numbers in a group, and they are
 related to eachother in an order, such as ``add one to the last one'', or
 ``divide by one plus the last one.'' They fall into two types which resemble the
 form:\footnote{again, there are other types, but they fall out of the scope of
-MATH130. Some examples include Harmonic Progressions, and a Taylor Series}
+MATH130. Some examples include Harmonic Progressions, and Taylor series}
 
 \begin{description}
-  \item[Arithmetic Progressions] $a_1 + (1-1)d, a_2 + (2-1)d, a_3 +(3-1)d,
-  \ldots$ Essentially, a bunch of numbers separated by a common delta. They
-  sometimes also go by the term \emph{arithmetic sequence}. I shall use the term
-  progression however, as it feels less confusing to me when we enter the topic
-  of sums.
-  \item[Geometric Progressions] $a, ar, ar^2, ar^3, ar^4, \ldots$
+  \item[Arithmetic Progressions] $a_1 = (1-1)d, a_2 = (2-1)d, a_3 = (3-1)d,
+  \ldots$ Essentially, a bunch of numbers separated by a common delta (or
+  difference). They sometimes also go by the term \emph{arithmetic sequence}. I
+  shall use the term progression however, as it feels less confusing to me when
+  we enter the topic of sums.
+  \item[Geometric Progressions] $a, ar, ar^2, ar^3, ar^4, \ldots$, that is, a
+  quotient of consecutive numbers is constant, we divide $\frac{ar^2}{ar} = a$,
+  and $\frac{ar^3}{ar^2} = a$, and $\frac{ar^4}{ar^3} = a$.
 \end{description}
 If you cannot recognise a form of numbers, you can perform what I call the
 ``double difference test''. We can taking any $2$ consecutive numbers, and
@@ -30,7 +32,7 @@ compare their difference with any other $2$ consecutive numbers.
 \section{Arithmetic Progressions}
 \label{ArithmeticProgressions}
 Arithmetic progressions are really nothing more than a set of numbers which have
-a difference from one number to the next of a common number, ($d$), as seen in
+a difference from one number to the next of a common delta, ($d$), as seen in
 the double difference test. An arithmetic progression takes the form:
 \begin{align}
   a_n &= a_1 + (n-1)d
@@ -98,7 +100,19 @@ in an arithmetic progression an \emph{arithmetic series}. To determine the sum:
 %     &= n(a_1 + a_n) \\
   S_n
     &= \frac{n}{2}(a_1 + a_n) \label{eq:ArithmeticSum1}\\
-    \text{or}
+  \intertext{by:}
+    & = a + (a+d) + (a+2d) + \ldots + (a + (n-1)d) \\
+    &= n\cdot a + (d + 2d + \ldots + (n-1)d) \\
+    &= n\cdot a + d(1 + 2 + \ldots + (n-1)) \\
+\intertext{if $n-1$ is even:}
+    1 + 2 + 3 + 4 & \ldots + (n-4) + (n-3) + (n-2) + (n-1) \nonumber \\
+    \frac{n-1}{2} \cdot n &= \frac{n(n-1)}{2} \\
+\intertext{if $n-1$ is odd:}
+    \frac{n-2}{2} \cdot n &= \frac{n}{2} \\
+    \frac{n-2}{2} \cdot \frac{n}{2} &= \frac{1}{2}\cdot \left[(n-2)n + n\right] \\
+    &= \frac{1}{2}(n^2 - 2n + n) \\
+    &= \frac{1}{2}(n^2 -n) \\
+    &= \frac{n(n-1)}{2} \\
     &= \frac{n}{2}(2a_1 + (n-1)d) \label{eq:ArithmeticSum2}
 \end{align}
 
@@ -184,7 +198,7 @@ $n$ & is the $n$\tsup{th} arbitrary value to index the term \\
 \end{tabularx}
 \caption{Components to a Geometric Progression.}
 \end{table} 
-\subsection{Determining the n-th term of an geometric progression}
+\subsection{Determining the n-th term of a geometric progression}
 \label{sec:nthTermOfAnGeometricProgression}
 Given some sequence of numbers, $1, 2, 4, 8, 16, 32, \ldots$, we can see the
 formula follows: $1=ar^{(1-1)}=ar^0=a*1=a=1$, and we can see that the
@@ -210,9 +224,9 @@ Simply raise one finger\footnote{ideally your thumb or pinky!}, and each time
 you double, raise another finger. If you have the normal number of digits per
 hand, the $5$\tsup{th} will match the result.
 \newpage
-\subsection{Sum of an Geometric Progression - aka Geometric Series}
+\subsection{Sum of a Geometric Progression - aka Geometric Series}
 \label{sec:GeometricSeries}
-We call a sum of subset of elements in an geometric progression an
+We call a sum of subset of elements in an geometric progression a
 \emph{geometric series}. To determine the sum:
 \begin{align}
   S_n
@@ -222,6 +236,7 @@ We call a sum of subset of elements in an geometric progression an
     &= ar^1 + ar^2 + \ldots + ar^{n-1} + ar^n \\
 \intertext{and we take the difference of these two equations:}
   S_n - rS_n
+    &= ar^0 - ar^n \\
     &= a - ar^n
 \intertext{$S_n$ can also be expressed as:}
   S_n 
@@ -234,6 +249,11 @@ working):}
    y &= \frac{y-(ry)}{x} \\
   yx &= y-yr \\
    x &= 1-r
+\intertext{Note: it is important that $r \neq 1$, else $S_n$ is undefined as
+such the progression looks like:}
+  & a, a, a, a, \ldots, a \\
+\intertext{So the sum looks like}
+  S_n &= n \cdot a
 \end{align}
 
 \begin{table}[!htb]

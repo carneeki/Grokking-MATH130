@@ -3,15 +3,19 @@
 %-----------------------------------------------------------------------------%
 \chapter{TODO: Integration}
 \label{sec:Integration}
-tl;dr: Integration is the reverse process of Differentiation.
+tl;dr \emph{Integration is the reverse process of Differentiation.}
+
+Integration is as looking at the \emph{accumulated change}, often by summing (or
+subtracting) of a quantity with respect to another quantity.
 
 If we were to delve more into what integration is, then we could describe it as
-finding the area ``underneath a curve'' (more accurately, between the curve and
+finding the area ``underneath a curve'' (more precisely, between the curve and
 the x-axis).
 
 There are many different ways of doing this, and MATH130 requires we know 2 of
 them:
 \begin{description}
+  \item[Riemann Sums]
   \item[Simpson's Rule]
   \item[Trapezoidal Rule]
 \end{description}
@@ -19,10 +23,145 @@ them:
 There are two types of integration:
 \begin{description}
   \item[Anti-derivatives] or \emph{indefinite integrals}
-
   \item[Definite Integrals]
 \end{description}
 The principles behind indefinite and definite integrals are the same, however,
 with definite integrals, you have a range for which you are integrating your
 function, where as indefinite integrals have no range (beyond the complete range
 of the function itself).
+
+\section{Riemann Sums}
+\begin{enumerate}
+  \item Draw a bunch of rectangles from the $x$-axis to the function
+such that the top left corner touches the function. This left hand corner is called a
+\emph{Left-hand Riemann sum.}
+
+  \item Now draw the same, but with the right hand corner, a ``Right-hand
+ Riemann sum''.
+\end{enumerate}
+
+For the function $2^x$ divided into 4 rectangles, the area can be calculated as
+
+$L_4 = \frac{1}{2} \left(2^1 + 2^{1.5} + 2^{2} + 2^{2.5}\right) \approx 7.24$
+and
+$R_4 = \frac{1}{2} \left(2^{1.5} + 2^{2} + 2^{2.5} + 2^{3}\right) \approx 10.24$
+
+\noindent Our intuition tells us to take the mean of these two numbers, however
+the curve is not quite straight, so the mean would be slightly larger. This mean
+($8.74$). It is pretty close though, and the most you can be wrong by is the
+interval of the gap divide by two\ldots That is, $\frac{R_4-L_4}{2} =
+\frac{3}{2} = 1.5$.
+
+\noindent Suppose we were to draw more intervals, $L_5$ and $R_5$ would be
+closer. $L_{500}$ and $R_{500}$ would be closer again. The error converges to
+zero with more rectangles.
+
+\noindent More generally,
+\begin{align}
+  L_n &= 2^{1\cdot \Delta x} +2^{2\cdot \Delta x} +2^{3\cdot \Delta x} +
+  \ldots + 2^{(n-1)\cdot \Delta x} \\
+  L_n &= f(1)\Delta x + f(1+\Delta x)\Delta x + \ldots + f(1+(n-1)\Delta
+  x)\Delta x \\
+  L_n &= \sum_{i=0}^{n-1} f(1 +i\Delta x)\Delta x
+\intertext{The exact answer can be given by:}
+  A &= \lim_{n \to \infty} \sum_{i=0}^{n-1} f(1+i \Delta x) \Delta x \\
+    &= \int_{1}^{3} f(x) dx
+\end{align}
+
+\noindent This formula is called ``the definite integral of f from $x=1$ to
+$x=3$''.
+Where:
+\begin{table}[!hbt]
+\label{tab:PartsOfAnIntegral}
+\begin{tabularx}{\linewidth}{| l X |}
+\hline
+\multicolumn{2}{|l|}{The convention I will use here is:} \\
+\hline \hline
+$\int$ & is the integral representing the \emph{sum} \\
+$\int_a$ & $a$ is our starting point \\
+$\int_{}^b$ & $b$ is our finishing point \\
+$f(x)$ & is the function to be integrated \\
+$dx$   & is what we are integrating with respect to \\
+\hline
+\end{tabularx}
+\caption{Parts of integrating a function}
+\end{table}
+
+\section{General form of a Riemann Sum}
+\begin{align}
+  L_n &= f(a)\Delta x + f(a + 1 \Delta x)\Delta x + f(a + 2 \Delta x)\Delta x +
+  \ldots + f(a + (n-1)\Delta x)\Delta x \\
+      &= \sum_{i=0}^{n-1} f(a+i \Delta x)\Delta x \\
+      &= \sum \ldots \\
+  L_n & \to A ~\text{as} ~ n \to \infty \\
+  A &= \lim_{n \to \infty} f(a+i \Delta x)\Delta x \\
+    &= \int_a^b f(x) dx
+\end{align}
+
+\section{Technique of Integration: Undoing the Chain Rule}
+Recall the chain rule:
+\begin{align}
+  (f \circ g)'(x) &= f'(g(x)) \cdot g'(x) \nonumber \\
+\intertext{By reversing we have}
+  \int f'(g(x))\cdot g'(x) \nd{x} &= (f \circ g)(x) \\
+\intertext{Let}
+  f'(g(x)) &= f'(u) \\
+  g'(x)\nd{x} &= \nd{u} \\
+\intertext{Such that}
+\int f'(g(x))\cdot g'(x) \nd{x} &= \\
+  &= \int f'(u)\nd{p} \\
+  &= f(g(x))
+\intertext{This works because $p$ is an inside function, and we can
+differentiate it:}
+  \deriv{p}{x} &= g'(x) \\
+  \nd{p} &= g'(x)\nd{x}
+\end{align}
+
+\subsection{Example}
+\begin{align}
+  \int \left(15x^2 + 4\right)\left(15x^3+4x+1\right)^8\nd{x} &=
+  \intertext{Let the inside function, u}
+  u &= 5x^3+4x+1 \\
+  \intertext{such that}
+  \deriv{u}{x} &= 15x^2 + 4 \\
+  \nd{u} &= \left(15x^2 + 4\right)\nd{x}
+  \intertext{and}
+  \int \left(15x^2 + 4\right)\left(15x^3+4x+1\right)^8\nd{x} &= \\
+    &= \int u^8\nd{u} \\
+    &= \frac{u^9}{9} \\
+  \intertext{then substitute back}
+    &= \frac{\left(5x^3+4x+1\right)^9}{9}
+\end{align}
+
+\subsection{Example}
+\begin{align}
+  \int \frac{1}{8x-3}\nd{x} &= \int \left(8x-3\right)^{-1}
+  \intertext{It is handy to remember:}
+    \int \frac{1}{x} \nd{x} &= \log(|x|) \\
+  \intertext{let u}
+  u &= 8x -3 \\
+  \deriv{u}{x} & = 8 \\
+  \intertext{thing}
+  &= \frac{1}{8} \int \frac{1}{u} \nd{u} \\
+  &= \frac{1}{8} \log(|u|) \\
+  &= \frac{1}{8} \log(|8x-3|)
+\end{align}
+
+Rule to memerise:
+\begin{align}
+  \int f'(x) e^{f(x)} \nd{x} &= e^{f(x)}
+  \intertext{we can get to this via $u$ substition, let}
+  u &= f(x) \\
+  \deriv{u}{x} &= f'(x) \\ 
+  \nd{u} &= f'(x)\nd{x} \\
+  \int e^u \nd{x}
+\end{align}
+
+\begin{align}
+  \int \frac{f'(x)}{f(x)} \nd{x} &= \log(|f(x)|) \\
+  \intertext{By:}
+   \int \frac{u'}{u} \nd{u} \\
+  &= \int \frac{1}{u} \nd{u}
+  \intertext{Where}
+  u &= f(x)
+\end{align}

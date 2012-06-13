@@ -86,8 +86,9 @@ longnamesfirst
 %- (05) Custom Commands ------------------------------------------------------%
 % MATH
 %\newcommand{\derivative}[1][x]{\frac{\mathrm{d}}{\mathrm{d}#1}}
+\newcommand{\nd}[1]{\,\mathrm{d}#1}
 \newcommand{\md}[1]{\mathrm{d}#1}
-\newcommand{\deriv}[2]{\frac{\md{#1}}{\md{#2}}} % derivative of fn
+\newcommand{\deriv}[2]{\frac{\nd{#1}}{\nd{#2}}} % derivative of fn
 \newcommand{\lderiv}[2]{\deriv{}{#2}(#1)} % deriv of a long fn
 \newcommand{\myint}[4]{\int_{#1}^{#2} #3~\md{#4}} % integrate
 \newcommand{\aderiv}[2]{\myint{}{}{#1}{#2}}
