@@ -1,0 +1,96 @@
+%-----------------------------------------------------------------------------%
+%- Algebra :: Arithmetic & Geometric Progressions ----------------------------%
+%-----------------------------------------------------------------------------%
+\chapter{Counting Techniques}
+\label{chap:CountingTechniques}
+How do we count certain events?
+
+Notation:
+\begin{align}
+  n! & = n(n-1)(n-2)\ldots 3 \cdot 2 \cdot 1 \left\{
+    \begin{array}{c c}
+      n \in \mathbb{N} \\
+      \mathbb{N} \in \mathbb{Z} & | ~ n > 0 \\
+    \end{array}
+  \right.
+\end{align}
+
+Example:
+\begin{align}
+  5! &= 5 \cdot 4 \cdot 3 \cdot 2 \cdot 1 \\
+     &= 120
+\end{align}
+
+Example: The alphabet has 26 letters. How many ways can I choose 1 letter in the
+English alphabet?
+
+1 letter:
+\begin{align}
+  26 \cdot 1 &= 26
+\end{align}
+
+How many ways can I form words of 2 letter in the English alphabet?
+
+2 letters:
+\begin{align}
+  26 * 25 & = \ldots
+\end{align}
+
+How many ways can I form choose 2 distinct letters in the English alphabet?
+1 letter:
+\begin{align}
+  \frac{26\cdot25}{2} + &= \ldots
+\end{align}
+
+Example: Group of 20 people. Choose 4 people and seat them in a row:
+
+\begin{align}
+  (20 \cdot 19 \cdot 18 \cdot 17) &= \ldots \text{distinct arrangements}
+\end{align}
+
+Now suppose they are seated around a square:
+\begin{align}
+  \frac{(20 \cdot 19 \cdot 18 \cdot 17)}{4} &= \ldots
+\end{align}
+
+In how many ways can we chose 4 people in a group of 20 where order is not
+important?
+\begin{align}
+  (20 \cdot 19 \cdot 18 \cdot 17) - (4 \cdot 3 \cdot 2 \cdot 1) &= \ldots
+    &= \frac{(20 \cdot 19 \cdot 18 \cdot 17)}{4!} \\
+    &= \frac{(20 \cdot 19 \cdot 18 \cdot 17)}{4!} \cdot \frac{16!}{16!} \\
+    &= \frac{20!}{4! \cdot 16!} \\
+    &= C(20,4) \\
+    &= C(20,16)
+\end{align}
+
+We start with all distinct possibilities and then remove the number of distinct
+arrangements of the select 4. $C(h,n)$ means \emph{``Choose $n$ needles from
+the haystack, $h$''}. This is called a \emph{binomial coefficient}\footnote{and
+is covered in more detail in DMTH137 and MATH135}.
+
+Choosing $r$ objects from a collection of $n$ objects:
+\begin{enumerate}
+  \item Without replacement
+  \begin{enumerate}
+    \item Order important: $n \cdot (n-1) \cdot (n-2)\cdot \ldots \cdot (n-r+1) $
+    \item Order not important: $\frac{n \cdot (n-1) \cdot (n-2)\cdot \ldots \cdot (n-r+1)}{r!}$
+  \end{enumerate}
+  \item With replacement
+  \begin{enumerate}
+    \item Order important: $n \cdot n \cdot n \cdot \ldots \cdot n_r = n^r $
+    \item Order not important: $C(n+r-1, r) = \frac{n+r-1}{r!(n-1)!}$ (mainly in DMTH137)
+  \end{enumerate}
+\end{enumerate}
+
+Permutations:
+\begin{align}
+  n(n-1)(n-2)\ldots(n-r+1)\cdot\frac{(n-r)!}{(n-r)!} = \frac{n!}{(n-r)!} \\
+\intertext{which is the same as without replacement, order important and is 
+represented by the symbol}
+ P(n,r) &= \frac{n!}{(n-r)!} \\
+ (_r^n) &= \frac{n!}{r!(n-r)!} \\
+ &= \frac{n!}{(n-r)!(n-(n-r))!} \\
+ &= (_{n-r}^n) \\
+ &= C(n,n-r)
+\end{align}
